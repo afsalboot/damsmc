@@ -1,0 +1,55 @@
+{
+  "name": "oushadhi-pos-desktop",
+  "version": "0.1.4",
+  "private": true,
+  "description": "Dr Abdulla’s Ayurvedic POS desktop client",
+  "author": "Dr Abdulla’s Ayurvedic Multi Speciality Medical Center",
+  "main": "main.mjs",
+  "scripts": {
+    "start": "node launch.mjs",
+    "dev": "node launch.mjs --local",
+    "smoke": "node launch.mjs --smoke",
+    "smoke:print": "node launch.mjs --print-smoke",
+    "dist": "electron-builder --win nsis --x64 --publish never",
+    "test": "node --test *.test.mjs"
+  },
+  "build": {
+    "appId": "com.oushadhi.pos",
+    "productName": "Dr Abdulla’s Ayurvedic POS",
+    "asar": true,
+    "directories": {
+      "output": "../dist-desktop"
+    },
+    "files": [
+      "main.mjs",
+      "chrome.html",
+      "chrome-preload.cjs",
+      "local-backup.mjs",
+      "preload.cjs",
+      "receipt-print.mjs",
+      "printer-policy.mjs",
+      "policy.mjs",
+      "offline.html",
+      "package.json",
+      "assets/*.png",
+      "saved-logins.mjs"
+    ],
+    "win": {
+      "icon": "assets/icon.png",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "include": "installer.nsh",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "artifactName": "Dr-Abdullas-POS-Setup-${version}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3"
+  }
+}
