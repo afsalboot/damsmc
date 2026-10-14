@@ -1,0 +1,14 @@
+{
+  "sales": {
+    "count": 2,
+    "hash": "8fdf855c1210dfd01080948fbd1f32d58de8ee02ff017dc4ffe4c8edb7021ac6"
+  },
+  "inventorybatches": {
+    "count": 1,
+    "hash": "4e473bc5cfb78b0cbc2aee9810f7897a8090e0eaf4c2f78c34018c94d0083ca4"
+  },
+  "stocktransactions": {
+    "count": 3,
+    "hash": "9b527931b4bb62884c30acdbc6141a0313cba620f30657de8b361a2ed8fdbd84"
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "name": "oushadhi-pos-desktop",
-  "version": "0.1.4",
+  "name": "dr-abdullas-pos-desktop",
+  "version": "0.1.7",
   "private": true,
   "description": "Dr Abdulla’s Ayurvedic POS desktop client",
   "author": "Dr Abdulla’s Ayurvedic Multi Speciality Medical Center",
@@ -14,7 +14,7 @@
     "test": "node --test *.test.mjs"
   },
   "build": {
-    "appId": "com.oushadhi.pos",
+    "appId": "com.drabdullas.pvamsp.pos",
     "productName": "Dr Abdulla’s Ayurvedic POS",
     "asar": true,
     "directories": {
@@ -32,7 +32,8 @@
       "offline.html",
       "package.json",
       "assets/*.png",
-      "saved-logins.mjs"
+      "saved-logins.mjs",
+      "identity.mjs"
     ],
     "win": {
       "icon": "assets/icon.png",

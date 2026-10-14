@@ -1,0 +1,702 @@
+{
+  "mode": "browser",
+  "origin": "http://localhost:3000",
+  "build": "local production build",
+  "initialMetrics": {
+    "source": "server",
+    "restoreMs": 0,
+    "indexRows": 1,
+    "indexBytes": 696,
+    "detailCount": 1,
+    "ready": true,
+    "freshDetails": 1,
+    "barcodeCount": 0,
+    "persistent": false,
+    "diskError": null
+  },
+  "persistence": {
+    "rows": 0,
+    "fullFetchedAt": 0,
+    "error": null
+  },
+  "samples": [
+    {
+      "cycle": 1,
+      "opening": {
+        "dispatchMs": 0.3999999985098839,
+        "domMs": 12,
+        "paintMs": 19.5
+      },
+      "openingRequests": [],
+      "search": {
+        "dispatchMs": 1,
+        "domMs": 5.899999998509884,
+        "paintMs": 13.399999998509884
+      },
+      "clear": {
+        "dispatchMs": 0.7999999970197678,
+        "domMs": 5.399999998509884,
+        "paintMs": 12.699999999254942
+      },
+      "searchRequests": 0,
+      "stockSearch": {
+        "dispatchMs": 0.6000000014901161,
+        "domMs": 0.8000000007450581,
+        "paintMs": 7.600000001490116
+      },
+      "stockClear": {
+        "dispatchMs": 0.5,
+        "domMs": 6.5,
+        "paintMs": 13.400000002235174
+      },
+      "stockRequests": [],
+      "selection": {
+        "dispatchMs": 0.3999999985098839,
+        "domMs": 14.599999997764826,
+        "paintMs": 20.099999997764826
+      },
+      "add": {
+        "dispatchMs": 0.3999999985098839,
+        "domMs": 14.599999997764826,
+        "paintMs": 20.099999997764826
+      },
+      "cartRequests": 0,
+      "reload": {
+        "readinessMs": 527.4707000000053,
+        "metrics": {
+          "source": "server",
+          "restoreMs": 0,
+          "indexRows": 1,
+          "indexBytes": 696,
+          "detailCount": 1,
+          "ready": true,
+          "freshDetails": 1,
+          "barcodeCount": 0,
+          "persistent": false,
+          "diskError": null
+        },
+        "navigation": {
+          "domContentLoaded": 98.19999999925494,
+          "load": 107.10000000149012
+        }
+      },
+      "reloadRequests": [
+        {
+          "id": "2852.136",
+          "path": "/api/products/sales-index",
+          "start": 27743.920391,
+          "status": 200,
+          "serverTiming": "sales-index;dur=151.7",
+          "wireBytes": 1860
+        },
+        {
+          "id": "2852.157",
+          "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+          "start": 27744.095354,
+          "status": 200,
+          "serverTiming": "selling-details;dur=178.8",
+          "wireBytes": 3095
+        },
+        {
+          "id": "2852.158",
+          "path": "/api/products/sales-index?membership=Low%20Stock",
+          "start": 27744.09547,
+          "status": 200,
+          "wireBytes": 1053
+        },
+        {
+          "id": "2852.159",
+          "path": "/api/products/sales-index?membership=Opened%20Stock",
+          "start": 27744.095512,
+          "status": 200,
+          "wireBytes": 1053
+        }
+      ],
+      "productRequests": 4
+    },
+    {
+      "cycle": 2,
+      "opening": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 11.400000002235174,
+        "paintMs": 17.5
+      },
+      "openingRequests": [],
+      "search": {
+        "dispatchMs": 1,
+        "domMs": 5,
+        "paintMs": 12.100000001490116
+      },
+      "clear": {
+        "dispatchMs": 0.6000000014901161,
+        "domMs": 7.600000001490116,
+        "paintMs": 13.600000001490116
+      },
+      "searchRequests": 0,
+      "stockSearch": {
+        "dispatchMs": 0.5999999977648258,
+        "domMs": 0.6999999992549419,
+        "paintMs": 7
+      },
+      "stockClear": {
+        "dispatchMs": 0.6000000014901161,
+        "domMs": 6.400000002235174,
+        "paintMs": 13.600000001490116
+      },
+      "stockRequests": [],
+      "selection": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 14,
+        "paintMs": 21
+      },
+      "add": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 14,
+        "paintMs": 21
+      },
+      "cartRequests": 0,
+      "reload": {
+        "readinessMs": 512.8072000000029,
+        "metrics": {
+          "source": "server",
+          "restoreMs": 0,
+          "indexRows": 1,
+          "indexBytes": 696,
+          "detailCount": 1,
+          "ready": true,
+          "freshDetails": 1,
+          "barcodeCount": 0,
+          "persistent": false,
+          "diskError": null
+        },
+        "navigation": {
+          "domContentLoaded": 86.5,
+          "load": 88.90000000223517
+        }
+      },
+      "reloadRequests": [
+        {
+          "id": "2852.214",
+          "path": "/api/products/sales-index",
+          "start": 27745.335708,
+          "status": 200,
+          "serverTiming": "sales-index;dur=137.4",
+          "wireBytes": 1860
+        },
+        {
+          "id": "2852.234",
+          "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+          "start": 27745.496135,
+          "status": 200,
+          "serverTiming": "selling-details;dur=184.5",
+          "wireBytes": 3095
+        },
+        {
+          "id": "2852.235",
+          "path": "/api/products/sales-index?membership=Low%20Stock",
+          "start": 27745.49623,
+          "status": 200,
+          "wireBytes": 1053
+        },
+        {
+          "id": "2852.236",
+          "path": "/api/products/sales-index?membership=Opened%20Stock",
+          "start": 27745.496266,
+          "status": 200,
+          "wireBytes": 1053
+        }
+      ],
+      "productRequests": 4
+    },
+    {
+      "cycle": 3,
+      "opening": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 11.900000002235174,
+        "paintMs": 20.100000001490116
+      },
+      "openingRequests": [],
+      "search": {
+        "dispatchMs": 0.6999999992549419,
+        "domMs": 5.5,
+        "paintMs": 13
+      },
+      "clear": {
+        "dispatchMs": 0.8000000007450581,
+        "domMs": 7.100000001490116,
+        "paintMs": 12.800000000745058
+      },
+      "searchRequests": 0,
+      "stockSearch": {
+        "dispatchMs": 0.5999999977648258,
+        "domMs": 0.6999999992549419,
+        "paintMs": 6.699999999254942
+      },
+      "stockClear": {
+        "dispatchMs": 0.5,
+        "domMs": 5.5,
+        "paintMs": 12.600000001490116
+      },
+      "stockRequests": [],
+      "selection": {
+        "dispatchMs": 0.10000000149011612,
+        "domMs": 13.600000001490116,
+        "paintMs": 19.5
+      },
+      "add": {
+        "dispatchMs": 0.10000000149011612,
+        "domMs": 13.600000001490116,
+        "paintMs": 19.5
+      },
+      "cartRequests": 0,
+      "reload": {
+        "readinessMs": 506.76170000000275,
+        "metrics": {
+          "source": "server",
+          "restoreMs": 0,
+          "indexRows": 1,
+          "indexBytes": 696,
+          "detailCount": 1,
+          "ready": true,
+          "freshDetails": 1,
+          "barcodeCount": 0,
+          "persistent": false,
+          "diskError": null
+        },
+        "navigation": {
+          "domContentLoaded": 88.90000000223517,
+          "load": 90.10000000149012
+        }
+      },
+      "reloadRequests": [
+        {
+          "id": "2852.291",
+          "path": "/api/products/sales-index",
+          "start": 27746.773128,
+          "status": 200,
+          "serverTiming": "sales-index;dur=136.1",
+          "wireBytes": 1860
+        },
+        {
+          "id": "2852.311",
+          "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+          "start": 27746.922033,
+          "status": 200,
+          "serverTiming": "selling-details;dur=163.1",
+          "wireBytes": 3095
+        },
+        {
+          "id": "2852.312",
+          "path": "/api/products/sales-index?membership=Low%20Stock",
+          "start": 27746.922119,
+          "status": 200,
+          "wireBytes": 1053
+        },
+        {
+          "id": "2852.313",
+          "path": "/api/products/sales-index?membership=Opened%20Stock",
+          "start": 27746.922155,
+          "status": 200,
+          "wireBytes": 1053
+        }
+      ],
+      "productRequests": 4
+    },
+    {
+      "cycle": 4,
+      "opening": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 11.599999997764826,
+        "paintMs": 19.199999999254942
+      },
+      "openingRequests": [],
+      "search": {
+        "dispatchMs": 0.9000000022351742,
+        "domMs": 6.100000001490116,
+        "paintMs": 12.699999999254942
+      },
+      "clear": {
+        "dispatchMs": 0.8000000007450581,
+        "domMs": 7.300000000745058,
+        "paintMs": 13.800000000745058
+      },
+      "searchRequests": 0,
+      "stockSearch": {
+        "dispatchMs": 0.7000000029802322,
+        "domMs": 0.8000000007450581,
+        "paintMs": 5.200000002980232
+      },
+      "stockClear": {
+        "dispatchMs": 0.5,
+        "domMs": 5.599999997764826,
+        "paintMs": 12.299999997019768
+      },
+      "stockRequests": [],
+      "selection": {
+        "dispatchMs": 0.09999999776482582,
+        "domMs": 11.800000000745058,
+        "paintMs": 19.399999998509884
+      },
+      "add": {
+        "dispatchMs": 0.09999999776482582,
+        "domMs": 11.800000000745058,
+        "paintMs": 19.399999998509884
+      },
+      "cartRequests": 0,
+      "reload": {
+        "readinessMs": 508.2047999999995,
+        "metrics": {
+          "source": "server",
+          "restoreMs": 0,
+          "indexRows": 1,
+          "indexBytes": 696,
+          "detailCount": 1,
+          "ready": true,
+          "freshDetails": 1,
+          "barcodeCount": 0,
+          "persistent": false,
+          "diskError": null
+        },
+        "navigation": {
+          "domContentLoaded": 89.69999999925494,
+          "load": 91
+        }
+      },
+      "reloadRequests": [
+        {
+          "id": "2852.368",
+          "path": "/api/products/sales-index",
+          "start": 27748.190779,
+          "status": 200,
+          "serverTiming": "sales-index;dur=134.0",
+          "wireBytes": 1860
+        },
+        {
+          "id": "2852.388",
+          "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+          "start": 27748.339454,
+          "status": 200,
+          "serverTiming": "selling-details;dur=161.5",
+          "wireBytes": 3095
+        },
+        {
+          "id": "2852.389",
+          "path": "/api/products/sales-index?membership=Low%20Stock",
+          "start": 27748.339546,
+          "status": 200,
+          "wireBytes": 1053
+        },
+        {
+          "id": "2852.390",
+          "path": "/api/products/sales-index?membership=Opened%20Stock",
+          "start": 27748.33958,
+          "status": 200,
+          "wireBytes": 1053
+        }
+      ],
+      "productRequests": 4
+    },
+    {
+      "cycle": 5,
+      "opening": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 16.200000002980232,
+        "paintMs": 23.200000002980232
+      },
+      "openingRequests": [],
+      "search": {
+        "dispatchMs": 1,
+        "domMs": 4.899999998509884,
+        "paintMs": 11.800000000745058
+      },
+      "clear": {
+        "dispatchMs": 0.6000000014901161,
+        "domMs": 5.800000000745058,
+        "paintMs": 13.200000002980232
+      },
+      "searchRequests": 0,
+      "stockSearch": {
+        "dispatchMs": 1,
+        "domMs": 1,
+        "paintMs": 7
+      },
+      "stockClear": {
+        "dispatchMs": 0.5,
+        "domMs": 5.5,
+        "paintMs": 13.5
+      },
+      "stockRequests": [],
+      "selection": {
+        "dispatchMs": 0.09999999776482582,
+        "domMs": 11.800000000745058,
+        "paintMs": 20.099999997764826
+      },
+      "add": {
+        "dispatchMs": 0.09999999776482582,
+        "domMs": 11.800000000745058,
+        "paintMs": 20.099999997764826
+      },
+      "cartRequests": 0,
+      "reload": {
+        "readinessMs": 506.20390000000043,
+        "metrics": {
+          "source": "server",
+          "restoreMs": 0,
+          "indexRows": 1,
+          "indexBytes": 696,
+          "detailCount": 1,
+          "ready": true,
+          "freshDetails": 1,
+          "barcodeCount": 0,
+          "persistent": false,
+          "diskError": null
+        },
+        "navigation": {
+          "domContentLoaded": 89.39999999850988,
+          "load": 90.69999999925494
+        }
+      },
+      "reloadRequests": [
+        {
+          "id": "2852.445",
+          "path": "/api/products/sales-index",
+          "start": 27749.608811,
+          "status": 200,
+          "serverTiming": "sales-index;dur=135.7",
+          "wireBytes": 1860
+        },
+        {
+          "id": "2852.465",
+          "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+          "start": 27749.759957,
+          "status": 200,
+          "serverTiming": "selling-details;dur=179.8",
+          "wireBytes": 3095
+        },
+        {
+          "id": "2852.466",
+          "path": "/api/products/sales-index?membership=Low%20Stock",
+          "start": 27749.760042,
+          "status": 200,
+          "wireBytes": 1053
+        },
+        {
+          "id": "2852.467",
+          "path": "/api/products/sales-index?membership=Opened%20Stock",
+          "start": 27749.760101,
+          "status": 200,
+          "wireBytes": 1053
+        }
+      ],
+      "productRequests": 4
+    }
+  ],
+  "summary": {
+    "opening": {
+      "medianDomMs": 11.900000002235174,
+      "medianPaintMs": 19.5
+    },
+    "search": {
+      "medianDomMs": 5.5,
+      "medianPaintMs": 12.699999999254942
+    },
+    "clear": {
+      "medianDomMs": 7.100000001490116,
+      "medianPaintMs": 13.200000002980232
+    },
+    "stockSearch": {
+      "medianDomMs": 0.8000000007450581,
+      "medianPaintMs": 7
+    },
+    "stockClear": {
+      "medianDomMs": 5.599999997764826,
+      "medianPaintMs": 13.400000002235174
+    },
+    "add": {
+      "medianDomMs": 13.600000001490116,
+      "medianPaintMs": 20.099999997764826
+    }
+  },
+  "requests": [
+    {
+      "id": "2852.50",
+      "path": "/api/products/sales-index",
+      "start": 27741.805124,
+      "status": 200,
+      "serverTiming": "sales-index;dur=140.8",
+      "wireBytes": 1860
+    },
+    {
+      "id": "2852.72",
+      "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+      "start": 27741.953257,
+      "status": 200,
+      "serverTiming": "selling-details;dur=170.4",
+      "wireBytes": 3095
+    },
+    {
+      "id": "2852.78",
+      "path": "/api/products/sales-index?membership=Low%20Stock",
+      "start": 27742.150295,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.79",
+      "path": "/api/products/sales-index?membership=Opened%20Stock",
+      "start": 27742.150377,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.136",
+      "path": "/api/products/sales-index",
+      "start": 27743.920391,
+      "status": 200,
+      "serverTiming": "sales-index;dur=151.7",
+      "wireBytes": 1860
+    },
+    {
+      "id": "2852.157",
+      "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+      "start": 27744.095354,
+      "status": 200,
+      "serverTiming": "selling-details;dur=178.8",
+      "wireBytes": 3095
+    },
+    {
+      "id": "2852.158",
+      "path": "/api/products/sales-index?membership=Low%20Stock",
+      "start": 27744.09547,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.159",
+      "path": "/api/products/sales-index?membership=Opened%20Stock",
+      "start": 27744.095512,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.214",
+      "path": "/api/products/sales-index",
+      "start": 27745.335708,
+      "status": 200,
+      "serverTiming": "sales-index;dur=137.4",
+      "wireBytes": 1860
+    },
+    {
+      "id": "2852.234",
+      "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+      "start": 27745.496135,
+      "status": 200,
+      "serverTiming": "selling-details;dur=184.5",
+      "wireBytes": 3095
+    },
+    {
+      "id": "2852.235",
+      "path": "/api/products/sales-index?membership=Low%20Stock",
+      "start": 27745.49623,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.236",
+      "path": "/api/products/sales-index?membership=Opened%20Stock",
+      "start": 27745.496266,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.291",
+      "path": "/api/products/sales-index",
+      "start": 27746.773128,
+      "status": 200,
+      "serverTiming": "sales-index;dur=136.1",
+      "wireBytes": 1860
+    },
+    {
+      "id": "2852.311",
+      "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+      "start": 27746.922033,
+      "status": 200,
+      "serverTiming": "selling-details;dur=163.1",
+      "wireBytes": 3095
+    },
+    {
+      "id": "2852.312",
+      "path": "/api/products/sales-index?membership=Low%20Stock",
+      "start": 27746.922119,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.313",
+      "path": "/api/products/sales-index?membership=Opened%20Stock",
+      "start": 27746.922155,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.368",
+      "path": "/api/products/sales-index",
+      "start": 27748.190779,
+      "status": 200,
+      "serverTiming": "sales-index;dur=134.0",
+      "wireBytes": 1860
+    },
+    {
+      "id": "2852.388",
+      "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+      "start": 27748.339454,
+      "status": 200,
+      "serverTiming": "selling-details;dur=161.5",
+      "wireBytes": 3095
+    },
+    {
+      "id": "2852.389",
+      "path": "/api/products/sales-index?membership=Low%20Stock",
+      "start": 27748.339546,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.390",
+      "path": "/api/products/sales-index?membership=Opened%20Stock",
+      "start": 27748.33958,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.445",
+      "path": "/api/products/sales-index",
+      "start": 27749.608811,
+      "status": 200,
+      "serverTiming": "sales-index;dur=135.7",
+      "wireBytes": 1860
+    },
+    {
+      "id": "2852.465",
+      "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+      "start": 27749.759957,
+      "status": 200,
+      "serverTiming": "selling-details;dur=179.8",
+      "wireBytes": 3095
+    },
+    {
+      "id": "2852.466",
+      "path": "/api/products/sales-index?membership=Low%20Stock",
+      "start": 27749.760042,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "2852.467",
+      "path": "/api/products/sales-index?membership=Opened%20Stock",
+      "start": 27749.760101,
+      "status": 200,
+      "wireBytes": 1053
+    }
+  ]
+}

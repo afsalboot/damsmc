@@ -16,11 +16,11 @@ test("navigation accepts application routes and rejects foreign or privileged UR
     "file:///C:/Windows/test",
     "javascript:alert(1)",
     "data:text/html,test",
-    "https://oushadikkmpos.vercel.app.evil.test",
+    "https://drabdullas-pos.vercel.app.evil.test",
     "https://evil.test",
     "not a url",
-    "https://user:pass@oushadikkmpos.vercel.app",
-    "http://oushadikkmpos.vercel.app",
+    "https://user:pass@drabdullas-pos.vercel.app",
+    "http://drabdullas-pos.vercel.app",
   ]) {
     assert.equal(isTrustedUrl(url, PRODUCTION_URL), false, url);
   }

@@ -67,8 +67,8 @@ function harness() {
     } },
     calculateSalePricing, createSaleStockBuffer, deductPackageStock, deductLooseStock, deductCountBasedLooseStock, getLooseUnit, isCountBasedProduct,
     assertRegistration, resolveSupply, validateFiscalLines, registrationStatus, financialYear, GST_RULE_VERSION, requestHash, assertRetryMatches, buildCustomerSnapshot, normalizeDoctorName, prepareWholesaleCredit, isWholesaleCustomer, money, multiplyMoney, directCheckoutPayments, saleFreeQuantity };
-  const h = { state, settings, staff: false, async invoke({ create = false, quantity = 3, version = new Date(state.sale.updatedAt).toISOString(), revision = Number(state.sale.editRevision || 0), key = "sale-edit-retry-key-001", price = quantity * 100, items } = {}) {
-    const body = { ...(!create ? { editSaleId: String(id), editVersion: version, editRevision: revision } : {}), items: items || [{ kind: "PRODUCT", productId: String(productId), saleMode: "PACKAGE", quantity, billedLineIndex: 0 }], customerType: "WALK_IN", payments: [{ method: "CASH", amount: price }] };
+  const h = { state, settings, staff: false, async invoke({ create = false, quantity = 3, version = new Date(state.sale.updatedAt).toISOString(), revision = Number(state.sale.editRevision || 0), key = "sale-edit-retry-key-001", price = quantity * 100, items, payments } = {}) {
+    const body = { ...(!create ? { editSaleId: String(id), editVersion: version, editRevision: revision } : {}), items: items || [{ kind: "PRODUCT", productId: String(productId), saleMode: "PACKAGE", quantity, billedLineIndex: 0 }], customerType: "WALK_IN", payments: payments || [{ method: "CASH", amount: price }] };
     const run = new AsyncFunction(...Object.keys(dependencies), "request", `${route}\nreturn POST(request);`);
     return run(...Object.values(dependencies), { json: async () => body, headers: { get: () => key } });
   } };
@@ -86,10 +86,12 @@ test("editing a paid sale keeps its invoice, billed price and date, adjusts stoc
   assert.equal(+result.data.invoiceDate, +original.invoiceDate);
   assert.equal(h.state.batches[0].sealedPackages, 2); // 3 + old 2 - revised 3.
   assert.equal(h.state.sale.editRevision, 1);
+  assert.ok(result.data.affectedProductIds.includes(String(productId)));
   assert.equal(h.state.audits[0].metadata.before.total, 200);
   assert.equal(h.state.audits[0].metadata.after.total, 300);
   const retry = await h.invoke({ version: original.updatedAt.toISOString(), revision: 0 });
   assert.equal(retry.status, 200);
+  assert.deepEqual(retry.data.affectedProductIds, result.data.affectedProductIds);
   assert.equal(h.state.batches[0].sealedPackages, 2);
   assert.equal(h.state.audits.length, 1);
 });
@@ -165,6 +167,8 @@ test("adding another product and removing a billed line reconcile both original 
   assert.equal(h.state.batches[0].sealedPackages, 5);
   assert.equal(h.state.batches[1].sealedPackages, 3);
   assert.equal(result.data.total, 50);
+  assert.ok(result.data.affectedProductIds.includes(String(productId)), "removed original products must be refreshed after an edit");
+  assert.ok(result.data.affectedProductIds.includes(String(addedProductId)));
 });
 
 const externalInput = (extra = {}) => ({ itemSource: "external_purchase", inventoryTracked: true,
@@ -243,5 +247,35 @@ test("malformed external checkout aborts and ordinary products cannot disable st
     assert.equal(result.status, 422, result.error);
     assert.equal(h.state.batches[0].sealedPackages, 3);
     assert.equal(h.state.expenses.length, 0);
+  }
+});
+
+
+test("fixture payment validation accepts UPI and exact split totals; mismatches preserve stock and original bill", async () => {
+  for (const payments of [[{ method: "UPI", amount: 300, reference: "fixture-ref" }], [{ method: "CASH", amount: 100 }, { method: "UPI", amount: 200, reference: "fixture-ref" }]]) {
+    const h = harness(); const result = await h.invoke({ payments });
+    assert.equal(result.status, 201, result.error);
+    assert.deepEqual(result.data.payments.map(row => ({ method: row.method, amount: row.amount })), payments.map(row => ({ method: row.method, amount: row.amount })));
+    assert.equal(h.state.batches[0].sealedPackages, 2);
+  }
+  for (const payments of [[{ method: "CASH", amount: 299 }], [{ method: "CASH", amount: 100 }, { method: "UPI", amount: 199 }], [{ method: "CARD", amount: 300 }]]) {
+    const h = harness(); const result = await h.invoke({ payments });
+    assert.equal(result.status, 422, result.error); assert.equal(h.state.batches[0].sealedPackages, 3);
+    assert.equal(h.state.sale.total, 200); assert.equal(h.state.rows.length, 0); assert.equal(h.state.audits.length, 0);
+  }
+});
+
+
+test("fixture Settings enforce required references, enabled methods and split policy without committing stock", async () => {
+  for (const settingsChange of [
+    { splitPayment: false },
+    { upi: { requireReference: true } },
+    { enabledMethods: ["CASH"] },
+  ]) {
+    const h = harness(); h.settings.payments = { ...h.settings.payments, ...settingsChange };
+    const payments = settingsChange.splitPayment === false ? [{ method: "CASH", amount: 100 }, { method: "UPI", amount: 200 }] : [{ method: "UPI", amount: 300 }];
+    const result = await h.invoke({ payments });
+    assert.equal(result.status, 422, result.error); assert.equal(h.state.batches[0].sealedPackages, 3);
+    assert.equal(h.state.sale.total, 200); assert.equal(h.state.rows.length, 0); assert.equal(h.state.audits.length, 0);
   }
 });

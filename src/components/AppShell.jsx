@@ -134,6 +134,7 @@ export default function AppShell({ user, children }) {
               <Link
                 key={href}
                 href={href}
+                prefetch={href === "/sales" ? true : undefined}
                 onClick={() => setOpen(false)}
                 className={`mb-1 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold transition ${active ? "bg-white text-[#173d29]" : "text-emerald-50/75 hover:bg-white/10 hover:text-white"}`}
               >

@@ -18,12 +18,8 @@ import { isWholesaleCustomer } from "@/lib/sale-customer";
 import {checkoutFetch} from "@/lib/checkout-request";
 import { resolveCheckoutCustomer } from "@/lib/checkout-customer";
 
-const money = (value) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 2,
-  }).format(Number(value || 0));
+const currencyFormatter = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 2 });
+const money = value => currencyFormatter.format(Number(value || 0));
 const amount = (value) =>
   Math.round((Number(value || 0) + Number.EPSILON) * 100) / 100;
 const lineTotal = (item) =>
@@ -68,6 +64,7 @@ export default function SalesCheckoutHostV2() {
   const [cartCustomer, setCartCustomer] = useState(null);
   const [editingSale, setEditingSale] = useState(null);
   const openingRef = useRef(false);
+  const submittingRef = useRef(false);
   const [preparing, setPreparing] = useState(false);
   const [directPending, setDirectPending] = useState(false);
   const submitDirect = useEffectEvent(async () => {
@@ -196,12 +193,13 @@ export default function SalesCheckoutHostV2() {
             `/api/customers/search?q=${encodeURIComponent(query.trim())}${customerFilter}`,
             { signal: controller.signal },
           );
+          if (controller.signal.aborted) return;
           setResults(found);
           setSearched(true);
         } catch (error) {
           if (error.name !== "AbortError") toast.error(error.message);
         } finally {
-          setSearching(false);
+          if (!controller.signal.aborted) setSearching(false);
         }
       }, 300);
     return () => {
@@ -254,14 +252,14 @@ export default function SalesCheckoutHostV2() {
     const value = Number(item.saleWholesaleDiscountPercent || 0);
     return Number.isFinite(value) && value >= 0 && value <= 100;
   });
-  const pricing=calculateSalePricing({
+  const pricing=useMemo(() => calculateSalePricing({
     consultationFeeEnabled: cartCustomer?.consultationFeeEnabled === true,
     consultationFee: cartCustomer?.consultationFee,
     wholesaleDiscount: wholesaleDiscountEnabled ? cart.map(item => item.saleWholesaleDiscountPercent || 0) : undefined,
     items:cart.map(item=>({...item,amount:lineTotal(item),gstRate:item.kind==="MIX"?settings?.gst?.defaultRate:item.gstRate,useDefaultGstRate:item.kind==="MIX"?true:item.useDefaultGstRate})),
     discount:{type:editingSale?.discountSummary?.discountType || "PERCENTAGE",value:editingSale?.discountSummary?.discountValue || 0,reason:discountReason},
     settings,currentUser:{role:settings?._capabilities?.role||"STAFF"},paymentMethod:payment,placeOfSupply
-  });
+  }), [cartCustomer, wholesaleDiscountEnabled, cart, editingSale, discountReason, settings, payment, placeOfSupply]);
   const discount=pricing.totalDiscount,gstInvoice=pricing.gst,total=pricing.total,roundOff=pricing.roundOff,
     change = amount(Number(cashReceived || 0) - total),
     splitRemaining = amount(
@@ -325,7 +323,15 @@ export default function SalesCheckoutHostV2() {
   }
   async function complete(event, direct = false) {
     event?.preventDefault();
-    if (saving) return;
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+    setSaving(true);
+    try { await performComplete(event, direct); }
+    catch (error) { toast.error(error.message); }
+    finally { submittingRef.current = false; setSaving(false); }
+  }
+  async function performComplete(event, direct = false) {
+    event?.preventDefault();
     if (customerType === "EXISTING" && !selected)
       return toast.error("Select an existing customer");
     if (directoryType === "RETAIL" && isWholesaleCustomer(selected)) {
@@ -446,7 +452,6 @@ export default function SalesCheckoutHostV2() {
               gstin:form.retailGstin,stateCode:recipientStateCode,
             }
         : undefined;
-    setSaving(true);
     try {
       const matches = saleType !== "WHOLESALE" && !selected
         ? await searchRetailCustomers(customerName, customerPhone) : [];
@@ -487,8 +492,6 @@ export default function SalesCheckoutHostV2() {
       );
     } catch (error) {
       toast.error(error.message);
-    } finally {
-      setSaving(false);
     }
   }
   function chooseType(type) {

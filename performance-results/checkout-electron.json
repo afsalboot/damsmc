@@ -1,0 +1,334 @@
+{
+  "mode": "electron",
+  "origin": "http://localhost:3000",
+  "build": "local production",
+  "noSubmission": true,
+  "blocked": [],
+  "samples": [
+    {
+      "cycle": 1,
+      "opening": {
+        "dispatchMs": 0.9000000022351742,
+        "domMs": 47.5,
+        "paintMs": 54.19999999925494
+      },
+      "cash": {
+        "dispatchMs": 0.6000000014901161,
+        "domMs": 5.300000000745058,
+        "paintMs": 12.199999999254942
+      },
+      "cashValid": true,
+      "upi": {
+        "dispatchMs": 2.800000000745058,
+        "domMs": 6.600000001490116,
+        "paintMs": 11.699999999254942
+      },
+      "reference": {
+        "dispatchMs": 0.6999999992549419,
+        "domMs": 8.099999997764826,
+        "paintMs": 14.199999999254942
+      },
+      "split": {
+        "dispatchMs": 0.19999999925494194,
+        "domMs": 6.300000000745058,
+        "paintMs": 13.300000000745058
+      },
+      "splitCash": {
+        "dispatchMs": 0.4000000022351742,
+        "domMs": 4.800000000745058,
+        "paintMs": 11.300000000745058
+      },
+      "splitUpi": {
+        "dispatchMs": 0.6999999992549419,
+        "domMs": 6.5,
+        "paintMs": 14.100000001490116
+      },
+      "splitValid": true,
+      "cancel": {
+        "dispatchMs": 0.19999999925494194,
+        "domMs": 12.399999998509884,
+        "paintMs": 18.399999998509884
+      },
+      "requests": [
+        {
+          "id": "31156.80",
+          "method": "GET",
+          "path": "/api/settings",
+          "start": 31779.722894,
+          "status": 200,
+          "wireBytes": 7705
+        }
+      ]
+    },
+    {
+      "cycle": 2,
+      "opening": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 14.600000001490116,
+        "paintMs": 20.399999998509884
+      },
+      "cash": {
+        "dispatchMs": 0.5,
+        "domMs": 5.799999997019768,
+        "paintMs": 12.399999998509884
+      },
+      "cashValid": true,
+      "upi": {
+        "dispatchMs": 0.10000000149011612,
+        "domMs": 6.5,
+        "paintMs": 12.100000001490116
+      },
+      "reference": {
+        "dispatchMs": 0.3999999985098839,
+        "domMs": 6.100000001490116,
+        "paintMs": 13.300000000745058
+      },
+      "split": {
+        "dispatchMs": 0.19999999925494194,
+        "domMs": 5.899999998509884,
+        "paintMs": 12.599999997764826
+      },
+      "splitCash": {
+        "dispatchMs": 0.5,
+        "domMs": 6.899999998509884,
+        "paintMs": 13.299999997019768
+      },
+      "splitUpi": {
+        "dispatchMs": 0.5,
+        "domMs": 7.299999997019768,
+        "paintMs": 13.299999997019768
+      },
+      "splitValid": true,
+      "cancel": {
+        "dispatchMs": 0,
+        "domMs": 12,
+        "paintMs": 19.899999998509884
+      },
+      "requests": []
+    },
+    {
+      "cycle": 3,
+      "opening": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 12.800000000745058,
+        "paintMs": 20.100000001490116
+      },
+      "cash": {
+        "dispatchMs": 0.3999999985098839,
+        "domMs": 6.599999997764826,
+        "paintMs": 12.5
+      },
+      "cashValid": true,
+      "upi": {
+        "dispatchMs": 0.19999999925494194,
+        "domMs": 5.5,
+        "paintMs": 11.899999998509884
+      },
+      "reference": {
+        "dispatchMs": 0.5999999977648258,
+        "domMs": 6.599999997764826,
+        "paintMs": 13.699999999254942
+      },
+      "split": {
+        "dispatchMs": 0.19999999925494194,
+        "domMs": 6.400000002235174,
+        "paintMs": 12.199999999254942
+      },
+      "splitCash": {
+        "dispatchMs": 0.3999999985098839,
+        "domMs": 6.399999998509884,
+        "paintMs": 13.5
+      },
+      "splitUpi": {
+        "dispatchMs": 0.5,
+        "domMs": 6.199999999254942,
+        "paintMs": 12.899999998509884
+      },
+      "splitValid": true,
+      "cancel": {
+        "dispatchMs": 0.19999999925494194,
+        "domMs": 12.299999997019768,
+        "paintMs": 18.399999998509884
+      },
+      "requests": []
+    },
+    {
+      "cycle": 4,
+      "opening": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 12.300000000745058,
+        "paintMs": 19.5
+      },
+      "cash": {
+        "dispatchMs": 0.4000000022351742,
+        "domMs": 7.300000000745058,
+        "paintMs": 13.300000000745058
+      },
+      "cashValid": true,
+      "upi": {
+        "dispatchMs": 0.10000000149011612,
+        "domMs": 6,
+        "paintMs": 13
+      },
+      "reference": {
+        "dispatchMs": 0.30000000074505806,
+        "domMs": 7,
+        "paintMs": 13.600000001490116
+      },
+      "split": {
+        "dispatchMs": 0.10000000149011612,
+        "domMs": 6.199999999254942,
+        "paintMs": 12.5
+      },
+      "splitCash": {
+        "dispatchMs": 0.5,
+        "domMs": 6.600000001490116,
+        "paintMs": 12.899999998509884
+      },
+      "splitUpi": {
+        "dispatchMs": 0.3999999985098839,
+        "domMs": 7.600000001490116,
+        "paintMs": 13.199999999254942
+      },
+      "splitValid": true,
+      "cancel": {
+        "dispatchMs": 0,
+        "domMs": 13,
+        "paintMs": 19.5
+      },
+      "requests": []
+    },
+    {
+      "cycle": 5,
+      "opening": {
+        "dispatchMs": 0.19999999925494194,
+        "domMs": 14.399999998509884,
+        "paintMs": 21
+      },
+      "cash": {
+        "dispatchMs": 0.3999999985098839,
+        "domMs": 6.399999998509884,
+        "paintMs": 12.399999998509884
+      },
+      "cashValid": true,
+      "upi": {
+        "dispatchMs": 0.10000000149011612,
+        "domMs": 7,
+        "paintMs": 12.399999998509884
+      },
+      "reference": {
+        "dispatchMs": 0.29999999701976776,
+        "domMs": 6.099999997764826,
+        "paintMs": 13.5
+      },
+      "split": {
+        "dispatchMs": 0.20000000298023224,
+        "domMs": 6.900000002235174,
+        "paintMs": 12.800000000745058
+      },
+      "splitCash": {
+        "dispatchMs": 0.4000000022351742,
+        "domMs": 5.800000000745058,
+        "paintMs": 14.200000002980232
+      },
+      "splitUpi": {
+        "dispatchMs": 0.6999999992549419,
+        "domMs": 5.399999998509884,
+        "paintMs": 11.699999999254942
+      },
+      "splitValid": true,
+      "cancel": {
+        "dispatchMs": 0.10000000149011612,
+        "domMs": 13,
+        "paintMs": 19.5
+      },
+      "requests": []
+    }
+  ],
+  "summary": {
+    "opening": {
+      "medianDomMs": 14.399999998509884,
+      "medianPaintMs": 20.399999998509884
+    },
+    "cash": {
+      "medianDomMs": 6.399999998509884,
+      "medianPaintMs": 12.399999998509884
+    },
+    "upi": {
+      "medianDomMs": 6.5,
+      "medianPaintMs": 12.100000001490116
+    },
+    "reference": {
+      "medianDomMs": 6.599999997764826,
+      "medianPaintMs": 13.600000001490116
+    },
+    "split": {
+      "medianDomMs": 6.300000000745058,
+      "medianPaintMs": 12.599999997764826
+    },
+    "splitCash": {
+      "medianDomMs": 6.399999998509884,
+      "medianPaintMs": 13.299999997019768
+    },
+    "splitUpi": {
+      "medianDomMs": 6.5,
+      "medianPaintMs": 13.199999999254942
+    },
+    "cancel": {
+      "medianDomMs": 12.399999998509884,
+      "medianPaintMs": 19.5
+    }
+  },
+  "requests": [
+    {
+      "id": "31156.49",
+      "method": "GET",
+      "path": "/api/products/sales-index",
+      "start": 31779.312343,
+      "status": 200,
+      "serverTiming": "sales-index;dur=137.5",
+      "wireBytes": 1829
+    },
+    {
+      "id": "31156.70",
+      "method": "GET",
+      "path": "/api/products/sales-index?details=true&ids=6acdca824a19a91f931e2aac",
+      "start": 31779.459747,
+      "status": 200,
+      "serverTiming": "selling-details;dur=168.9",
+      "wireBytes": 3095
+    },
+    {
+      "id": "31156.75",
+      "method": "GET",
+      "path": "/api/settings",
+      "start": 31779.68259,
+      "status": 200,
+      "wireBytes": 7705
+    },
+    {
+      "id": "31156.76",
+      "method": "GET",
+      "path": "/api/products/sales-index?membership=Low%20Stock",
+      "start": 31779.688153,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "31156.77",
+      "method": "GET",
+      "path": "/api/products/sales-index?membership=Opened%20Stock",
+      "start": 31779.688238,
+      "status": 200,
+      "wireBytes": 1053
+    },
+    {
+      "id": "31156.80",
+      "method": "GET",
+      "path": "/api/settings",
+      "start": 31779.722894,
+      "status": 200,
+      "wireBytes": 7705
+    }
+  ]
+}

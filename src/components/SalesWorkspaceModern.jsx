@@ -2,6 +2,8 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { salesCache } from "@/lib/sales-cache";
+import { useSalesCache } from "@/lib/use-sales-cache";
 import { saleEditCart } from "@/lib/sale-edit";
 import ExternalPurchaseModal from "@/components/ExternalPurchaseModal";
 import { isExternalPurchase } from "@/lib/external-purchase";
@@ -32,16 +34,10 @@ import CartCustomerFields from "@/components/CartCustomerFields";
 import { setCartItemWholesale } from "@/lib/wholesale";
 import { saleFreeQuantity } from "@/lib/sale-free-quantity";
 import { calculateSalePricing } from "@/services/pricing.service";
-const money = (v) =>
-    new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      maximumFractionDigits: 2,
-    }).format(Number(v || 0)),
-  num = (v) =>
-    new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(
-      Number(v || 0),
-    );
+const currencyFormatter = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 2 });
+const numberFormatter = new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 });
+const money = v => currencyFormatter.format(Number(v || 0));
+const num = v => numberFormatter.format(Number(v || 0));
 const api = async (u, o) => {
   const r = await checkoutFetch(u, o),
     j = await r.json();
@@ -308,7 +304,7 @@ function QuickSell({ p, close, add }) {
             <Badge t="green">{p.categoryId?.name}</Badge>
             <h2 className="mt-3 text-2xl font-extrabold">{p.name}</h2>
             <p className="mt-1 text-sm font-bold text-[var(--green)]">
-              {p.stockLabel}
+              {p.stockLabel || "Loading stock?"}
             </p>
             <ExpiredStockWarning product={p} />
           </div>
@@ -561,9 +557,11 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
   const [editLoading, setEditLoading] = useState(Boolean(editSaleId));
   const [editError, setEditError] = useState("");
   const loadedEditRef = useRef(false);
+  const catalogue = useSalesCache();
+  const [page, setPage] = useState(0);
   const confirmAction = useConfirm();
   const [mode, setMode] = useState("PRODUCT"),
-    [products, setProducts] = useState([]),
+    [editProducts, setEditProducts] = useState([]),
     [categories, setCategories] = useState([]),
     [settings, setSettings] = useState(null),
     [search, setSearch] = useState(""),
@@ -586,6 +584,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
     [customerId, setCustomerId] = useState(""),
     [payment, setPayment] = useState("CASH"),
     [saving, setSaving] = useState(false);
+  const products = editSaleId ? editProducts : catalogue.rows;
   useEffect(() => {
     if (editSaleId) return;
     try {
@@ -617,7 +616,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
     api(`/api/sales/${encodeURIComponent(editSaleId)}?edit=true`).then(({ sale, products: available, customer }) => {
       const billedCart = saleEditCart(sale, available);
       if (!active) return;
-      setProducts(available);
+      setEditProducts(available);
       setCart(billedCart);
       setEditingSale(sale);
       setSaleCustomer(customer);
@@ -670,9 +669,6 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
     };
   }, [mode]);
   useEffect(() => {
-    if (!editSaleId) api("/api/products?sales=true")
-      .then(setProducts)
-      .catch((e) => toast.error(e.message));
     api("/api/categories")
       .then(setCategories)
       .catch((e) => toast.error(e.message));
@@ -776,9 +772,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
       setWholesaleDiscountEnabled(false);
       setEditingSale(null);
       if (event.detail?.edited) router.replace("/sales");
-      api("/api/products?sales=true")
-        .then(setProducts)
-        .catch(() => {});
+
     };
     window.addEventListener("oushadi-sale-complete", completed);
     return () => window.removeEventListener("oushadi-sale-complete", completed);
@@ -857,6 +851,10 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
         link.removeEventListener("click", start, { capture: true }),
       );
   }, [cart, wholesaleDiscountEnabled, editSaleId]);
+  const stockMemberships = useMemo(() => ({
+    low: new Set(catalogue.memberships?.["Low Stock"] || []),
+    opened: new Set(catalogue.memberships?.["Opened Stock"] || []),
+  }), [catalogue.memberships]);
   const cats = useMemo(
       () => [
         ...new Set([
@@ -873,23 +871,38 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
       "Loose Sale",
       "Opened Stock",
     ],
-    shown = products.filter((p) => {
+    shown = useMemo(() => editSaleId ? products.filter(p => {
       if (mode === "MIX" && !p.allowMixture) return false;
-      if (
-        search &&
-        !`${p.name} ${p.sku} ${p.barcode || ""} ${p.categoryId?.name || ""}`
-          .toLowerCase()
-          .includes(search.toLowerCase())
-      )
-        return false;
+      if (search && !`${p.name} ${p.sku} ${p.barcode || ""} ${p.manufacturer || ""} ${p.categoryId?.name || ""}`.toLowerCase().includes(search.toLowerCase())) return false;
       if (mode === "MIX") return true;
       if (filter === "Low Stock") return p.lowStock;
-      if (filter === "Loose Sale") return p.allowLooseSale;
       if (filter === "Opened Stock") return opened(p) > 0;
+      if (filter === "Loose Sale") return p.allowLooseSale;
       return filter === "All" || p.categoryId?.name === filter;
-    });
+    }) : salesCache.search(search, { mode, filter, membership: filter === "Low Stock" ? stockMemberships.low : stockMemberships.opened }), [products, editSaleId, search, mode, filter, stockMemberships]);
+  const pageCount = Math.max(1, Math.ceil(shown.length / 20));
+  const currentPage = Math.min(page, pageCount - 1);
+  const visibleIds = shown.slice(currentPage * 20, currentPage * 20 + 20).map(p => p._id).join(",");
+  const visibleProducts = shown.slice(currentPage * 20, currentPage * 20 + 20).map(p => editSaleId ? p : salesCache.details.get(p._id)?.product || p);
+  useEffect(() => { setPage(0); }, [search, filter, mode]);
+  useEffect(() => {
+    if (!editSaleId && catalogue.ready && visibleIds) salesCache.sellingDetails(visibleIds.split(",")).catch(error => toast.error(error.message));
+  }, [visibleIds, editSaleId, catalogue.ready, catalogue.version]);
+  useEffect(() => {
+    if (editSaleId || !catalogue.ready) return;
+    Promise.all([salesCache.membership("Low Stock"), salesCache.membership("Opened Stock")]).catch(error => toast.error(error.message));
+  }, [filter, mode, editSaleId, catalogue.ready, catalogue.version]);
+  async function chooseProduct(row) {
+    const epoch = salesCache.scopeEpoch;
+    try {
+      const product = editSaleId ? row : salesCache.freshDetail(row._id) || (await salesCache.sellingDetails([row._id]))[0];
+      if (epoch !== salesCache.scopeEpoch) return;
+      if (!product) throw Error("Product is no longer available for sale");
+      if (mode === "PRODUCT") selectProduct(product); else ingredient(product);
+    } catch (error) { toast.error(error.message); }
+  }
   const subtotal = cart.reduce((s, i) => s + total(i), 0),
-    cartPricing = calculateSalePricing({
+    cartPricing = useMemo(() => calculateSalePricing({
       consultationFeeEnabled: cartCustomer.consultationFeeEnabled === true,
       consultationFee: cartCustomer.consultationFee,
       wholesaleDiscount: wholesaleDiscountEnabled ? cart.map(item => item.saleWholesaleDiscountPercent || 0) : undefined,
@@ -905,7 +918,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
         : cartCustomer.selected && !cartCustomer.selected.gstin && (cartCustomer.selected.customerType === "WHOLESALE") === wholesaleDiscountEnabled
           ? cartCustomer.selected.stateCode || settings?.store?.stateCode
           : settings?.store?.stateCode,
-    }),
+    }), [cart, cartCustomer, wholesaleDiscountEnabled, settings, editingSale]),
     cartGst = cartPricing.gst,
     step = settings?.roundOff?.enabled,
     grand = cartPricing.total,
@@ -1220,7 +1233,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
       setCart([]);
       setWholesaleDiscountEnabled(false);
       setCheckout(false);
-      setProducts(await api("/api/products?sales=true"));
+
     } catch (error) {
       toast.error(error.message);
     } finally {
@@ -1348,12 +1361,10 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
             ? [
                 ["Products shown", shown.length],
                 ["Loose sale", shown.filter((p) => p.allowLooseSale).length],
-                ["Opened stock", shown.filter((p) => opened(p) > 0).length],
+                ["Opened stock", editSaleId ? shown.filter(p => opened(p) > 0).length : salesCache.memberships.has("Opened Stock") ? shown.filter(p => stockMemberships.opened.has(p._id)).length : "?"],
                 [
                   "Low stock",
-                  shown.filter(
-                    (p) => p.reorderLevel > 0 && stock(p) <= p.reorderLevel,
-                  ).length,
+                  editSaleId ? shown.filter(p => p.lowStock).length : salesCache.memberships.has("Low Stock") ? shown.filter(p => stockMemberships.low.has(p._id)).length : "?",
                 ],
               ]
             : [
@@ -1375,11 +1386,11 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
       )}
       <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_410px]">
         <main className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3">
-          {shown.map((p) => (
+          {visibleProducts.map((p) => (
             <article
               className={`sales-product-card card flex cursor-pointer flex-col p-5 transition hover:-translate-y-0.5 hover:shadow-md ${p.expired ? "sales-product-expired" : ""}`}
               key={p._id}
-              onClick={() => (mode === "PRODUCT" ? selectProduct(p) : ingredient(p))}
+              onClick={() => chooseProduct(p)}
             >
               <div className="flex justify-between">
                 <Badge t="green">{p.categoryId?.name}</Badge>
@@ -1402,7 +1413,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
                 {p.allowMixture && <Badge t="green">Mix enabled</Badge>}
               </div>
               <div className="pt-2">
-                <b className="text-sm text-[var(--green)]">{p.stockLabel}</b>
+                <b className="text-sm text-[var(--green)]">{p.stockLabel || "Loading stock?"}</b>
                 {mode === "PRODUCT" && p.allowPackageSale && (
                   <p className="mt-2 text-xl font-extrabold">
                     {money(p.packageSellingPrice)}{" "}
@@ -1416,6 +1427,11 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
               </div>
             </article>
           ))}
+          <div className="flex items-center justify-between gap-2 sm:col-span-2 2xl:col-span-3">
+            <button className="btn" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>Previous</button>
+            <span className="text-sm">{shown.length} products ? Page {currentPage + 1} of {pageCount}</span>
+            <button className="btn" disabled={currentPage + 1 >= pageCount} onClick={() => setPage(currentPage + 1)}>Next</button>
+          </div>
         </main>
         {mode === "PRODUCT" ? (
           <aside className="sales-cart-shell card overflow-hidden xl:sticky xl:top-24">

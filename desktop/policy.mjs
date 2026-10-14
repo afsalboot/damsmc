@@ -1,4 +1,4 @@
-export const PRODUCTION_URL = "https://oushadikkmpos.vercel.app";
+export const PRODUCTION_URL = "https://drabdullas-pos.vercel.app";
 
 export function getStartUrl(packaged, args) {
   return !packaged && args.includes("--local")

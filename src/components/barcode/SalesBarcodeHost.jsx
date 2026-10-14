@@ -8,6 +8,7 @@ import BarcodeScannerListener from "@/components/barcode/BarcodeScannerListener"
 import CameraBarcodeScanner from "@/components/barcode/CameraBarcodeScanner";
 import ScannerStatus from "@/components/barcode/ScannerStatus";
 import UnknownBarcodeModal from "@/components/barcode/UnknownBarcodeModal";
+import { salesCache } from "@/lib/sales-cache";
 import { looksLikeBarcode, normalizeBarcode } from "@/lib/barcode";
 
 export default function SalesBarcodeHost() {
@@ -20,23 +21,18 @@ export default function SalesBarcodeHost() {
     const barcode = normalizeBarcode(rawBarcode);
     if (!barcode || scanning.current) return;
     scanning.current = true;
+    const epoch = salesCache.scopeEpoch;
     setStatus({ status: "scanning", message: "Scanning…" });
     try {
-      const response = await fetch(
-          `/api/products/barcode/${encodeURIComponent(barcode)}?context=sale`,
-        ),
-        result = await response.json();
-      if (!response.ok) {
-        if (response.status === 404) setUnknown(barcode);
-        throw new Error(
-          result.error || "Unable to scan barcode. Please try again.",
-        );
-      }
+      let product;
+      try { product = await salesCache.barcode(barcode); }
+      catch (error) { if (/not registered/i.test(error.message)) setUnknown(barcode); throw error; }
+      if (epoch !== salesCache.scopeEpoch) return;
       window.dispatchEvent(
-        new CustomEvent("oushadi-barcode-product", { detail: result.data }),
+        new CustomEvent("oushadi-barcode-product", { detail: product }),
       );
       setCameraOpen(false);
-      setStatus({ status: "found", message: `${result.data.name} found` });
+      setStatus({ status: "found", message: `${product.name} found` });
       window.setTimeout(
         () => setStatus({ status: "ready", message: "" }),
         1600,

@@ -1,6 +1,9 @@
 export async function importProductsWithProgress(rows, sendBatch, onProgress) {
   const result = { imported: 0, skipped: 0, failed: 0, results: [] };
   onProgress({ completed: 0, total: rows.length, percent: 0 });
+  const notify = detail => { if (typeof window !== "undefined") window.dispatchEvent(new CustomEvent("pos-product-import", { detail })); };
+  notify("start");
+  try {
   for (let offset = 0; offset < rows.length; offset += 10) {
     const batch = rows.slice(offset, offset + 10);
     let response;
@@ -24,4 +27,5 @@ export async function importProductsWithProgress(rows, sendBatch, onProgress) {
     onProgress({ completed, total: rows.length, percent: Math.floor(completed / rows.length * 100) });
   }
   return result;
+  } finally { notify("end"); }
 }

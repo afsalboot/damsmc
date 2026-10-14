@@ -5,15 +5,18 @@ import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { getStartUrl, isTrustedUrl } from "./policy.mjs";
+import { DESKTOP_APP_ID, DESKTOP_PROFILE_NAME } from "./identity.mjs";
 import { LocalBackup, backupDue } from "./local-backup.mjs";
 import { SavedLogins, installSavedLogins } from "./saved-logins.mjs";
 
 const startUrl = getStartUrl(app.isPackaged, process.argv);
+const benchmark = !app.isPackaged && process.argv.includes("--benchmark");
 const printSmoke = !app.isPackaged && process.argv.includes("--print-smoke");
 const smoke = !app.isPackaged && (process.argv.includes("--smoke") || printSmoke);
-if (smoke) app.setPath("userData", mkdtempSync(join(tmpdir(), "oushadhi-desktop-check-")));
-// Retain existing sessions, backup schedules and printer choices after rebranding.
-else app.setPath("userData", join(app.getPath("appData"), "oushadhi-pos-desktop"));
+if (benchmark) app.setPath("userData", process.env.POS_BENCHMARK_PROFILE || mkdtempSync(join(tmpdir(), "pvamsp-sales-benchmark-")));
+else if (smoke) app.setPath("userData", mkdtempSync(join(tmpdir(), "dr-abdullas-desktop-check-")));
+// Do not inherit the legacy profile shared with another customer's POS.
+else app.setPath("userData", join(app.getPath("appData"), DESKTOP_PROFILE_NAME));
 let smokePrintCount = 0;
 const offlinePath = fileURLToPath(new URL("./offline.html", import.meta.url));
 let mainWindow;
@@ -170,7 +173,7 @@ function createWindow() {
   };
   resizeContent();
   mainWindow.on("resize", resizeContent);
-  void mainWindow.loadFile(fileURLToPath(new URL("./chrome.html", import.meta.url)));
+  void mainWindow.loadFile(fileURLToPath(new URL("./chrome.html", import.meta.url))).then(() => { if (benchmark && !mainWindow.isDestroyed()) { mainWindow.show(); mainWindow.focus(); } });
   mainWindow.once("ready-to-show", () => { if (!smoke) mainWindow.show(); });
   const contents = appView.webContents;
   for (const event of ["will-navigate", "will-redirect"]) {
@@ -235,7 +238,7 @@ if (!app.requestSingleInstanceLock()) {
         return { success: false };
       });
     });
-    app.setAppUserModelId("com.oushadhi.pos");
+    app.setAppUserModelId(DESKTOP_APP_ID);
     session.defaultSession.setPermissionCheckHandler((contents, permission, origin, details) =>
       contents === appView?.webContents && permission === "media" &&
       details.mediaType === "video" && isTrustedUrl(origin, startUrl));
@@ -272,7 +275,7 @@ if (!app.requestSingleInstanceLock()) {
         { role: "togglefullscreen" }, ...(!app.isPackaged ? [{ role: "toggleDevTools" }] : [])] },
     ]));
     createWindow();
-    if (!smoke) {
+    if (!smoke && !benchmark) {
       setTimeout(() => { void checkBackup(); }, 15000).unref();
       const backupTimer = setInterval(() => { void checkBackup(); }, 60000);
       backupTimer.unref();

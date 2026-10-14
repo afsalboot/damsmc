@@ -23,3 +23,14 @@ test('checkout retry retains its key across network and response-body failures',
   assert.equal(new Set(keys).size,1);
   assert.equal(storage.size,0);
 });
+test('uncertain HTTP outcomes retain the retry key; definitive rejections clear it', async t => {
+  const storage = new Map();
+  const previous = Object.getOwnPropertyDescriptor(globalThis, 'sessionStorage');
+  Object.defineProperty(globalThis, 'sessionStorage', { configurable: true, value: { getItem: key => storage.get(key), setItem: (key, value) => storage.set(key, value), removeItem: key => storage.delete(key) } });
+  t.after(() => previous ? Object.defineProperty(globalThis, 'sessionStorage', previous) : delete globalThis.sessionStorage);
+  let status = 500;
+  t.mock.method(globalThis, 'fetch', async () => Response.json({ error: 'fixture rejection' }, { status }));
+  const options = { method: 'POST', body: '{"items":[1]}', headers: {} };
+  for (status of [500, 408, 429]) { await checkoutFetch('/api/sales', options); assert.equal(storage.size, 1); }
+  for (status of [400, 401, 403, 409, 422]) { await checkoutFetch('/api/sales', options); assert.equal(storage.size, 0); }
+});

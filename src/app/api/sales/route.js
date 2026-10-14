@@ -45,6 +45,13 @@ import { findSaleEditRetry, loadSaleForEdit, restoreSaleStock, saveSaleEdit } fr
 import { buildExternalPurchase, isExternalPurchase, externalPurchaseSummary, saleForActor } from "@/lib/external-purchase";
 import { syncExternalPurchaseExpenses } from "@/services/external-purchase.service";
 
+function affectedSaleProducts(items = []) {
+  return items.flatMap(item => isExternalPurchase(item) ? [] : item.kind === "MIX" ? (item.ingredients || []).map(i => String(i.productId)) : [item.productId, item.freeProductId].filter(Boolean).map(String));
+}
+function cacheSaleResult(sale) {
+  const data = sale.toObject?.() || sale;
+  return { ...data, affectedProductIds: [...new Set([...(data.affectedProductIds || []).map(String), ...affectedSaleProducts(data.items)])] };
+}
 const amount = money;
 const escapeRegex = (value) =>
   String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -301,10 +308,10 @@ export async function POST(request) {
     if(!/^[a-zA-Z0-9-]{16,80}$/.test(requestKey))return fail('A checkout retry key is required. Refresh checkout and try again.',422);
     const hash=requestHash(body);
     const previous=await Sale.findOne({requestKey}).lean();
-    if(previous)return timed(ok(assertRetryMatches(previous,hash,session.sub)));
+    if(previous)return timed(ok(cacheSaleResult(assertRetryMatches(previous,hash,session.sub))));
     if (editing) {
       const retry = await findSaleEditRetry({ AuditLog, requestKey, hash, actorId: session.sub });
-      if (retry) return timed(ok(retry));
+      if (retry) return timed(ok(cacheSaleResult(retry)));
     }
     const saleType = body.saleType === "WHOLESALE" ? "WHOLESALE" : "SALE";
     const directoryType = saleType === "WHOLESALE" || body.wholesaleDiscountEnabled === true ? "WHOLESALE" : "RETAIL";
@@ -953,6 +960,7 @@ export async function POST(request) {
               gstin: settings?.store?.gstin || "",
               stateCode: settings?.store?.stateCode || "",
             },
+            affectedProductIds: [...new Set([...affectedSaleProducts(originalSale?.items), ...affectedSaleProducts(saleItems), ...stockRows.map(row => String(row.productId))])],
             items: saleItems,
             ...externalPurchaseSummary(saleItems),
             stockAllocations: stockRows.filter(row => row.allocation).map(row => row.allocation),
@@ -1022,7 +1030,7 @@ export async function POST(request) {
       if (!originalSale) await AuditLog.create([{actorId:session.sub,action:'INVOICE_FINALIZED',module:'sales',targetType:'Sale',targetId:completedSale._id,description:`Issued ${invoiceNumber}`,metadata:{invoiceNumber,documentType,total,tax:gstInvoice.tax,placeOfSupply,ruleVersion:GST_RULE_VERSION}}],{session:dbSession});
     });
     mark("transaction");
-    return timed(ok({ ...(completedSale.toObject?.() || completedSale), receiptSnapshot }, 201));
+    return timed(ok({ ...cacheSaleResult(completedSale), receiptSnapshot }, 201));
   } catch (error) {
     // Plain validation errors abort the transaction and are safe to correct/retry.
     if(error?.constructor===Error&&!error.status)error.status=422;

@@ -388,6 +388,7 @@ const paymentSchema = new Schema(
 );
 const saleSchema = new Schema(
   {
+    affectedProductIds: [{ type: Schema.Types.ObjectId, ref: "Product" }],
     externalPurchaseRevenue: { type: Number, default: 0 },
     externalPurchaseCost: { type: Number, default: 0 },
     externalPurchaseProfit: { type: Number, default: 0 },

@@ -1,0 +1,38 @@
+{
+  "fixture": true,
+  "rows": 10000,
+  "indexBytes": 4056671,
+  "coldMs": 81.19999999925494,
+  "restoreMs": 65.19999999925494,
+  "source": "indexeddb",
+  "restoreRequests": 0,
+  "operationRequests": 0,
+  "samples": [
+    {
+      "searchMs": 0.6999999992549419,
+      "clearMs": 0.19999999925494194,
+      "barcodeMs": 0.10000000149011612
+    },
+    {
+      "searchMs": 0.3999999985098839,
+      "clearMs": 0.19999999925494194,
+      "barcodeMs": 0
+    },
+    {
+      "searchMs": 0.4000000022351742,
+      "clearMs": 0.09999999776482582,
+      "barcodeMs": 0
+    },
+    {
+      "searchMs": 0.4000000022351742,
+      "clearMs": 0.19999999925494194,
+      "barcodeMs": 0
+    },
+    {
+      "searchMs": 0.30000000074505806,
+      "clearMs": 0.09999999776482582,
+      "barcodeMs": 0
+    }
+  ],
+  "persistenceError": null
+}
