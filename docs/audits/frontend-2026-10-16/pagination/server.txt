@@ -1,0 +1,16 @@
+▲ Next.js 16.3.8 (Turbopack)
+- Local:         http://127.0.0.1:3117
+- Network:       http://127.0.0.1:3117
+- Environments: .env.local
+✓ Ready in 432ms
+✓ Running next.config.mjs took 19ms
+Creating turbopack project {
+  dir: 'D:\\Next.js\\Projects\\PVAMSP - POS\\pvamsp-pos',
+  testMode: true
+}
+
+ GET /api/health 200 in 76ms (next.js: 54ms, proxy.ts: 3ms, application-code: 18ms)
+ GET /frontend-audit-preview?screen=sales&state=single 200 in 488ms (next.js: 75ms, application-code: 413ms)
+ GET /frontend-audit-preview?screen=sales&state=populated 200 in 56ms (next.js: 5ms, application-code: 51ms)
+ GET /frontend-audit-preview?screen=sales&state=empty 200 in 39ms (next.js: 5ms, application-code: 34ms)
+ GET /frontend-audit-preview?screen=sales&state=single 200 in 38ms (next.js: 4ms, application-code: 34ms)

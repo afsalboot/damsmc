@@ -8,7 +8,7 @@ import { tmpdir } from "node:os";
 import { fixtureResponse } from "./fixtures.mjs";
 
 const phase = process.argv[2] || "before";
-if (!["before", "after", "states", "recovery", "dense", "interaction"].includes(phase)) throw Error("Choose before, after, states, recovery, dense or interaction");
+if (!["before", "after", "states", "recovery", "dense", "interaction", "pagination"].includes(phase)) throw Error("Choose before, after, states, recovery, dense or interaction");
 const output = `docs/audits/frontend-2026-10-16/${phase}`;
 await mkdir(output, { recursive: true });
 const route = resolve("src/app/frontend-audit-preview");
@@ -75,6 +75,37 @@ try {
   await command("Page.enable"); await command("Runtime.enable");
   await command("Fetch.enable", { patterns: [{ urlPattern: "*://localhost:3117/api/*", requestStage: "Request" }] });
   await command("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
+  if (phase === "pagination") {
+    async function checkPager(state, width, cart = false) {
+      const metrics = await evaluate(`(()=>{const nav=document.querySelector('nav[aria-label="Product pagination"]'),grid=nav.parentElement,rect=nav.getBoundingClientRect(),parent=grid.getBoundingClientRect(),cards=[...grid.querySelectorAll(':scope > article')],bottom=Math.max(parent.top,...cards.map(el=>el.getBoundingClientRect().bottom));return {width:innerWidth,documentWidth:document.documentElement.scrollWidth,top:rect.top,bottom,left:rect.left,right:rect.right,gridLeft:parent.left,gridRight:parent.right,text:nav.innerText,disabled:[...nav.querySelectorAll('button')].map(el=>el.disabled),cards:cards.length}})()`);
+      if (metrics.documentWidth > width + 1 || metrics.top < metrics.bottom - 1 || Math.abs(metrics.left - metrics.gridLeft) > 1 || Math.abs(metrics.right - metrics.gridRight) > 1) throw Error(`Pagination layout failed: ${state}/${width}/${cart}`);
+      result.screens.push({screen:"sales",state,cart,metrics});
+      if ([320,1366,1920].includes(width)) { await evaluate(`document.querySelector('nav[aria-label="Product pagination"]').scrollIntoView({block:'center'})`); await screenshot(`pagination-${state}-${width}${cart ? '-cart' : ''}`); }
+    }
+    for (const state of ["single", "populated", "empty"]) {
+      await navigate("sales", state);
+      for (const width of result.widths) {
+        await command("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: false });
+        await sleep(80);
+        await checkPager(state,width);
+      }
+      if (state === "populated") {
+        await clickText("Next");
+        await checkPager("page-2",2560);
+        if (!result.screens.at(-1).metrics.text.includes("Page 2 of 2") || result.screens.at(-1).metrics.cards!==4) throw Error("Next page failed");
+        await clickText("Previous");
+        if (!(await evaluate(`document.querySelector('nav[aria-label="Product pagination"]').innerText`)).includes("Page 1 of 2")) throw Error("Previous page failed");
+      }
+    }
+    await navigate("sales", "single");
+    await clickText("Select Classical Ayurvedic Preparation 2");
+    await clickText("Add to sale");
+    for (const width of [320,768,1280,1366,1920,2560]) {
+      await command("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: false });
+      await sleep(80); await checkPager("single",width,true);
+    }
+    console.log(`PASS: ${result.screens.length} pagination layout checks; single/many/empty catalogues, cart visible, Next and Previous.`);
+  } else {
   const screens = ["login", "dashboard", "sales", "products", "customers", "suppliers", "purchases", "expenses", "accounts", "reports", "staff", "settings", "consultations", "consultation-report", "notifications", "recent-sales", "sale-details", "change-password", "login-pin"];
   for (const [index, screen] of (["states", "recovery", "dense", "interaction"].includes(phase) ? [] : screens).entries()) {
     await command("Emulation.setDeviceMetricsOverride", { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false });
@@ -197,6 +228,7 @@ try {
   await sleep(200);
   result.navigation.closedOnResize = await evaluate("!document.querySelector('[role=dialog]')&&getComputedStyle(document.body).overflow!=='hidden'");
   result.exceptions = exceptions; result.missingFixtures = [...new Set(missingFixtures)]; result.blockedWrites = blockedWrites;
+  }
 } catch (error) { result.error = error.message; console.error(error.message); process.exitCode = 1; }
 finally {
   result.exceptions = exceptions; result.missingFixtures = [...new Set(missingFixtures)]; result.blockedWrites = blockedWrites;

@@ -32,13 +32,14 @@ export async function fixtureResponse(url, mode = "populated") {
   if (mode === "loading") await new Promise(resolve => setTimeout(resolve, 3500));
   if (mode === "error" && !["/api/settings", "/api/notifications", "/api/auth/status"].includes(path)) return { status: 503, data: null, error: "Preview network unavailable. Please retry." };
   const empty = mode === "empty";
+  const catalog = mode === "single" ? products.slice(1, 2) : products;
   let data;
   if (path === "/api/settings") data = settings;
   else if (path === "/api/settings/receipt") data = { receipt: settings.receipt };
   else if (path === "/api/auth/status") data = { needsBootstrap: false };
   else if (path === "/api/categories") data = [category];
   else if (path === "/api/products/sales-index") {
-    data = empty ? [] : params.has("membership") ? products.map(row => row._id) : params.get("details") === "true" ? products.filter(row => params.get("ids")?.split(",").includes(row._id)) : products.map(indexRow);
+    data = empty ? [] : params.has("membership") ? catalog.map(row => row._id) : params.get("details") === "true" ? catalog.filter(row => params.get("ids")?.split(",").includes(row._id)) : catalog.map(indexRow);
   } else if (path === "/api/products") data = empty ? [] : products;
   else if (path === "/api/products/duplicates") data = { groups: [], canMerge: true };
   else if (path.startsWith("/api/products/")) data = { ...products[1], batches: [], history: [], salesHistory: [] };

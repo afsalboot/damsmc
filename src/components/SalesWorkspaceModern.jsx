@@ -1397,9 +1397,9 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
       )}
       <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_410px]">
         <main className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3">
-          {!editSaleId && !catalogue.ready && !catalogueError && <div role="status" className="card p-5 sm:col-span-2 2xl:col-span-3"><span className="sr-only">Loading products</span><div className="loading-shimmer h-24 rounded-xl bg-[var(--green-soft)]" aria-hidden="true" /></div>}
-          {!editSaleId && catalogueError && <section role="alert" className="card p-5 sm:col-span-2 2xl:col-span-3"><h2 className="font-extrabold">Unable to load the sales catalogue</h2><p className="my-3 text-sm">{catalogueError}</p><button type="button" className="btn" onClick={() => setCatalogueRetry(value => value + 1)}>Retry</button></section>}
-          {!editSaleId && catalogue.ready && !catalogueError && !visibleProducts.length && <p role="status" className="card p-5 sm:col-span-2 2xl:col-span-3">No products match the current filters.</p>}
+          {!editSaleId && !catalogue.ready && !catalogueError && <div role="status" className="card col-span-full p-5"><span className="sr-only">Loading products</span><div className="loading-shimmer h-24 rounded-xl bg-[var(--green-soft)]" aria-hidden="true" /></div>}
+          {!editSaleId && catalogueError && <section role="alert" className="card col-span-full p-5"><h2 className="font-extrabold">Unable to load the sales catalogue</h2><p className="my-3 text-sm">{catalogueError}</p><button type="button" className="btn" onClick={() => setCatalogueRetry(value => value + 1)}>Retry</button></section>}
+          {!editSaleId && catalogue.ready && !catalogueError && !visibleProducts.length && <p role="status" className="card col-span-full p-5">No products match the current filters.</p>}
           {visibleProducts.map((p) => (
             <article
               className={`sales-product-card card relative flex cursor-pointer flex-col p-5 transition hover:-translate-y-0.5 hover:shadow-md ${p.expired ? "sales-product-expired" : ""}`}
@@ -1440,11 +1440,11 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
               </div>
             </article>
           ))}
-          <div className="flex items-center justify-between gap-2 sm:col-span-2 2xl:col-span-3">
+          <nav aria-label="Product pagination" className="col-span-full flex items-center justify-between gap-2">
             <button className="btn" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>Previous</button>
-            <span className="text-sm">{shown.length} products ? Page {currentPage + 1} of {pageCount}</span>
+            <span className="text-sm">{shown.length} {shown.length === 1 ? "product" : "products"} &middot; Page {currentPage + 1} of {pageCount}</span>
             <button className="btn" disabled={currentPage + 1 >= pageCount} onClick={() => setPage(currentPage + 1)}>Next</button>
-          </div>
+          </nav>
         </main>
         {mode === "PRODUCT" ? (
           <aside className="sales-cart-shell card overflow-hidden xl:sticky xl:top-24">

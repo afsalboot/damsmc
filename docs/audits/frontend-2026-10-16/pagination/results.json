@@ -1,0 +1,1184 @@
+{
+  "phase": "pagination",
+  "fixturesOnly": true,
+  "liveDatabase": false,
+  "widths": [
+    320,
+    360,
+    375,
+    390,
+    414,
+    480,
+    640,
+    768,
+    820,
+    1024,
+    1280,
+    1366,
+    1440,
+    1536,
+    1920,
+    2560
+  ],
+  "screens": [
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 320,
+        "documentWidth": 310,
+        "top": 1142.96875,
+        "bottom": 1130.96875,
+        "left": 16,
+        "right": 294,
+        "gridLeft": 16,
+        "gridRight": 294,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 360,
+        "documentWidth": 350,
+        "top": 836.96875,
+        "bottom": 824.96875,
+        "left": 16,
+        "right": 334,
+        "gridLeft": 16,
+        "gridRight": 334,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 375,
+        "documentWidth": 365,
+        "top": 836.96875,
+        "bottom": 824.96875,
+        "left": 16,
+        "right": 349,
+        "gridLeft": 16,
+        "gridRight": 349,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 390,
+        "documentWidth": 380,
+        "top": 836.96875,
+        "bottom": 824.96875,
+        "left": 16,
+        "right": 364,
+        "gridLeft": 16,
+        "gridRight": 364,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 414,
+        "documentWidth": 404,
+        "top": 836.96875,
+        "bottom": 824.96875,
+        "left": 16,
+        "right": 388,
+        "gridLeft": 16,
+        "gridRight": 388,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 480,
+        "documentWidth": 470,
+        "top": 836.96875,
+        "bottom": 824.96875,
+        "left": 16,
+        "right": 454,
+        "gridLeft": 16,
+        "gridRight": 454,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 640,
+        "documentWidth": 630,
+        "top": 837.1875,
+        "bottom": 825.1875,
+        "left": 16,
+        "right": 614,
+        "gridLeft": 16,
+        "gridRight": 614,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 758,
+        "top": 837.1875,
+        "bottom": 825.1875,
+        "left": 16,
+        "right": 742,
+        "gridLeft": 16,
+        "gridRight": 742,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 820,
+        "documentWidth": 810,
+        "top": 837.1875,
+        "bottom": 825.1875,
+        "left": 16,
+        "right": 794,
+        "gridLeft": 16,
+        "gridRight": 794,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 1024,
+        "documentWidth": 1014,
+        "top": 821.28125,
+        "bottom": 809.28125,
+        "left": 276,
+        "right": 982,
+        "gridLeft": 276,
+        "gridRight": 982,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "top": 665.09375,
+        "bottom": 655.09375,
+        "left": 276,
+        "right": 1248,
+        "gridLeft": 276,
+        "gridRight": 1248,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "top": 630.09375,
+        "bottom": 620.09375,
+        "left": 276,
+        "right": 1334,
+        "gridLeft": 276,
+        "gridRight": 1334,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "top": 630.09375,
+        "bottom": 620.09375,
+        "left": 276,
+        "right": 1408,
+        "gridLeft": 276,
+        "gridRight": 1408,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 1536,
+        "documentWidth": 1536,
+        "top": 615.09375,
+        "bottom": 605.09375,
+        "left": 276,
+        "right": 1504,
+        "gridLeft": 276,
+        "gridRight": 1504,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "top": 600.046875,
+        "bottom": 590.046875,
+        "left": 276,
+        "right": 1888,
+        "gridLeft": 276,
+        "gridRight": 1888,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": false,
+      "metrics": {
+        "width": 2560,
+        "documentWidth": 2560,
+        "top": 594.046875,
+        "bottom": 584.046875,
+        "left": 276,
+        "right": 2528,
+        "gridLeft": 276,
+        "gridRight": 2528,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 320,
+        "documentWidth": 310,
+        "top": 6629.53125,
+        "bottom": 6617.53125,
+        "left": 16,
+        "right": 294,
+        "gridLeft": 16,
+        "gridRight": 294,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 360,
+        "documentWidth": 350,
+        "top": 837.28125,
+        "bottom": 825.28125,
+        "left": 16,
+        "right": 334,
+        "gridLeft": 16,
+        "gridRight": 334,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 375,
+        "documentWidth": 365,
+        "top": 837.28125,
+        "bottom": 825.28125,
+        "left": 16,
+        "right": 349,
+        "gridLeft": 16,
+        "gridRight": 349,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 390,
+        "documentWidth": 380,
+        "top": 837.28125,
+        "bottom": 825.28125,
+        "left": 16,
+        "right": 364,
+        "gridLeft": 16,
+        "gridRight": 364,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 414,
+        "documentWidth": 404,
+        "top": 837.53125,
+        "bottom": 825.53125,
+        "left": 16,
+        "right": 388,
+        "gridLeft": 16,
+        "gridRight": 388,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 480,
+        "documentWidth": 470,
+        "top": 837.53125,
+        "bottom": 825.53125,
+        "left": 16,
+        "right": 454,
+        "gridLeft": 16,
+        "gridRight": 454,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 640,
+        "documentWidth": 630,
+        "top": 837.125,
+        "bottom": 825.125,
+        "left": 16,
+        "right": 614,
+        "gridLeft": 16,
+        "gridRight": 614,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 758,
+        "top": 837.375,
+        "bottom": 825.375,
+        "left": 16,
+        "right": 742,
+        "gridLeft": 16,
+        "gridRight": 742,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 820,
+        "documentWidth": 810,
+        "top": 837.375,
+        "bottom": 825.375,
+        "left": 16,
+        "right": 794,
+        "gridLeft": 16,
+        "gridRight": 794,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 1024,
+        "documentWidth": 1014,
+        "top": 821.21875,
+        "bottom": 809.21875,
+        "left": 276,
+        "right": 982,
+        "gridLeft": 276,
+        "gridRight": 982,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 1280,
+        "documentWidth": 1270,
+        "top": 821.46875,
+        "bottom": 811.46875,
+        "left": 276,
+        "right": 1237.984375,
+        "gridLeft": 276,
+        "gridRight": 1238,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 1366,
+        "documentWidth": 1356,
+        "top": 821.46875,
+        "bottom": 811.46875,
+        "left": 276,
+        "right": 1324,
+        "gridLeft": 276,
+        "gridRight": 1324,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 1440,
+        "documentWidth": 1430,
+        "top": 821.46875,
+        "bottom": 811.46875,
+        "left": 276,
+        "right": 1397.984375,
+        "gridLeft": 276,
+        "gridRight": 1398,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 1536,
+        "documentWidth": 1526,
+        "top": 821.421875,
+        "bottom": 811.421875,
+        "left": 276,
+        "right": 1494,
+        "gridLeft": 276,
+        "gridRight": 1494,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 1920,
+        "documentWidth": 1910,
+        "top": 821.28125,
+        "bottom": 811.28125,
+        "left": 276,
+        "right": 1877.984375,
+        "gridLeft": 276,
+        "gridRight": 1878,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "populated",
+      "cart": false,
+      "metrics": {
+        "width": 2560,
+        "documentWidth": 2550,
+        "top": 821.234375,
+        "bottom": 811.234375,
+        "left": 276,
+        "right": 2517.984375,
+        "gridLeft": 276,
+        "gridRight": 2518,
+        "text": "Previous\n24 products ? Page 1 of 2\nNext",
+        "disabled": [
+          true,
+          false
+        ],
+        "cards": 20
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "page-2",
+      "cart": false,
+      "metrics": {
+        "width": 2560,
+        "documentWidth": 2560,
+        "top": 594.046875,
+        "bottom": 584.046875,
+        "left": 276,
+        "right": 2527.984375,
+        "gridLeft": 276,
+        "gridRight": 2528,
+        "text": "Previous\n24 products ? Page 2 of 2\nNext",
+        "disabled": [
+          false,
+          true
+        ],
+        "cards": 4
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 320,
+        "documentWidth": 310,
+        "top": 969.03125,
+        "bottom": 867.03125,
+        "left": 16,
+        "right": 294,
+        "gridLeft": 16,
+        "gridRight": 294,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 360,
+        "documentWidth": 350,
+        "top": 837.03125,
+        "bottom": 759.03125,
+        "left": 16,
+        "right": 334,
+        "gridLeft": 16,
+        "gridRight": 334,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 375,
+        "documentWidth": 365,
+        "top": 837.03125,
+        "bottom": 759.03125,
+        "left": 16,
+        "right": 349,
+        "gridLeft": 16,
+        "gridRight": 349,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 390,
+        "documentWidth": 380,
+        "top": 837.03125,
+        "bottom": 759.03125,
+        "left": 16,
+        "right": 364,
+        "gridLeft": 16,
+        "gridRight": 364,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 414,
+        "documentWidth": 404,
+        "top": 837.03125,
+        "bottom": 759.03125,
+        "left": 16,
+        "right": 388,
+        "gridLeft": 16,
+        "gridRight": 388,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 480,
+        "documentWidth": 470,
+        "top": 837.03125,
+        "bottom": 759.03125,
+        "left": 16,
+        "right": 454,
+        "gridLeft": 16,
+        "gridRight": 454,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 640,
+        "documentWidth": 640,
+        "top": 712.25,
+        "bottom": 634.25,
+        "left": 16,
+        "right": 624,
+        "gridLeft": 16,
+        "gridRight": 624,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 768,
+        "top": 712.25,
+        "bottom": 634.25,
+        "left": 16,
+        "right": 752,
+        "gridLeft": 16,
+        "gridRight": 752,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 820,
+        "documentWidth": 820,
+        "top": 712.25,
+        "bottom": 634.25,
+        "left": 16,
+        "right": 804,
+        "gridLeft": 16,
+        "gridRight": 804,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 1024,
+        "documentWidth": 1024,
+        "top": 658.34375,
+        "bottom": 580.34375,
+        "left": 276,
+        "right": 992,
+        "gridLeft": 276,
+        "gridRight": 992,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "top": 486,
+        "bottom": 410,
+        "left": 276,
+        "right": 1248,
+        "gridLeft": 276,
+        "gridRight": 1248,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "top": 466,
+        "bottom": 390,
+        "left": 276,
+        "right": 1334,
+        "gridLeft": 276,
+        "gridRight": 1334,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "top": 466,
+        "bottom": 390,
+        "left": 276,
+        "right": 1408,
+        "gridLeft": 276,
+        "gridRight": 1408,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 1536,
+        "documentWidth": 1536,
+        "top": 466,
+        "bottom": 390,
+        "left": 276,
+        "right": 1504,
+        "gridLeft": 276,
+        "gridRight": 1504,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "top": 466,
+        "bottom": 390,
+        "left": 276,
+        "right": 1888,
+        "gridLeft": 276,
+        "gridRight": 1888,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "cart": false,
+      "metrics": {
+        "width": 2560,
+        "documentWidth": 2560,
+        "top": 466,
+        "bottom": 390,
+        "left": 276,
+        "right": 2528,
+        "gridLeft": 276,
+        "gridRight": 2528,
+        "text": "Previous\n0 products ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 0
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": true,
+      "metrics": {
+        "width": 320,
+        "documentWidth": 310,
+        "top": 1142.96875,
+        "bottom": 1130.96875,
+        "left": 16,
+        "right": 294,
+        "gridLeft": 16,
+        "gridRight": 294,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": true,
+      "metrics": {
+        "width": 768,
+        "documentWidth": 758,
+        "top": 290.1875,
+        "bottom": 278.1875,
+        "left": 16,
+        "right": 742,
+        "gridLeft": 16,
+        "gridRight": 742,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": true,
+      "metrics": {
+        "width": 1280,
+        "documentWidth": 1270,
+        "top": 821.140625,
+        "bottom": 811.140625,
+        "left": 276,
+        "right": 808,
+        "gridLeft": 276,
+        "gridRight": 808,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": true,
+      "metrics": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "top": 759.140625,
+        "bottom": 749.140625,
+        "left": 276,
+        "right": 904,
+        "gridLeft": 276,
+        "gridRight": 904,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": true,
+      "metrics": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "top": 600.046875,
+        "bottom": 590.046875,
+        "left": 276,
+        "right": 1458,
+        "gridLeft": 276,
+        "gridRight": 1458,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    },
+    {
+      "screen": "sales",
+      "state": "single",
+      "cart": true,
+      "metrics": {
+        "width": 2560,
+        "documentWidth": 2560,
+        "top": 594.046875,
+        "bottom": 584.046875,
+        "left": 276,
+        "right": 2098,
+        "gridLeft": 276,
+        "gridRight": 2098,
+        "text": "Previous\n1 product ? Page 1 of 1\nNext",
+        "disabled": [
+          true,
+          true
+        ],
+        "cards": 1
+      }
+    }
+  ],
+  "interactions": [],
+  "exceptions": [],
+  "missingFixtures": [],
+  "blockedWrites": []
+}

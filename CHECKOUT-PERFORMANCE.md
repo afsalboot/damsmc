@@ -1,4 +1,4 @@
-# Checkout and payment checks
+![alt text](image.png)# Checkout and payment checks
 
 14 October 2026 ? PVAMSP POS, local production build in Chrome and the actual Electron shell. Hosted deployment and installed-client behavior were not tested.
 
