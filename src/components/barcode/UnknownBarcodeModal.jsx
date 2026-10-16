@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 
 import Link from "next/link";
 import { Barcode, Plus } from "lucide-react";
@@ -9,7 +10,7 @@ export default function UnknownBarcodeModal({ barcode, onClose, onScanAgain }) {
       className="fixed inset-0 z-[150] grid place-items-center bg-black/45 p-4"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <section
+      <DialogSurface onEscape={onClose}
         className="card w-full max-w-md p-6 text-center"
         role="dialog"
         aria-modal="true"
@@ -42,7 +43,7 @@ export default function UnknownBarcodeModal({ barcode, onClose, onScanAgain }) {
         >
           Close
         </button>
-      </section>
+      </DialogSurface>
     </div>
   );
 }

@@ -44,6 +44,7 @@ import { saleFreeQuantity } from "@/lib/sale-free-quantity";
 import { findSaleEditRetry, loadSaleForEdit, restoreSaleStock, saveSaleEdit } from "@/services/sale-edit.service";
 import { buildExternalPurchase, isExternalPurchase, externalPurchaseSummary, saleForActor } from "@/lib/external-purchase";
 import { syncExternalPurchaseExpenses } from "@/services/external-purchase.service";
+import { boundedInteger, searchText } from "@/lib/query-input";
 
 function affectedSaleProducts(items = []) {
   return items.flatMap(item => isExternalPurchase(item) ? [] : item.kind === "MIX" ? (item.ingredients || []).map(i => String(i.productId)) : [item.productId, item.freeProductId].filter(Boolean).map(String));
@@ -207,19 +208,14 @@ export async function GET(request) {
     await connectDb();
     const parameters = new URL(request.url).searchParams;
     const customerId = parameters.get("customerId");
+    if (customerId !== null && !mongoose.isValidObjectId(customerId)) return fail("Invalid customer", 400);
     const filter = mongoose.isValidObjectId(customerId)
       ? { customerId: new mongoose.Types.ObjectId(customerId) }
       : {};
     if (parameters.get("view") === "recent") {
-      const page = Math.max(
-        1,
-        Number.parseInt(parameters.get("page") || "1", 10),
-      );
-      const limit = Math.min(
-        50,
-        Math.max(5, Number.parseInt(parameters.get("limit") || "20", 10)),
-      );
-      const search = parameters.get("q")?.trim();
+      const page = boundedInteger(parameters.get("page"), 1, 1, 100000);
+      const limit = boundedInteger(parameters.get("limit"), 20, 5, 50);
+      const search = searchText(parameters.get("q"));
       const paymentMethod = parameters.get("paymentMethod")?.trim();
       const saleMode = parameters.get("saleMode")?.trim();
       const dateFrom = parameters.get("dateFrom");
@@ -241,6 +237,8 @@ export async function GET(request) {
         filter.createdAt = {};
         if (dateFrom) filter.createdAt.$gte = new Date(`${dateFrom}T00:00:00`);
         if (dateTo) filter.createdAt.$lte = new Date(`${dateTo}T23:59:59.999`);
+        if (Object.values(filter.createdAt).some(date => !Number.isFinite(date.getTime()))) return fail("Invalid sale date range", 400);
+        if (dateFrom && dateTo && filter.createdAt.$gte > filter.createdAt.$lte) return fail("From date must be on or before To date", 400);
       }
       const [sales, total, totals] = await Promise.all([
         Sale.find(filter)

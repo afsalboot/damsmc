@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import DialogSurface from "@/components/DialogSurface";
 import {
   LayoutDashboard,
   ShoppingCart,
@@ -88,6 +89,12 @@ export default function AppShell({ user, children }) {
   const router = useRouter();
   const confirmAction = useConfirm();
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
   const allowed = (permission) =>
     user.role === "ADMIN" || user.permissions?.includes(permission);
 
@@ -111,6 +118,7 @@ export default function AppShell({ user, children }) {
     <>
       <div className="flex h-20 items-center justify-between border-b border-white/10 px-5">
         <Link
+          className="mr-2 min-w-0 flex-1"
           href="/dashboard"
           onClick={() => mobile && setOpen(false)}
           aria-label="Dr Abdulla’s Ayurvedic POS dashboard"
@@ -118,7 +126,7 @@ export default function AppShell({ user, children }) {
           <BrandLogo tone="inverse" />
         </Link>
         <button
-          className="text-white lg:hidden"
+          className="shrink-0 text-white lg:hidden"
           onClick={() => setOpen(false)}
           aria-label="Close navigation"
         >
@@ -133,6 +141,7 @@ export default function AppShell({ user, children }) {
             return (
               <Link
                 key={href}
+                aria-current={active ? "page" : undefined}
                 href={href}
                 prefetch={href === "/sales" ? true : undefined}
                 onClick={() => setOpen(false)}
@@ -156,7 +165,7 @@ export default function AppShell({ user, children }) {
           </span>
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-bold text-white">{user.name}</p>
-            <p className="text-xs text-emerald-100/55">
+            <p className="text-xs text-emerald-100/80">
               {user.roleName || user.role}
             </p>
           </div>
@@ -174,6 +183,7 @@ export default function AppShell({ user, children }) {
 
   return (
     <div className="min-h-screen lg:grid lg:grid-cols-[244px_1fr]">
+      <a className="skip-link" href="#workspace-content">Skip to content</a>
       <aside className="app-sidebar fixed inset-y-0 hidden w-[244px] flex-col bg-[#173d29] lg:flex">
         {sidebar()}
       </aside>
@@ -184,9 +194,9 @@ export default function AppShell({ user, children }) {
             className="fixed inset-0 z-40 bg-black/35 lg:hidden"
             onClick={() => setOpen(false)}
           />
-          <aside className="app-sidebar fixed inset-y-0 left-0 z-50 flex w-[280px] flex-col bg-[#173d29] lg:hidden">
+          <DialogSurface as="aside" id="mobile-navigation" aria-label="Navigation" onEscape={() => setOpen(false)} className="app-sidebar fixed inset-y-0 left-0 z-50 flex w-[280px] flex-col bg-[#173d29] lg:hidden">
             {sidebar(true)}
-          </aside>
+          </DialogSurface>
         </>
       )}
       <div className="min-w-0 lg:col-start-2">
@@ -195,6 +205,8 @@ export default function AppShell({ user, children }) {
             className="grid size-11 place-items-center rounded-xl border border-[var(--line)] bg-white shadow-sm"
             onClick={() => setOpen(true)}
             aria-label="Open navigation"
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
             <Menu />
           </button>
@@ -202,7 +214,7 @@ export default function AppShell({ user, children }) {
             <BrandLogo />
           </Link>
         </header>
-        <main className="p-4 lg:p-8">{children}</main>
+        <main id="workspace-content" tabIndex={-1} className="p-4 lg:p-8">{children}</main>
       </div>
     </div>
   );

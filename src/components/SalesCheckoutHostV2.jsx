@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 import { isExternalPurchase } from "@/lib/external-purchase";
 
 import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
@@ -526,7 +527,7 @@ export default function SalesCheckoutHostV2() {
             event.target === event.currentTarget && !saving && setOpen(false)
           }
         >
-          <form
+          <DialogSurface as="form" onEscape={() => !saving && setOpen(false)}
             onSubmit={complete}
             className={`card max-h-[94vh] w-full ${cartCustomer ? "max-w-lg" : "max-w-4xl"} overflow-y-auto p-6`}
             role="dialog"
@@ -1179,7 +1180,7 @@ export default function SalesCheckoutHostV2() {
                 </button>
               </section>
             </div>
-          </form>
+          </DialogSurface>
         </div>
       )}
     </>

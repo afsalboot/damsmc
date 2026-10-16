@@ -4,13 +4,14 @@ import { requireSession } from "@/lib/auth";
 import { ok, fail, apiError } from "@/lib/api";
 import { Product, InventoryBatch, AuditLog } from "@/models";
 import { createProduct, getProducts, updateProduct } from "@/services/product.service";
+import { searchText, literalPattern } from "@/lib/query-input";
 
 export async function GET(request) {
   try {
     await requireSession("products.view");
     await connectDb();
     const parameters = new URL(request.url).searchParams;
-    const query = parameters.get("q")?.trim();
+    const query = literalPattern(searchText(parameters.get("q")));
     const salesOnly = parameters.get("sales") === "true";
     const filter = query
       ? { $or: [{ name: { $regex: query, $options: "i" } }, { sku: { $regex: query, $options: "i" } }, { barcode: { $regex: query, $options: "i" } }, { manufacturer: { $regex: query, $options: "i" } }] }

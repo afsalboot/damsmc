@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -375,7 +376,7 @@ function AddSupplierModal({ onClose, onCreated }) {
       className="fixed inset-0 z-[140] grid place-items-center bg-black/50 p-4"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <form
+      <DialogSurface as="form" onEscape={() => !saving && onClose()}
         className="card max-h-[90vh] w-full max-w-xl overflow-y-auto p-5"
         role="dialog"
         aria-modal="true"
@@ -483,7 +484,7 @@ function AddSupplierModal({ onClose, onCreated }) {
             {saving ? "Saving…" : "Create supplier"}
           </button>
         </footer>
-      </form>
+      </DialogSurface>
     </div>
   );
 }
@@ -643,7 +644,7 @@ export default function PurchaseForm({
         }
       }}
     >
-      <section
+      <DialogSurface as="section" onEscape={() => !saving && onClose()}
         className="mx-auto min-h-screen w-full max-w-[1180px] bg-[#f7f8f4] sm:min-h-0 sm:rounded-2xl"
         role="dialog"
         aria-modal="true"
@@ -727,7 +728,7 @@ export default function PurchaseForm({
                       className="absolute left-3 top-3.5 text-[var(--muted)]"
                       size={17}
                     />
-                    <input
+                    <input aria-label="Search supplier by name, phone, GSTIN or code"
                       className="field !pl-10"
                       value={supplierQuery}
                       onFocus={() => setSupplierOpen(true)}
@@ -1159,7 +1160,7 @@ export default function PurchaseForm({
             </div>
           </aside>
         </div>
-      </section>
+      </DialogSurface>
       {productOpen && (
         <div className="fixed inset-0 z-[100] grid place-items-center bg-black/45 p-4">
           <div className="card max-h-[86vh] w-full max-w-2xl overflow-hidden">
@@ -1175,7 +1176,7 @@ export default function PurchaseForm({
                   className="absolute left-3 top-3.5 text-[var(--muted)]"
                   size={17}
                 />
-                <input
+                <input aria-label="Search product, SKU or scan barcode"
                   autoFocus
                   className="field !pl-10"
                   value={productQuery}

@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import {AuditLog,Expense,Purchase,Sale,StaffRole,User} from "@/models";
 import {applyPermissionDependencies,ensureDefaultRoles,getEffectivePermissionObject,normalizePermissions,permissionLabel} from "@/services/rbac.service";
 import {queryValues} from "@/lib/filter-utils";
+import {assertStaffRoleAssignment} from "../lib/staff-role-assignment.js";
 
 const text=(value)=>String(value??"").trim();
 const escapeRegex=(value)=>value.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
@@ -45,6 +46,7 @@ export async function createStaff(body,actor){
   const roles=await rolesAndMigration(),name=text(body.name),email=text(body.email).toLowerCase(),phone=text(body.phone),password=String(body.password||"");
   if(!name||!email)throw new Error("Name and email are required");if(!passwordValid(password))throw new Error(PASSWORD_POLICY_MESSAGE);if(password!==String(body.confirmPassword||password))throw new Error("Passwords do not match");
   const role=roles.find((entry)=>String(entry._id)===String(body.roleId));if(!role)throw new Error("Select an active staff role");
+  assertStaffRoleAssignment(role,actor);
   const canManagePermissions=actor.role==="ADMIN"||actor.permissions?.includes("staff.managePermissions");
   const username=normalizeUsername(body.username);if(!username)throw new Error("Username must be 3-32 letters, numbers, dots, underscores or hyphens");await User.init();
   const user=await User.create({name,email,phone,username,passwordHash:await bcrypt.hash(password,12),role:"STAFF",roleId:role._id,permissionOverrides:canManagePermissions&&body.customizePermissions?applyPermissionDependencies(body.permissionOverrides):{},permissions:[],active:body.active!==false,mustChangePassword:Boolean(body.mustChangePassword),createdBy:actor.sub});
@@ -53,6 +55,7 @@ export async function createStaff(body,actor){
 
 export async function updateStaff(id,body,actor){
   const user=await User.findOne({_id:id,role:"STAFF"});if(!user)throw new Error("Staff account not found");const role=await StaffRole.findOne({_id:body.roleId,active:true});if(!role)throw new Error("Select an active staff role");
+  if(String(user.roleId?._id||user.roleId)!==String(role._id))assertStaffRoleAssignment(role,actor);
   const username=normalizeUsername(body.username);if(!username)throw new Error("A valid username is required");await User.init();if(user.username!==username){user.username=username;user.authVersion=Number(user.authVersion||0)+1;}
   user.name=text(body.name);user.email=text(body.email).toLowerCase();user.phone=text(body.phone);user.roleId=role._id;const canManagePermissions=actor.role==="ADMIN"||actor.permissions?.includes("staff.managePermissions");if(canManagePermissions&&Object.hasOwn(body,"customizePermissions"))user.permissionOverrides=body.customizePermissions?applyPermissionDependencies(body.permissionOverrides):{};if(typeof body.active==="boolean")user.active=body.active;if(!user.name||!user.email)throw new Error("Name and email are required");await user.save();
   await writeAudit({actorId:actor.sub,action:"STAFF_UPDATED",targetId:user._id,description:`Updated staff account for ${user.name}`,metadata:{role:role.name}});return getStaffDetails(user._id);

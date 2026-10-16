@@ -1,0 +1,1 @@
+PASS: 19 screens, 304 requested-width checks + 38 landscape/reflow checks; 7 populated-table screens across 16 widths; 27 state previews; 11 retry recoveries; 7 create dialogs, navigation and cash/split checkout; no browser exceptions or API writes.

@@ -1,0 +1,21 @@
+▲ Next.js 16.3.8 (Turbopack)
+- Local:         http://127.0.0.1:3117
+- Network:       http://127.0.0.1:3117
+- Environments: .env.local
+✓ Ready in 422ms
+✓ Running next.config.mjs took 20ms
+Creating turbopack project {
+  dir: 'D:\\Next.js\\Projects\\PVAMSP - POS\\pvamsp-pos',
+  testMode: true
+}
+
+ GET /api/health 200 in 75ms (next.js: 53ms, proxy.ts: 3ms, application-code: 18ms)
+ GET /frontend-audit-preview?screen=products&state=populated 200 in 457ms (next.js: 69ms, application-code: 388ms)
+ GET /frontend-audit-preview?screen=customers&state=populated 200 in 47ms (next.js: 5ms, application-code: 43ms)
+ GET /frontend-audit-preview?screen=suppliers&state=populated 200 in 40ms (next.js: 5ms, application-code: 35ms)
+ GET /frontend-audit-preview?screen=purchases&state=populated 200 in 41ms (next.js: 4ms, application-code: 36ms)
+ GET /frontend-audit-preview?screen=expenses&state=populated 200 in 51ms (next.js: 4ms, application-code: 47ms)
+ GET /frontend-audit-preview?screen=staff&state=populated 200 in 42ms (next.js: 5ms, application-code: 37ms)
+ GET /frontend-audit-preview?screen=consultations&state=populated 200 in 62ms (next.js: 8ms, application-code: 54ms)
+ GET /frontend-audit-preview?screen=sales&state=populated 200 in 47ms (next.js: 4ms, application-code: 43ms)
+ GET /frontend-audit-preview?screen=sales&state=populated 200 in 39ms (next.js: 4ms, application-code: 35ms)

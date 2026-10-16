@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -105,11 +106,11 @@ function Modal({ children, onClose, wide = false }) {
       className="fixed inset-0 z-[80] grid place-items-center bg-black/45 p-3 sm:p-5"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <section
+      <DialogSurface as="section" onEscape={onClose}
         className={`card relative max-h-[94dvh] w-full ${wide ? "max-w-5xl" : "max-w-2xl"} overflow-y-auto p-5 sm:p-7`}
       >
         {children}
-      </section>
+      </DialogSurface>
     </div>
   );
 }
@@ -120,9 +121,9 @@ function Drawer({ children, onClose }) {
       className="fixed inset-0 z-[75] bg-black/35"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <aside className="absolute inset-y-0 right-0 w-full max-w-xl overflow-y-auto bg-white p-5 shadow-2xl sm:p-7">
+      <DialogSurface as="aside" onEscape={onClose} className="absolute inset-y-0 right-0 w-full max-w-xl overflow-y-auto bg-white p-5 shadow-2xl sm:p-7">
         {children}
-      </aside>
+      </DialogSurface>
     </div>
   );
 }
@@ -300,7 +301,7 @@ function CategoryModal({ onClose, onCreated, category: existingCategory }) {
             </p>
             <h2 className="mt-1 text-2xl font-extrabold">{existingCategory ? "Edit category" : "Add category"}</h2>
           </div>
-          <button type="button" onClick={onClose}>
+          <button aria-label="Close dialog" type="button" onClick={onClose}>
             <X />
           </button>
         </div>
@@ -1645,7 +1646,7 @@ function ProductDrawer({
     return (
       <Drawer onClose={onClose}>
         <div className="flex justify-end">
-          <button onClick={onClose}>
+          <button aria-label="Close dialog" onClick={onClose}>
             <X />
           </button>
         </div>
@@ -1666,7 +1667,7 @@ function ProductDrawer({
           <h2 className="mt-1 text-2xl font-extrabold">{product.name}</h2>
           <p className="text-sm text-[var(--muted)]">{product.sku}</p>
         </div>
-        <button onClick={onClose}>
+        <button aria-label="Close dialog" onClick={onClose}>
           <X />
         </button>
       </div>
@@ -2484,7 +2485,7 @@ function ProductRow({
               onChange={onSelect}
             />
             <div className="min-w-0">
-              <h3 className="font-extrabold">{product.name}</h3>
+              <h3 className="font-extrabold"><button type="button" className="text-left" onClick={(event) => { event.stopPropagation(); onOpen(); }} aria-label={`View ${product.name}`}>{product.name}</button></h3>
               <p className="text-xs text-[var(--muted)]">
                 {product.sku} · {product.categoryId?.name || "Uncategorized"}
               </p>
@@ -2544,7 +2545,7 @@ function ProductRow({
         />
       </td>
       <td>
-        <strong>{product.name}</strong>
+        <button type="button" className="text-left font-extrabold" onClick={(event) => { event.stopPropagation(); onOpen(); }} aria-label={`View ${product.name}`}>{product.name}</button>
         <p className="text-xs text-[var(--muted)]">
           {product.sku}
           {product.barcode ? ` · ${product.barcode}` : ""}
@@ -2681,6 +2682,7 @@ function DuplicateProducts({ onClose, onMerged }) {
 export default function ProductCatalogue() {
   const pageSize = 20;
   const confirmAction = useConfirm();
+  const [loadError, setLoadError] = useState("");
   const [products, setProducts] = useState([]),
     [categories, setCategories] = useState([]),
     [suppliers, setSuppliers] = useState([]),
@@ -2714,6 +2716,7 @@ export default function ProductCatalogue() {
     return () => window.clearTimeout(timer);
   }, []);
   function replaceProducts(rows) {
+    setLoadError("");
     setProducts(rows);
     setPage(1);
     const available = new Set(rows.map((product) => String(product._id)));
@@ -2737,6 +2740,7 @@ export default function ProductCatalogue() {
         ),
       );
     } catch (error) {
+      setLoadError(error.message || "Please try again.");
       toast.error(error.message);
     } finally {
       setLoading(false);
@@ -2751,7 +2755,7 @@ export default function ProductCatalogue() {
         );
         if (active) replaceProducts(rows);
       } catch (error) {
-        if (active) toast.error(error.message);
+        if (active) { setLoadError(error.message || "Please try again."); toast.error(error.message); }
       } finally {
         if (active) setLoading(false);
       }
@@ -3060,7 +3064,7 @@ export default function ProductCatalogue() {
             visibility.
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
           <button className="btn" onClick={() => setDuplicatesOpen(true)}><Copy size={17} />Check duplicates</button>
           <button className="btn" onClick={() => setImportOpen("MANUAL")}><Plus size={17} />Bulk Add</button>
           <button className="btn" onClick={() => setImportOpen(true)}>
@@ -3073,7 +3077,7 @@ export default function ProductCatalogue() {
           </button>
         </div>
       </header>
-      <div className="mb-5 grid grid-cols-2 gap-3 lg:grid-cols-5">
+      <div className="product-kpis mb-5 grid grid-cols-2 gap-3 lg:grid-cols-5">
         {[
           ["Total products", metrics.total, Package],
           ["Low stock", metrics.low, AlertTriangle],
@@ -3098,7 +3102,7 @@ export default function ProductCatalogue() {
             className="absolute left-4 top-3.5 text-[var(--muted)]"
             size={18}
           />
-          <input
+          <input aria-label="Search products by name, SKU, barcode or brand"
             className="field !pl-11"
             value={query}
             onChange={(e) => {
@@ -3275,6 +3279,12 @@ export default function ProductCatalogue() {
             />
           ))}
         </div>
+      ) : loadError ? (
+        <section className="card p-6" role="alert">
+          <h2 className="font-extrabold">Unable to load products</h2>
+          <p className="my-3 text-sm text-[var(--muted)]">{loadError}</p>
+          <button type="button" className="btn" onClick={() => load()}>Retry</button>
+        </section>
       ) : filtered.length ? (
         <>
           <div className="products-table-scroll hidden card table-wrap md:block">

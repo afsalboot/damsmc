@@ -1,0 +1,4 @@
+
+> oushadi-pos@0.1.0 lint
+> eslint
+

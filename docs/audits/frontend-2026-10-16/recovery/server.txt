@@ -1,0 +1,32 @@
+▲ Next.js 16.3.8 (Turbopack)
+- Local:         http://127.0.0.1:3117
+- Network:       http://127.0.0.1:3117
+- Environments: .env.local
+✓ Ready in 406ms
+✓ Running next.config.mjs took 17ms
+Creating turbopack project {
+  dir: 'D:\\Next.js\\Projects\\PVAMSP - POS\\pvamsp-pos',
+  testMode: true
+}
+
+ GET /api/health 200 in 83ms (next.js: 62ms, proxy.ts: 3ms, application-code: 19ms)
+ GET /frontend-audit-preview?screen=sales&state=error 200 in 479ms (next.js: 77ms, application-code: 402ms)
+ GET /frontend-audit-preview?screen=products&state=error 200 in 50ms (next.js: 5ms, application-code: 46ms)
+ GET /frontend-audit-preview?screen=customers&state=error 200 in 45ms (next.js: 5ms, application-code: 40ms)
+ GET /frontend-audit-preview?screen=suppliers&state=error 200 in 39ms (next.js: 5ms, application-code: 34ms)
+ GET /frontend-audit-preview?screen=purchases&state=error 200 in 51ms (next.js: 4ms, application-code: 47ms)
+ GET /frontend-audit-preview?screen=expenses&state=error 200 in 45ms (next.js: 5ms, application-code: 40ms)
+ GET /frontend-audit-preview?screen=accounts&state=error 200 in 44ms (next.js: 4ms, application-code: 40ms)
+ GET /frontend-audit-preview?screen=reports&state=error 200 in 38ms (next.js: 5ms, application-code: 32ms)
+ GET /frontend-audit-preview?screen=staff&state=error 200 in 38ms (next.js: 4ms, application-code: 34ms)
+ GET /frontend-audit-preview?screen=consultations&state=error 200 in 39ms (next.js: 4ms, application-code: 35ms)
+ GET /frontend-audit-preview?screen=recent-sales&state=error 200 in 36ms (next.js: 4ms, application-code: 33ms)
+ GET /frontend-audit-preview?screen=products&state=populated 200 in 51ms (next.js: 4ms, application-code: 46ms)
+ GET /frontend-audit-preview?screen=customers&state=populated 200 in 43ms (next.js: 4ms, application-code: 39ms)
+ GET /frontend-audit-preview?screen=suppliers&state=populated 200 in 32ms (next.js: 5ms, application-code: 28ms)
+ GET /frontend-audit-preview?screen=purchases&state=populated 200 in 41ms (next.js: 4ms, application-code: 36ms)
+ GET /frontend-audit-preview?screen=expenses&state=populated 200 in 42ms (next.js: 4ms, application-code: 38ms)
+ GET /frontend-audit-preview?screen=staff&state=populated 200 in 37ms (next.js: 4ms, application-code: 33ms)
+ GET /frontend-audit-preview?screen=consultations&state=populated 200 in 33ms (next.js: 4ms, application-code: 29ms)
+ GET /frontend-audit-preview?screen=sales&state=populated 200 in 36ms (next.js: 4ms, application-code: 32ms)
+ GET /frontend-audit-preview?screen=sales&state=populated 200 in 42ms (next.js: 4ms, application-code: 38ms)

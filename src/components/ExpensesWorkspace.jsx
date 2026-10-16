@@ -1,4 +1,6 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
+import {csvCell} from "@/lib/csv";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -213,7 +215,7 @@ function CategoryForm({ category, onClose, onSaved }) {
   }
   return (
     <div className="fixed inset-0 z-[110] grid place-items-center bg-black/45 p-4">
-      <form className="card w-full max-w-md p-6" onSubmit={submit}>
+      <DialogSurface as="form" onEscape={() => !saving && onClose()} className="card w-full max-w-md p-6" onSubmit={submit}>
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--green)]">
@@ -223,7 +225,7 @@ function CategoryForm({ category, onClose, onSaved }) {
               {category ? "Edit category" : "Add category"}
             </h3>
           </div>
-          <button type="button" onClick={onClose}>
+          <button aria-label="Close dialog" type="button" onClick={onClose}>
             <X />
           </button>
         </div>
@@ -260,7 +262,7 @@ function CategoryForm({ category, onClose, onSaved }) {
             Save category
           </button>
         </div>
-      </form>
+      </DialogSurface>
     </div>
   );
 }
@@ -325,7 +327,7 @@ function CategoriesManager({ categories, setCategories, onClose }) {
       className="fixed inset-0 z-[80] bg-black/40"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <aside className="ml-auto flex h-full w-full max-w-xl flex-col bg-white shadow-2xl">
+      <DialogSurface as="aside" onEscape={onClose} className="ml-auto flex h-full w-full max-w-xl flex-col bg-white shadow-2xl">
         <header className="flex items-start justify-between border-b border-[var(--line)] p-5">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--green)]">
@@ -336,7 +338,7 @@ function CategoriesManager({ categories, setCategories, onClose }) {
               Manage database-backed operating categories.
             </p>
           </div>
-          <button onClick={onClose}>
+          <button aria-label="Close dialog" onClick={onClose}>
             <X />
           </button>
         </header>
@@ -418,7 +420,7 @@ function CategoriesManager({ categories, setCategories, onClose }) {
             ))}
           </div>
         </div>
-      </aside>
+      </DialogSurface>
       {showForm && (
         <CategoryForm
           category={editing}
@@ -476,7 +478,7 @@ function ExpenseForm({
   }
   return (
     <div className="fixed inset-0 z-[70] overflow-y-auto bg-black/45 p-0 sm:p-4">
-      <form
+      <DialogSurface as="form" onEscape={() => !saving && onClose()}
         onSubmit={save}
         className="mx-auto min-h-screen w-full max-w-3xl bg-[#f7f8f4] sm:min-h-0 sm:rounded-2xl"
       >
@@ -491,7 +493,7 @@ function ExpenseForm({
                 : "Record an operating expense"}
             </h2>
           </div>
-          <button type="button" onClick={onClose}>
+          <button aria-label="Close dialog" type="button" onClick={onClose}>
             <X />
           </button>
         </header>
@@ -738,7 +740,7 @@ function ExpenseForm({
             </button>
           </div>
         </div>
-      </form>
+      </DialogSurface>
       {categoryForm && (
         <CategoryForm
           onClose={() => setCategoryForm(false)}
@@ -761,7 +763,7 @@ function ExpenseDrawer({ expense, onClose, onEdit, onDuplicate, onVoid }) {
       className="fixed inset-0 z-[60] bg-black/35"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <aside className="ml-auto flex h-full w-full max-w-xl flex-col bg-white shadow-2xl">
+      <DialogSurface as="aside" onEscape={onClose} className="ml-auto flex h-full w-full max-w-xl flex-col bg-white shadow-2xl">
         <header className="flex items-start justify-between border-b border-[var(--line)] p-5">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--green)]">
@@ -775,7 +777,7 @@ function ExpenseDrawer({ expense, onClose, onEdit, onDuplicate, onVoid }) {
               <Badge value={expense.status || "ACTIVE"} />
             </div>
           </div>
-          <button onClick={onClose}>
+          <button aria-label="Close dialog" onClick={onClose}>
             <X />
           </button>
         </header>
@@ -974,7 +976,7 @@ function ExpenseDrawer({ expense, onClose, onEdit, onDuplicate, onVoid }) {
             )
           )}
         </footer>
-      </aside>
+      </DialogSurface>
     </div>
   );
 }
@@ -1000,7 +1002,7 @@ function VoidModal({ expense, onClose, onVoided }) {
   }
   return (
     <div className="fixed inset-0 z-[100] grid place-items-center bg-black/45 p-4">
-      <div className="card w-full max-w-md p-6">
+      <DialogSurface as="div" onEscape={() => !saving && onClose()} className="card w-full max-w-md p-6">
         <AlertTriangle className="text-amber-600" />
         <h3 className="mt-3 text-xl font-extrabold">Void expense?</h3>
         <p className="mt-2 font-bold">
@@ -1031,7 +1033,7 @@ function VoidModal({ expense, onClose, onVoided }) {
             {saving ? "Voiding…" : "Void expense"}
           </button>
         </div>
-      </div>
+      </DialogSurface>
     </div>
   );
 }
@@ -1178,7 +1180,7 @@ export default function ExpensesWorkspace() {
         "Status",
         "Purchase Number",
       ];
-      const cell = (value) => `"${String(value ?? "").replaceAll('"', '""')}"`;
+      const cell = csvCell;
       const csv = [
         headers,
         ...result.rows.map((row) => [
@@ -1213,7 +1215,6 @@ export default function ExpensesWorkspace() {
       toast.error(failure.message);
     }
   }
-  // eslint-disable-next-line @next/next/no-location-assign-relative-destination
   const rows = data?.rows || [],
     kpis = data?.kpis || {},
     monthLabel = new Intl.DateTimeFormat("en-IN", {
@@ -1255,7 +1256,7 @@ export default function ExpensesWorkspace() {
           </button>
         </div>
       </div>
-      <div className="mb-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="workspace-kpis mb-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {[
           {
             label: "Today's expenses",
@@ -1334,7 +1335,7 @@ export default function ExpensesWorkspace() {
             className="absolute left-3 top-3.5 text-[var(--muted)]"
             size={18}
           />
-          <input
+          <input aria-label="Search description, category, payment reference, purchase ID or staff"
             className="field !pl-10"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
@@ -1443,7 +1444,7 @@ export default function ExpensesWorkspace() {
             }}
           />
           <div className="flex gap-2">
-            <select
+            <select aria-label="Sort order"
               className="field"
               value={`${filters.sort}:${filters.order}`}
               onChange={(event) => {
@@ -1584,7 +1585,7 @@ export default function ExpensesWorkspace() {
                           className="text-xs font-extrabold text-indigo-700"
                           onClick={(event) => {
                             event.stopPropagation();
-                            window.location.assign(
+                            router.push(
                               `/purchases?search=${encodeURIComponent(row.purchase?.purchaseNumber || "")}`,
                             );
                           }}
@@ -1633,7 +1634,7 @@ export default function ExpensesWorkspace() {
                     onVoid={() => setVoidTarget(row)}
                   />
                 </div>
-                <div className="mt-4 flex items-end justify-between">
+                <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
                   <div className="text-sm text-[var(--muted)]">
                     <p>{date(row.expenseDate)}</p>
                     <p className="mt-1">
@@ -1645,7 +1646,7 @@ export default function ExpensesWorkspace() {
                         "System"}
                     </p>
                   </div>
-                  <strong className="text-lg">
+                  <strong className="whitespace-nowrap text-lg">
                     {money(row.accountAmount)}
                   </strong>
                 </div>

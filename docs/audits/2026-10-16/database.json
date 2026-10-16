@@ -1,0 +1,424 @@
+{
+  "readOnly": true,
+  "measuredAt": "2026-10-16T12:41:45.632Z",
+  "queries": [
+    {
+      "name": "products",
+      "filter": {
+        "active": true,
+        "visibleInSales": {
+          "$ne": false
+        }
+      },
+      "sort": {
+        "name": 1
+      },
+      "plan": {
+        "isCached": false,
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 1
+        },
+        "inputStage": {
+          "stage": "SORT",
+          "sortPattern": {
+            "name": 1
+          },
+          "memLimit": 33554432,
+          "limitAmount": 20,
+          "type": "simple",
+          "inputStage": {
+            "stage": "COLLSCAN",
+            "filter": {
+              "$and": [
+                {
+                  "active": {
+                    "$eq": true
+                  }
+                },
+                {
+                  "visibleInSales": {
+                    "$not": {
+                      "$eq": false
+                    }
+                  }
+                }
+              ]
+            },
+            "direction": "forward"
+          }
+        }
+      },
+      "executionMs": 0,
+      "documents": 1,
+      "keys": 0,
+      "returned": 1
+    },
+    {
+      "name": "products",
+      "filter": {
+        "barcode": "__audit_nonexistent_barcode__"
+      },
+      "sort": null,
+      "plan": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "limitAmount": 20,
+        "inputStage": {
+          "stage": "PROJECTION_SIMPLE",
+          "transformBy": {
+            "_id": 1
+          },
+          "inputStage": {
+            "stage": "FETCH",
+            "inputStage": {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "barcode": 1
+              },
+              "indexName": "barcode_1",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "barcode": []
+              },
+              "isUnique": true,
+              "isSparse": true,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "barcode": [
+                  "[\"__audit_nonexistent_barcode__\", \"__audit_nonexistent_barcode__\"]"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "executionMs": 0,
+      "documents": 0,
+      "keys": 0,
+      "returned": 0
+    },
+    {
+      "name": "sales",
+      "filter": {},
+      "sort": {
+        "createdAt": -1
+      },
+      "plan": {
+        "isCached": false,
+        "stage": "PROJECTION_SIMPLE",
+        "transformBy": {
+          "_id": 1
+        },
+        "inputStage": {
+          "stage": "SORT",
+          "sortPattern": {
+            "createdAt": -1
+          },
+          "memLimit": 33554432,
+          "limitAmount": 20,
+          "type": "simple",
+          "inputStage": {
+            "stage": "COLLSCAN",
+            "direction": "forward"
+          }
+        }
+      },
+      "executionMs": 0,
+      "documents": 3,
+      "keys": 0,
+      "returned": 3
+    }
+  ],
+  "products": {
+    "count": 1,
+    "indexes": [
+      {
+        "key": {
+          "_id": 1
+        }
+      },
+      {
+        "key": {
+          "sku": 1
+        },
+        "unique": true
+      },
+      {
+        "key": {
+          "barcode": 1
+        },
+        "unique": true
+      },
+      {
+        "key": {
+          "wholesaleEnabled": 1
+        }
+      },
+      {
+        "key": {
+          "duplicateKey": 1
+        },
+        "unique": true
+      }
+    ]
+  },
+  "inventorybatches": {
+    "count": 1,
+    "indexes": [
+      {
+        "key": {
+          "_id": 1
+        }
+      },
+      {
+        "key": {
+          "productId": 1
+        }
+      }
+    ]
+  },
+  "sales": {
+    "count": 3,
+    "indexes": [
+      {
+        "key": {
+          "_id": 1
+        }
+      },
+      {
+        "key": {
+          "invoiceNumber": 1
+        },
+        "unique": true
+      },
+      {
+        "key": {
+          "customerType": 1
+        }
+      },
+      {
+        "key": {
+          "customerId": 1
+        }
+      },
+      {
+        "key": {
+          "paymentStatus": 1
+        }
+      },
+      {
+        "key": {
+          "saleType": 1
+        }
+      },
+      {
+        "key": {
+          "documentStatus": 1
+        }
+      },
+      {
+        "key": {
+          "requestKey": 1
+        },
+        "unique": true
+      }
+    ]
+  },
+  "customers": {
+    "count": 0,
+    "indexes": [
+      {
+        "key": {
+          "_id": 1
+        }
+      },
+      {
+        "key": {
+          "name": 1
+        }
+      },
+      {
+        "key": {
+          "normalizedPhone": 1
+        }
+      },
+      {
+        "key": {
+          "email": 1
+        }
+      },
+      {
+        "key": {
+          "status": 1
+        }
+      },
+      {
+        "key": {
+          "customerType": 1
+        }
+      }
+    ]
+  },
+  "categories": {
+    "count": 1,
+    "indexes": [
+      {
+        "key": {
+          "_id": 1
+        }
+      },
+      {
+        "key": {
+          "name": 1
+        },
+        "unique": true
+      },
+      {
+        "key": {
+          "slug": 1
+        },
+        "unique": true
+      }
+    ]
+  },
+  "purchases": {
+    "count": 0,
+    "indexes": [
+      {
+        "key": {
+          "_id": 1
+        }
+      },
+      {
+        "key": {
+          "purchaseNumber": 1
+        },
+        "unique": true
+      },
+      {
+        "key": {
+          "supplierId": 1
+        }
+      },
+      {
+        "key": {
+          "paymentStatus": 1
+        }
+      },
+      {
+        "key": {
+          "purchaseStatus": 1
+        }
+      },
+      {
+        "key": {
+          "purchasedAt": 1
+        }
+      }
+    ]
+  },
+  "expenses": {
+    "count": 0,
+    "indexes": [
+      {
+        "key": {
+          "_id": 1
+        }
+      },
+      {
+        "key": {
+          "expenseNumber": 1
+        },
+        "unique": true
+      },
+      {
+        "key": {
+          "categoryId": 1
+        }
+      },
+      {
+        "key": {
+          "category": 1
+        }
+      },
+      {
+        "key": {
+          "expenseDate": 1
+        }
+      },
+      {
+        "key": {
+          "source": 1
+        }
+      },
+      {
+        "key": {
+          "referenceId": 1
+        }
+      },
+      {
+        "key": {
+          "actorId": 1
+        }
+      },
+      {
+        "key": {
+          "status": 1
+        }
+      }
+    ]
+  },
+  "settings": {
+    "count": 0,
+    "indexes": [
+      {
+        "key": {
+          "_id": 1
+        }
+      },
+      {
+        "key": {
+          "key": 1
+        },
+        "unique": true
+      }
+    ]
+  },
+  "customerStats": {
+    "samples": [
+      {
+        "beforeMs": 27.202399999999898,
+        "afterMs": 27.840199999999868
+      },
+      {
+        "beforeMs": 28.828500000000076,
+        "afterMs": 29.224899999999934
+      },
+      {
+        "beforeMs": 30.137899999999945,
+        "afterMs": 28.53260000000023
+      },
+      {
+        "beforeMs": 29.073100000000068,
+        "afterMs": 29.88090000000011
+      },
+      {
+        "beforeMs": 28.767399999999725,
+        "afterMs": 28.6270999999997
+      }
+    ],
+    "outputsEqual": true,
+    "sampleLimit": 100,
+    "sampledCustomers": 0,
+    "mongoFixtureCasesPassed": 5
+  },
+  "ledgerProjection": {
+    "mongoFixtureCasesPassed": 2,
+    "originalBytes": 4954,
+    "projectedBytes": 961,
+    "outputsEqual": true
+  }
+}

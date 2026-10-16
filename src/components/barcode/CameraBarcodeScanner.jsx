@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 
 import { useEffect, useRef, useState } from "react";
 import { Camera, LoaderCircle, RefreshCw, X } from "lucide-react";
@@ -29,7 +30,8 @@ export default function CameraBarcodeScanner({ onDetected, onClose }) {
             : { facingMode: { ideal: "environment" } },
           audio: false,
         };
-        controlsRef.current = await reader.decodeFromConstraints(
+        if (!active) return;
+        const controls = await reader.decodeFromConstraints(
           constraints,
           video,
           (result) => {
@@ -39,6 +41,9 @@ export default function CameraBarcodeScanner({ onDetected, onClose }) {
             onDetected(result.getText());
           },
         );
+        // Permission/camera startup can finish after unmount or a device change.
+        if (!active) { controls.stop(); return; }
+        controlsRef.current = controls;
         const cameras = await BrowserMultiFormatReader.listVideoInputDevices();
         if (active) setDevices(cameras);
       } catch (failure) {
@@ -59,6 +64,7 @@ export default function CameraBarcodeScanner({ onDetected, onClose }) {
     return () => {
       active = false;
       controlsRef.current?.stop();
+      controlsRef.current = null;
       const stream = video?.srcObject;
       stream?.getTracks?.().forEach((track) => track.stop());
     };
@@ -69,7 +75,7 @@ export default function CameraBarcodeScanner({ onDetected, onClose }) {
       className="fixed inset-0 z-[160] grid place-items-end bg-black/55 p-0 sm:place-items-center sm:p-4"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <section
+      <DialogSurface onEscape={onClose}
         className="w-full rounded-t-3xl bg-white p-5 shadow-2xl sm:max-w-xl sm:rounded-2xl"
         role="dialog"
         aria-modal="true"
@@ -157,7 +163,7 @@ export default function CameraBarcodeScanner({ onDetected, onClose }) {
             Cancel
           </button>
         </footer>
-      </section>
+      </DialogSurface>
     </div>
   );
 }

@@ -2661,14 +2661,14 @@ export default function SettingsWorkspace() {
               className="absolute left-3 top-3 text-[var(--muted)]"
               size={17}
             />
-            <input
+            <input aria-label="Search settings"
               className="field !pl-10"
               value={search}
               onChange={(event) => setSearch(event.target.value)}
               placeholder="Search settings..."
             />
           </div>
-          <select
+          <select aria-label="Settings section"
             className="field lg:hidden"
             value={section}
             onChange={(event) => setSection(event.target.value)}

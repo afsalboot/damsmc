@@ -122,7 +122,8 @@ export async function getProducts(filter = {}) {
   const byProduct = new Map();
   for (const batch of batches) {
     const key = String(batch.productId);
-    byProduct.set(key, [...(byProduct.get(key) || []), batch]);
+    if (!byProduct.has(key)) byProduct.set(key, []);
+    byProduct.get(key).push(batch);
   }
   return products.map((product) => {
     const productBatches = byProduct.get(String(product._id)) || [];

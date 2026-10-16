@@ -2,15 +2,16 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { normalizeUsername, validPassword } from "../src/lib/password-policy.js";
+import { assertStaffRoleAssignment } from "../src/lib/staff-role-assignment.js";
 
 const source = (await readFile(new URL("../src/services/staff.service.js", import.meta.url), "utf8"))
   .replace(/^import .*;\r?\n/gm, "").replace(/export \{normalizePermissions\};/, "").replaceAll("export async function", "async function");
-function harness() {
+function harness({ rolePermissions = {} } = {}) {
   const created = [];
   const user = { _id: "id", username: "old.user", authVersion: 2, save: async () => {}, markModified: () => {} };
-  const role = { _id: "role", name: "Cashier", slug: "cashier" };
+  const role = { _id: "role", name: "Cashier", slug: "cashier", permissions: rolePermissions };
   const deps = { bcrypt: { hash: async () => "hashed-password" }, passwordValid: validPassword, normalizeUsername,
-    PASSWORD_POLICY_MESSAGE: "Strong password required", ensureDefaultRoles: async () => [role],
+    PASSWORD_POLICY_MESSAGE: "Strong password required", ensureDefaultRoles: async () => [role], assertStaffRoleAssignment,
     User: { init: async () => {}, create: async (data) => { created.push(data); return { _id: "id" }; }, findOne: async () => user },
     StaffRole: { findOne: async () => role }, AuditLog: { create: async () => {} } };
   const methods = new Function(...Object.keys(deps), `${source}; getStaffDetails = async (id) => id; return {createStaff, updateStaff, resetStaffPassword};`)(...Object.values(deps));
@@ -34,6 +35,15 @@ test("staff username changes invalidate existing sessions", async () => {
   await h.updateStaff("id", body, actor);
   assert.equal(h.user.username, "new.user");
   assert.equal(h.user.authVersion, 3);
+});
+
+test("staff role escalation is rejected before creating or saving an account", async () => {
+  const h = harness({ rolePermissions: { sales: { create: true } } });
+  const limitedActor = { role: "STAFF", permissions: ["staff.create", "staff.edit"] };
+  await assert.rejects(h.createStaff(body, limitedActor), error => error.status === 403);
+  await assert.rejects(h.updateStaff("id", body, limitedActor), error => error.status === 403);
+  assert.equal(h.created.length, 0);
+  assert.equal(h.user.username, "old.user");
 });
 test("staff password reset applies strong policy and invalidates existing credentials", async () => {
   const h = harness();

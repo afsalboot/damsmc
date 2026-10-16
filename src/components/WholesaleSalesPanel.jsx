@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -105,7 +106,7 @@ function WholesaleQuantityModal({ product, onClose, onAdd }) {
       className="fixed inset-0 z-[95] grid place-items-center bg-black/45 p-4"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <section
+      <DialogSurface as="section" onEscape={onClose}
         className="card max-h-[92vh] w-full max-w-lg overflow-y-auto p-6"
         role="dialog"
         aria-modal="true"
@@ -307,7 +308,7 @@ function WholesaleQuantityModal({ product, onClose, onAdd }) {
             Add to wholesale cart
           </button>
         </div>
-      </section>
+      </DialogSurface>
     </div>
   );
 }

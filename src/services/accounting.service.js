@@ -1,5 +1,9 @@
 export const ACCOUNT_DIRECTIONS={IN:"IN",OUT:"OUT"};
 export const ACCOUNT_TRANSACTION_TYPES={SALE:"SALE",PURCHASE:"PURCHASE",EXPENSE:"EXPENSE",CONSULTATION:"CONSULTATION",CONSULTATION_REFUND:"CONSULTATION_REFUND"};
+// Ledger rows need the line count, not full recipes, stock allocations or tax snapshots.
+export const LEDGER_SALE_FIELDS="createdAt total payments invoiceNumber customerSnapshot.name cashierSnapshot.name actorId items.kind";
+export const LEDGER_EXPENSE_FIELDS="status source paidAmount amount referenceId description expenseNumber category staffId staffSnapshot paidTo title paymentMethod paymentReference expenseDate createdAt actorId creatorSnapshot";
+export const LEDGER_CONSULTATION_FIELDS="opNumber patient.name doctorSnapshot.name creatorSnapshot.name paymentMethod paymentReference consultationFee createdAt status refundedAmount cancelledAt cancellationReason refundReference";
 
 const money=(value)=>Math.round((Number(value||0)+Number.EPSILON)*100)/100;
 const text=(value)=>String(value??"").trim();

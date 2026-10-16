@@ -1,0 +1,122 @@
+
+> oushadi-pos@0.1.0 build
+> next build
+
+▲ Next.js 16.3.8 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.mjs took 13ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1410ms
+  Running TypeScript ...
+  Finished TypeScript in 3ms ...
+  Collecting page data using 19 workers ...
+  Generating static pages using 19 workers (0/70) ...
+  Generating static pages using 19 workers (17/70) 
+  Generating static pages using 19 workers (34/70) 
+  Generating static pages using 19 workers (52/70) 
+✓ Generating static pages using 19 workers (70/70) in 330ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /accounts
+├ ƒ /api/accounts
+├ ƒ /api/auth/bootstrap
+├ ƒ /api/auth/change-password
+├ ƒ /api/auth/login
+├ ƒ /api/auth/logout
+├ ƒ /api/auth/pin
+├ ƒ /api/auth/pin-login
+├ ƒ /api/auth/status
+├ ƒ /api/auth/username-login
+├ ƒ /api/auth/users
+├ ƒ /api/backups
+├ ƒ /api/backups/[name]
+├ ƒ /api/backups/folders
+├ ƒ /api/backups/restore
+├ ƒ /api/categories
+├ ƒ /api/consultations
+├ ƒ /api/consultations/[id]
+├ ƒ /api/consultations/[id]/cancel
+├ ƒ /api/consultations/options
+├ ƒ /api/consultations/reset-tokens
+├ ƒ /api/customers
+├ ƒ /api/customers/[id]
+├ ƒ /api/customers/search
+├ ƒ /api/dashboard
+├ ƒ /api/doctors
+├ ƒ /api/doctors/[id]
+├ ƒ /api/expense-categories
+├ ƒ /api/expense-categories/[id]
+├ ƒ /api/expenses
+├ ƒ /api/expenses/[id]
+├ ƒ /api/expenses/[id]/void
+├ ƒ /api/health
+├ ƒ /api/notifications
+├ ƒ /api/products
+├ ƒ /api/products/[id]
+├ ƒ /api/products/[id]/adjustment
+├ ƒ /api/products/[id]/stock
+├ ƒ /api/products/barcode/[barcode]
+├ ƒ /api/products/barcode/generate
+├ ƒ /api/products/bulk
+├ ƒ /api/products/duplicates
+├ ƒ /api/products/import
+├ ƒ /api/products/merge
+├ ƒ /api/products/sales-index
+├ ƒ /api/purchases
+├ ƒ /api/purchases/[id]
+├ ƒ /api/purchases/[id]/cancel
+├ ƒ /api/purchases/[id]/stock-transactions
+├ ƒ /api/reports/[type]
+├ ƒ /api/roles
+├ ƒ /api/roles/[id]
+├ ƒ /api/sales
+├ ƒ /api/sales/[id]
+├ ƒ /api/search
+├ ƒ /api/settings
+├ ƒ /api/settings/audit
+├ ƒ /api/settings/invoice-reset
+├ ƒ /api/settings/receipt
+├ ƒ /api/settings/reset
+├ ƒ /api/staff
+├ ƒ /api/staff/[id]
+├ ƒ /api/staff/[id]/activity
+├ ƒ /api/staff/[id]/deactivate
+├ ƒ /api/staff/[id]/reactivate
+├ ƒ /api/staff/[id]/reset-password
+├ ƒ /api/staff/options
+├ ƒ /api/suppliers
+├ ƒ /api/suppliers/[id]
+├ ○ /apple-icon.png
+├ ƒ /change-password
+├ ƒ /consultations
+├ ƒ /consultations/report
+├ ƒ /customers
+├ ƒ /dashboard
+├ ƒ /expenses
+├ ○ /icon.png
+├ ƒ /login
+├ ƒ /login-pin
+├ ƒ /notifications
+├ ƒ /products
+├ ƒ /purchases
+├ ƒ /reports
+├ ƒ /sales
+├ ƒ /sales/[id]
+├ ƒ /sales/new
+├ ƒ /sales/recent
+├ ƒ /settings
+├ ƒ /settings/change-password
+├ ƒ /settings/login-pin
+├ ƒ /staff
+└ ƒ /suppliers
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

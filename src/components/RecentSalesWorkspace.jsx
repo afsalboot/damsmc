@@ -83,6 +83,7 @@ function Kpi({ label, value, note, icon: Icon }) {
 }
 
 export default function RecentSalesWorkspace() {
+  const [revision, setRevision] = useState(0);
   const [data, setData] = useState(null),
     [loading, setLoading] = useState(true),
     [error, setError] = useState(""),
@@ -129,7 +130,7 @@ export default function RecentSalesWorkspace() {
     return () => {
       active = false;
     };
-  }, [query]);
+  }, [query, revision]);
   function updateFilter(key, value) {
     setFilters((current) => ({ ...current, [key]: value }));
     setPage(1);
@@ -178,7 +179,7 @@ export default function RecentSalesWorkspace() {
           New sale
         </Link>
       </header>
-      <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+      <section className="workspace-kpis grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         <Kpi
           label="Invoices"
           value={summary.invoices || 0}
@@ -210,7 +211,7 @@ export default function RecentSalesWorkspace() {
             className="absolute left-3 top-3.5 text-[var(--muted)]"
             size={18}
           />
-          <input
+          <input aria-label="Search invoice, customer, phone, or cashier"
             className="field !pl-10"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
@@ -295,6 +296,7 @@ export default function RecentSalesWorkspace() {
               Unable to load recent sales
             </h2>
             <p className="mt-2 text-sm text-[var(--muted)]">{error}</p>
+            <button type="button" className="btn mt-4" disabled={loading} onClick={() => setRevision(value => value + 1)}>Retry</button>
           </div>
         </section>
       ) : loading ? (

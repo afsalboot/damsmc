@@ -1,0 +1,32 @@
+
+> dr-abdullas-pos-desktop@0.1.7 test
+> node --test *.test.mjs
+
+✔ Dr Abdulla and Oushadhi generate different NSIS registrations and installation directories (9.4398ms)
+✔ runtime profile and taskbar identities match this customer's installer (0.5577ms)
+✔ release and lockfile metadata stay synchronized (0.2671ms)
+✔ schedule stays off by default and throttles retries (0.9914ms)
+✔ saves exact encrypted bytes, persists success, and leaves no partial files (166.8793ms)
+✔ failed download retries the same server archive without creating another (129.7182ms)
+✔ rejects unauthorized responses and unsafe names without writing archives (85.6186ms)
+✔ rejects HTML downloads and concurrent runs (43.5946ms)
+✔ packaged builds always use the production server (0.9002ms)
+✔ navigation accepts application routes and rejects foreign or privileged URLs (0.3859ms)
+✔ each computer can select POS80, Helett, or any exact installed name (1.055ms)
+✔ missing default or disconnected saved printer requires explicit selection (0.2248ms)
+✔ opted-in logins persist encrypted across restart and suggestions never contain passwords (28.0076ms)
+✔ production and local accounts cannot fill or delete each other's secrets (30.9496ms)
+✔ concurrent saves retain both accounts and password updates retain the existing account id (106.4642ms)
+✔ unavailable or failing encryption cannot write plaintext or destroy the prior vault (63.2071ms)
+✔ damaged encrypted storage does not silently reset saved accounts (53.7264ms)
+✔ save needs successful authentication and explicit Save; failures, Not now and stale outcomes save nothing (28.5807ms)
+✔ saved login IPC rejects foreign pages, subframes and different senders before revealing a password (27.4237ms)
+✔ forget requires consent, and failed or PIN authentication cannot qualify a save (33.4537ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 601.4953

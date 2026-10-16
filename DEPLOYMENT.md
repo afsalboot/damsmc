@@ -1,5 +1,11 @@
 # Production deployment
 
+## Vercel deployment
+
+The Electron production URL targets Vercel. When `VERCEL=1`, encrypted backup archives use MongoDB GridFS; `BACKUP_DIR` is unnecessary and the process timer is disabled. Backup status requests can trigger a due automatic backup, so automatic backups currently depend on user traffic. A guaranteed unattended schedule requires a separately secured scheduler; no such cron integration is configured in this repository. Verify function execution, body-size and archive-size limits before using application backups on a large dataset. Keep independent database-native backups and test recovery in an isolated database.
+
+The startup configuration checker also supports this GridFS mode. On a self-hosted Node deployment, the persistent filesystem requirements below still apply. Local configuration checks do not verify hosted environment variables or infrastructure.
+
 ## Release checks
 
 Use a supported Node.js LTS release compatible with Next.js 16 (Node 22 or 24), a long-running Node process, HTTPS, and MongoDB configured as a replica set or sharded cluster. Standalone MongoDB cannot support the transactions used by checkout, receiving, restore, and backup snapshots.

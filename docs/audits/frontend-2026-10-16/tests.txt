@@ -1,0 +1,626 @@
+
+> oushadi-pos@0.1.0 test
+> node --test tests/*.test.mjs
+
+(node:29544) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/accounting.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ accounts include sale receipts and purchase-linked expenses once (20.8048ms)
+✔ sale payments are capped at the bill total (0.669ms)
+✔ wholesale credit invoices do not create cash movements before payment (0.1969ms)
+✔ accounts use only the paid portion of a supplier purchase (0.4848ms)
+✔ void expenses remain auditable but are excluded from Accounts (0.2482ms)
+✔ manual expense movements use their stable expense number and title (0.4662ms)
+✔ split sale payments stay one transaction with channel-level reconciliation (1.5361ms)
+✔ running balances remain chronological when rows are newest first (0.9523ms)
+✔ server filters and pagination do not change ledger balances (0.8208ms)
+✔ cash-flow chart groups transaction days in the store timezone (0.5609ms)
+✔ account filters accept multiple transaction types and payment methods (0.5882ms)
+(node:15052) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/csv.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ spreadsheet exports neutralize formulas including whitespace-prefixed cells (1.2439ms)
+✔ CSV retains numeric amounts, quotes, commas and empty cells (0.3712ms)
+(node:8660) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/dashboard-dates.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ dashboard counts received purchases using the persisted purchaseStatus field (25.0142ms)
+✔ discarding exhausted historical batches preserves dashboard inventory and low-stock summaries (0.568ms)
+✔ scanner stops a camera that resolves after the effect has been cleaned up (5.71ms)
+✔ confirmation dialog lets Enter activate the focused Cancel button (0.7631ms)
+(node:35212) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/request-origin.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ same-origin writes use destination Host when Next normalizes the internal hostname (26.5981ms)
+✔ foreign, null, malformed, different scheme and different port origins are blocked (0.3953ms)
+✔ untrusted forwarded host cannot override Host and non-browser clients retain auth enforcement (0.2004ms)
+(node:28964) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/query-input.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ database limits are positive bounded integers for adversarial URL inputs (1.1641ms)
+✔ search metacharacters are literal and excessive queries are rejected (0.7894ms)
+✔ global search rechecks current admin authorization before any resource query (25.8886ms)
+✔ product endpoint treats attack patterns literally and rejects oversized queries before fetching (1.2428ms)
+✔ recent sales handler bounds malformed pagination and fails closed for invalid customer IDs (2.6037ms)
+(node:22232) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/staff-role-assignment.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ staff creation/edit permissions cannot grant a role above the actor's permissions (2.2197ms)
+✔ owner and explicitly delegated permission managers can assign roles (0.2978ms)
+✔ persistent attempt pipeline increments an active window and resets an expired one (1.6682ms)
+✔ attempt budgets share database state across service instances and simultaneous requests (1.3962ms)
+✔ database throttle errors fail closed (0.4526ms)
+(node:1604) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/backup-folders.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ drive picker lists only accessible Windows drives (2.6597ms)
+✔ folder browser excludes files and returns sorted navigable folders (12.1617ms)
+✔ invalid paths never reach the filesystem and access errors are readable (0.962ms)
+(node:552) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/backup-storage.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Vercel uses durable database storage even with a saved filesystem override (0.5731ms)
+✔ encrypted archives survive separate storage clients and download byte for byte (5.1872ms)
+✔ failed uploads reject and clean up their partial chunks (1.9731ms)
+(node:18236) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/backup-storage.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ saved backup folder overrides the environment and blank restores the fallback (1.2233ms)
+✔ backup directory validation rejects relative paths, control characters and non-strings (1.2656ms)
+✔ storage check writes and removes only its unique probe file (1.3856ms)
+✔ storage check rejects inaccessible directories without deleting existing files (0.6122ms)
+(node:23392) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/barcode.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ barcode normalization preserves identifiers but removes surrounding whitespace (1.0727ms)
+✔ barcode validation rejects embedded spaces and accepts internal Code 128 values (1.0939ms)
+✔ barcode format detection covers common retail identifiers (0.5047ms)
+(node:38392) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/batch-expiry.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Hair Tone Oil's three expired bottles remain visibly flagged (2.521ms)
+✔ sold-out expired batches do not flag fresh stock (0.1985ms)
+✔ mixed batches flag remaining expired loose stock and show its date (0.0961ms)
+✔ expiry today stays valid through today, matching checkout (0.9384ms)
+(node:13272) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/inventory-value.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ stock without purchase costs still has a selling value, and missing cost is explicit (1.8251ms)
+✔ count-based inventory never treats tablet quantities as package weight (0.333ms)
+✔ receipt percentage survives Mongoose casting and retains the discount amount (9.4412ms)
+(node:39120) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/checkout-customer.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ blank customer fields complete as walk-in (1.1306ms)
+✔ exact names and normalized phone numbers link existing retail customers (0.1895ms)
+✔ unmatched name or number creates a new retail customer (0.1637ms)
+✔ phone takes precedence over a shared name and wholesale is excluded (0.1023ms)
+✔ ambiguous names require selection and explicit selection resolves ambiguity (0.3515ms)
+✔ checked wholesale customer entry matches only the wholesale directory (0.0993ms)
+✔ switching wholesale clears incompatible selected customer identity (0.0794ms)
+✔ wholesale discount without customer details stays walk-in (0.073ms)
+(node:9096) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/checkout-request.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ checkout retry retains its key across network and response-body failures (31.4068ms)
+✔ uncertain HTTP outcomes retain the retry key; definitive rejections clear it (2.058ms)
+✔ two same-turn submits cannot both enter customer lookup or payment submission (2.1577ms)
+✔ a customer lookup failure unlocks checkout and is surfaced without an unhandled rejection (0.9469ms)
+✔ direct checkout uses the same synchronous submit lock (0.8083ms)
+(node:27900) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/pricing.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ consultation fee increases total without altering product subtotal (4.1001ms)
+✔ unchecking consultation ignores a previously entered amount (0.4262ms)
+✔ wholesale discount applies to products and does not reduce consultation fee (0.4105ms)
+✔ rounding includes the consultation fee (0.5005ms)
+✔ enabled consultation fee rejects blank, negative, non-finite and excessive values (1.3252ms)
+✔ saved sale retains fee and finalized fee field is immutable (8.5307ms)
+(node:20384) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/settings.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ disabled feature rejects creation before writes, including a concurrent settings toggle (7.726ms)
+✔ inactive doctor cannot issue a ticket or consume numbers (1.1268ms)
+✔ ticket numbers, snapshots and audit share one database transaction (2.2528ms)
+✔ retry of an issued request returns its ticket without new counters or payments (0.668ms)
+✔ cancellation requires explicit refund confirmation and records actor plus audit (1.3963ms)
+✔ retrying cancellation does not record another refund (0.6752ms)
+✔ updates correct patient and doctor snapshots without changing collected payment (1.0885ms)
+✔ updates reject invalid patient, financial edits, inactive doctor and cancelled tickets (6.6702ms)
+✔ delete requires completed cancellation and retains payment and refund records (2.4005ms)
+✔ update and delete require explicit permissions and the enabled feature (2.3445ms)
+✔ reset restarts today's displayed tokens while preserving OP and internal uniqueness (3.1775ms)
+✔ retried reset does not reset tokens issued after the first request (2.2683ms)
+✔ reset rejects staff, missing confirmation, stale dates and disabled module (2.2204ms)
+✔ reset affects only today's token counter (0.7129ms)
+(node:15840) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/consultation.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ consultation defaults off and remains explicitly enabled only by Settings (2.7154ms)
+✔ consultation accepts an unlinked patient and snapshots optional details (0.3727ms)
+✔ fee overrides, disabled payments and missing bank references are rejected (1.1866ms)
+✔ patient fields and ages are validated (0.3145ms)
+✔ cancelled consultations are excluded from collection summary (5.3586ms)
+✔ receipt layouts share conservative content widths and reject arbitrary CSS values (0.4606ms)
+✔ OP, request IDs and branch/day tokens have unique database indexes (0.8586ms)
+✔ existing staff do not gain consultation permissions and owner gets configuration access (0.6377ms)
+✔ ledger preserves consultation collection and later refund as separate movements (22.4001ms)
+(node:15412) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/dashboard-dates.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ This Week starts Monday, Last 7 Days includes the prior six days (2.235ms)
+✔ custom range includes both complete IST dates and equal previous period (0.257ms)
+✔ date validation rejects missing, reversed and impossible dates (0.3903ms)
+✔ today uses IST even when UTC date differs (0.3719ms)
+✔ long chart ranges cover all dates without gaps and limit plotted buckets (0.7633ms)
+(node:26580) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/dashboard-summary.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ dashboard includes cart wholesale discount sales and earlier wholesale invoices once (2.8185ms)
+✔ deleted or inactive product batches do not enter current stock summaries (0.6599ms)
+✔ count-based stock uses loose counts rather than package weight (0.2339ms)
+✔ empty current inventory and retail-only sales produce empty summaries (0.2336ms)
+(node:8616) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/direct-checkout.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ checkout window remains enabled for existing settings (2.5259ms)
+✔ direct checkout requires explicit server-side enablement (0.6959ms)
+✔ direct checkout records the server total as Cash regardless of client payment values (0.9768ms)
+✔ direct checkout cannot use a disabled payment method (0.9923ms)
+(node:36880) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/document-number.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ formats document date-time in the store timezone (21.2503ms)
+✔ adds a continuous three digit sequence (1.1922ms)
+✔ finds the highest existing suffix across different timestamps (0.4778ms)
+(node:10516) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/external-purchase.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ selling-price-only external items need no supplier data and create no expense (6.1738ms)
+✔ external costs and revenue use quantity and decimal money; tracking is forced off (1.8386ms)
+✔ required values and malformed external inputs fail server validation (0.5105ms)
+✔ manual and linked external history edits never need a live product or stock returns (0.516ms)
+✔ internal supplier and cost data require existing staff permissions (0.3343ms)
+✔ schema persists line snapshots and all supplier payment methods (12.0671ms)
+✔ supplier expenses synchronize once, survive reordered lines, and retain unpaid balances (0.6451ms)
+✔ cash ledger subtracts cash external costs once; other modes leave physical cash unchanged (22.4331ms)
+✔ receipt renderer never renders supplier cost or source fields (0.721ms)
+✔ rendered thermal invoice includes external selling information and no supplier information (123.3111ms)
+✔ sales and profit reports include external margins without claiming unavailable inventory COGS (0.9482ms)
+(node:2388) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/filter-utils.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ multi-select filters serialize without losing values that contain commas (1.6702ms)
+✔ server query values accept comma-separated and repeated parameters (0.2537ms)
+✔ empty arrays are not treated as active filters (0.1514ms)
+(node:29788) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/models/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ fiscal schema extensions are accessible on actual mongoose documents (14.1359ms)
+✔ an existing mongoose invoice cannot replace immutable totals or numbering (3.6602ms)
+(node:18140) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/full-stock-adjustment.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ full stock corrections use package counts without box conversion (1.694ms)
+✔ reductions span batches without changing open quantities or batch metadata (2.0426ms)
+✔ zero clears only full packages and unchanged counts have no adjustment (0.7194ms)
+✔ count-based stock corrections never use package weight as a loose count (1.5095ms)
+✔ invalid full stock values are rejected (0.5826ms)
+(node:34080) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/future-invoice-reset.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ reset keeps INV and previews timestamp format with 001 in India time (24.3232ms)
+✔ timestamp invoice suffix is continuous and restarts after resetting the counter (1.0985ms)
+✔ same-second reset skips occupied invoice numbers (0.4931ms)
+✔ reset version invalidates old previews without depending on the clock (0.8285ms)
+(node:16644) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/gst-compliance.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ unregistered profile cannot collect output GST even with a plausible GSTIN (3.4071ms)
+✔ complete regular registration is accepted; required metadata is not just a regex (2.9136ms)
+✔ checksum and state detect malformed supplier/customer IDs (0.3405ms)
+✔ invalid calendar dates, future registration and expired registration fail (0.5674ms)
+✔ composition never separately collects GST (0.4855ms)
+✔ delivery address determines ordinary interstate B2C supply (0.5904ms)
+✔ B2C counter address on record determines POS; anonymous counter defaults supplier (0.2107ms)
+✔ special supplies and invalid delivery states cannot silently be ordinary goods (0.3188ms)
+✔ UTGST and SGST stay distinct and components reconcile (0.4111ms)
+✔ tax invoice, bill of supply and commercial invoice are distinct (0.6512ms)
+✔ B2B identity, large B2C identity, HSN and unclassified mixtures are blocked (0.4602ms)
+✔ potentially mandated e-invoice fails closed rather than issuing without IRN (0.1929ms)
+✔ HSN requirements increase with preceding-year turnover (0.324ms)
+✔ line discount stays with the 5 percent item (1.4179ms)
+✔ discount eligibility is respected (0.6202ms)
+✔ largest remainder never over-allocates discount across tiny lines (2.3613ms)
+✔ decimal arithmetic handles ties, precise unit prices and inclusive tax (0.4087ms)
+✔ multiple rates and product inclusive/exclusive overrides reconcile (0.4521ms)
+✔ odd paise components conserve invoice tax across many lines (7.0368ms)
+✔ purchase inclusive base and discounted exclusive tax are corrected (0.8052ms)
+✔ purchase odd-paise tax and additional charge tax reconcile (0.3558ms)
+✔ invoice numbering uses IST datetime and continuous sequence across registration (16.776ms)
+✔ restore rejects removed or altered issued documents (1.2201ms)
+✔ idempotency validates actor and request fingerprint (0.3955ms)
+✔ fiscal register includes unpaid supplies and preserves snapshot HSN (0.9664ms)
+(node:42292) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/gst.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ inclusive intrastate GST is extracted and split into CGST and SGST (3.6611ms)
+✔ exclusive interstate GST is added as IGST (0.5406ms)
+✔ cart discount reduces taxable value before GST (0.6275ms)
+✔ disabled GST preserves the discounted total (0.3553ms)
+✔ legacy cart setting cannot overwrite product classifications (0.6122ms)
+✔ legacy override switch cannot change explicit product rates (4.9822ms)
+✔ tax type follows place of supply despite legacy force setting (0.4421ms)
+✔ product price mode can override the store price treatment (0.529ms)
+(node:27056) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/inventory.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ 200 ml loose opens one 400 ml bottle (3.3141ms)
+✔ loose sale consumes open quantity before another package (0.2717ms)
+✔ loose sale can span an open and sealed package (0.1648ms)
+✔ packet stock formats physically (0.7859ms)
+✔ sealed stock is displayed as boxes plus individual bottles (0.183ms)
+✔ package deduction never consumes open stock (0.5117ms)
+✔ count-on-open uses entered count then deducts the sale (0.2777ms)
+✔ count-based sale consumes existing loose stock first (0.1823ms)
+✔ fixed count opens without cashier input (0.1811ms)
+✔ count stock keeps package weight separate from loose units (0.2268ms)
+✔ count-on-open rejects fractional physical counts (0.2569ms)
+✔ low stock compares standard products in package equivalents (0.1962ms)
+✔ low stock alerts when sealed package stock reaches its package threshold (0.1405ms)
+✔ count-based low stock never converts package weight into loose counts (0.1046ms)
+(node:1568) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/password-policy.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ PIN validation accepts leading zeroes and rejects malformed credentials (1.1107ms)
+✔ username PIN login reserves a persistent bounded attempt and issues the normal session (1.6717ms)
+✔ email and user ID cannot replace username in PIN login (0.5445ms)
+✔ wrong PIN, locked or unavailable accounts and account changes cannot issue sessions (0.4788ms)
+✔ persistent IP throttling blocks PIN attempts before the user update (1.4234ms)
+✔ PIN setup requires authentication, current password and an existing username (10.4362ms)
+✔ PIN setup hashes the PIN and invalidates old sessions (0.3645ms)
+✔ PIN removal clears the hash and concurrent password resets block setup (0.4195ms)
+✔ public user enumeration is disabled (7.054ms)
+✔ legacy login URL only delegates to username authentication (2.4327ms)
+(node:22384) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/notification-utils.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ notification day follows the configured store timezone (20.1571ms)
+✔ supplier outstanding notification is stable for one store day (0.6018ms)
+✔ supplier outstanding notification changes on the next store day (0.4118ms)
+(node:6768) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/pricing.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ nearest rupee round off (1.5459ms)
+✔ disabled discount and round off are fully ignored (1.0233ms)
+✔ enabled settings apply discount then round off (0.3576ms)
+✔ configured percentage discount is calculated from the cart subtotal (0.6417ms)
+✔ configured fixed discount respects its maximum (0.6298ms)
+✔ round off is calculated after discount (0.3236ms)
+(node:6620) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-bulk-fields.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ bulk edits accept current fields and reject identity, inventory and malformed values (2.3636ms)
+✔ price changes recalculate proportional loose price without replacing untouched fields (0.6831ms)
+✔ stocked products reject conversion edits but permit stock-pack grouping (0.655ms)
+✔ GST checks apply only when tax fields change and exemptions stay consistent (1.3125ms)
+✔ CSV and manual entry cover stock packs and all current wholesale fields (0.3175ms)
+✔ blank optional CSV fields use defaults and numeric zero is retained (0.7534ms)
+✔ legacy total package CSV and current box/remainder CSV produce the same stock (0.3417ms)
+✔ enabling wholesale packs inherits stock-pack conversion unless explicitly supplied (0.2533ms)
+(node:9024) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-bulk.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ bulk price adjustment supports increases, reductions, and currency rounding (0.9143ms)
+✔ mass deletion deletes selected products even when they have history (0.7604ms)
+✔ enabling wholesale repairs missing legacy defaults before validation (0.2497ms)
+✔ wholesale-only bulk edits do not trigger GST and HSN validation (1.0143ms)
+(node:4248) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-import-fields.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ bulk category matching ignores case in both stored and imported names (18.3967ms)
+(node:13596) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-validation.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ product creation saves same-name batch/price variants and their opening inventory (6.0466ms)
+✔ product creation rejects identical details, batch and price with HTTP 409 (0.9436ms)
+✔ batch identity persists even when no opening stock is supplied (1.1562ms)
+(node:664) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-duplicates.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ creation allows batch and price variants but rejects matching batch and price (1.3239ms)
+✔ duplicate details normalize names and brands while preserving distinct pack sizes and brands (2.3584ms)
+✔ name check finds different packs for review; empty identifiers never form duplicate groups (0.4488ms)
+✔ merge allows price differences but rejects incompatible physical inventory (0.4362ms)
+✔ purchase cancellation keeps its original batch when merged products share batch names (0.2965ms)
+(node:39260) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-import-duplicates.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ default imports preserve different batches and selling prices across existing and sheet rows (2.3236ms)
+✔ selected name matching ignores pack size while details matching keeps it distinct (0.332ms)
+✔ SKU and barcode matching ignore empty values and match only the selected identifier (1.6975ms)
+✔ imports identify existing products without SKU despite case and spacing differences (0.2184ms)
+✔ different sizes, units, categories, packaging and specified brands remain distinct (0.2459ms)
+✔ successful rows enter duplicate index for later rows and later batches (0.1436ms)
+(node:40076) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-import-progress.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ progress reflects completed batches and reports original sheet row numbers (1.9986ms)
+✔ interrupted imports preserve successes and never show false completion or retry (0.4868ms)
+(node:16248) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-import-sample.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ simple sample imports required details and full opening stock (11.2812ms)
+✔ standalone sample matches in-app sample (2.0716ms)
+(node:36664) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-duplicates.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ merge endpoint requires owner access and makes no writes for staff (2.0764ms)
+✔ merge rejects invalid, repeated and self-referencing IDs before writes (0.9052ms)
+✔ name duplicates with different pack sizes cannot merge (0.834ms)
+✔ ambiguous purchase batches stop the merge before records move (0.5645ms)
+✔ merge moves references transactionally, preserves snapshots and batch quantities, audits before deleting (0.7952ms)
+(node:33520) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/product-validation.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ normalizes product CSV values (2.8523ms)
+✔ opening boxes and individual packages become sealed package stock (0.3246ms)
+✔ calculates the loose-unit price from package price and size (0.1338ms)
+✔ accepts common CSV boolean representations (0.1268ms)
+✔ normalizes current Add Product fields from the CSV template (0.7467ms)
+✔ normalizes an unselected free-scheme product to null (0.3031ms)
+✔ normalizes barcode metadata and rejects accidental spaces (0.6201ms)
+✔ stores a non-taxable product with zero GST and a product GST price mode (0.2213ms)
+✔ rejects missing identity and invalid stock values (0.3582ms)
+✔ normalizes opening loose stock and explicit custom pricing (0.346ms)
+✔ requires expiry after manufacturing date for tracked batches (0.2357ms)
+✔ validates unknown count-on-open jars without kg conversion (0.2304ms)
+✔ fixed count requires positive whole units per package (1.1877ms)
+(node:10812) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/db-connection.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ failed database connection can retry and concurrent callers share a connection (2.9397ms)
+✔ production first-owner setup is closed without the deployment token (1.119ms)
+✔ backup collections share a snapshot transaction and read sequentially (4.2171ms)
+✔ production configuration rejects missing or reused secrets without exposing values (0.6448ms)
+(node:13804) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/purchase-calculations.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ free packages increase received inventory without increasing purchase cost (2.0011ms)
+✔ purchase totals apply charges and percentage discounts once (0.3922ms)
+✔ purchase GST preserves inclusive and exclusive invoice treatment (0.5844ms)
+✔ purchase totals reject discounts larger than the payable value (0.4733ms)
+(node:14032) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/rate-limit.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ client headers cannot bypass limits unless proxy trust is explicitly enabled (53.503ms)
+✔ rate limiter bounds memory without evicting active limits (12.5669ms)
+✔ rate limiter blocks attempts beyond the configured window limit (0.3071ms)
+✔ rate limiter opens a fresh bucket after the window expires (0.148ms)
+(node:1100) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/rbac.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ action permissions automatically include module view access (0.6259ms)
+✔ employee overrides can grant and revoke role actions (0.2967ms)
+✔ owner access is complete and legacy module permissions remain view-only (0.2273ms)
+(node:37048) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/brand.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ thermal logo has opaque black ink and white paper without translucent or grey fills (43.0837ms)
+(node:22104) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/report.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ report split payments never exceed invoice revenue (1.0052ms)
+✔ report CSV exports only declared human-readable columns (0.3072ms)
+(node:13644) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/sale-customer.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ doctor name is trimmed and stored for a walk-in invoice (3.0283ms)
+✔ doctor name is added without changing an existing customer snapshot (0.2705ms)
+✔ doctor name length is limited (0.6391ms)
+✔ wholesale checkout accepts only explicitly wholesale customers (0.2094ms)
+✔ wholesale checkout reads customer type from a hydrated database document (0.2287ms)
+✔ wholesale credit adds the invoice to the customer outstanding balance (0.2971ms)
+✔ wholesale credit enforces the available customer credit (23.2779ms)
+(node:15588) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/models/index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ editing a paid sale keeps its invoice, billed price and date, adjusts stock once, and preserves an audited original (33.6528ms)
+✔ insufficient stock and incorrect payment roll back stock returns, sale changes and audit writes (1.901ms)
+✔ staff, stale edits, tax documents and credit sales cannot change a billed sale (0.7733ms)
+✔ a second edit uses only the latest allocations and altered retries are rejected (5.5063ms)
+✔ legacy loose and mix returns preserve opened packages and count actual units (0.6034ms)
+✔ edit cart shows billed quantities and prices with returned stock available for changes (0.3312ms)
+✔ adding another product and removing a billed line reconcile both original batches (7.4663ms)
+✔ selling-price-only external checkout completes without supplier expenses or inventory changes (5.6545ms)
+✔ checkout accepts manual external products, ignores forged tracking, and retries without duplicate expenses (3.7923ms)
+✔ mixed checkout deducts only inventory lines, including an external reference to a zero-stock product (4.7314ms)
+✔ completed external quantity edit updates totals and the linked expense without stock writes (7.3108ms)
+✔ supplier expense failure rolls back mixed checkout stock and invoice (3.982ms)
+✔ malformed external checkout aborts and ordinary products cannot disable stock (0.9495ms)
+✔ fixture payment validation accepts UPI and exact split totals; mismatches preserve stock and original bill (6.4131ms)
+✔ fixture Settings enforce required references, enabled methods and split policy without committing stock (0.824ms)
+(node:30176) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/sale-free-quantity.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ free quantities require wholesale and valid stock units (1.318ms)
+✔ paid plus free packages consume stock across batches in the sale transaction (1.6175ms)
+✔ insufficient stock for free units rejects the transaction callback (0.8474ms)
+✔ counted free loose units consume counts rather than package weight (0.4383ms)
+(node:40408) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/sale-stock-buffer.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ many cart lines use one inventory read and one write with shared transaction state (4.0086ms)
+✔ repeated lines deplete the same FEFO batches and cannot oversell (2.5635ms)
+✔ package, loose and free stock share the same final batch update (0.5262ms)
+✔ missing batch updates and invalid stock reject the transaction (0.6775ms)
+✔ each transaction retry loads a new stock view (3.3842ms)
+(node:29112) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/sales-cache-invalidation.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ successful stock writes refresh authoritative IDs without waiting for cache completion (77.0841ms)
+✔ failed checkout does not invalidate or change correct cached stock (24.4835ms)
+✔ concurrent committed mutations remain valid after another stock refresh (48.7362ms)
+✔ late successful mutations and denials cannot invalidate a newer account (51.1774ms)
+✔ logout purges the current account and does not broadcast private records (1.0472ms)
+✔ a product deletion reads IDs from its route and changes metadata (30.3114ms)
+✔ imports coalesce until the final batch and interrupted batches refresh committed data (100.7215ms)
+✔ readonly requests and generated unused barcodes do not invalidate the catalogue (17.3161ms)
+✔ cross-tab notifications contain only scope and mutation IDs (15.7226ms)
+✔ cache scope changes for users, authentication versions, roles, effective permissions and cloned databases (13.088ms)
+✔ a missing store identity disables persistence while separating memory by datasource (3.9335ms)
+(node:26924) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/sales-cache.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ cold concurrent loads coalesce; cached search, clearing and navigation make no requests (41.0474ms)
+✔ fresh exact barcode hits preserve leading zeros and repeat scan details use zero requests (5.7979ms)
+✔ barcode misses use one exact endpoint and the repeat scan reuses its validated detail (12.8317ms)
+✔ unknown barcode does not clear a valid account cache (3.7483ms)
+✔ barcode index insertion projects metadata and does not retain full selling fields in index rows (3.2389ms)
+✔ full refresh retains unchanged details across Date and JSON timestamp representations (2.6779ms)
+✔ native IndexedDB restores complete rows and bounded details without a fetch (4.2034ms)
+✔ IndexedDB failure retains a functional memory cache (0.9195ms)
+✔ stock membership is cached independently and all keystrokes search locally (1.5923ms)
+✔ targeted metadata changes remove stale reverse maps, create rows and delete invisible products (3.5663ms)
+✔ committed stock refresh replaces only affected selling details and keeps the metadata index (10.8381ms)
+✔ switching accounts and logout purge the former scope and private memory (1.9819ms)
+✔ late success and denial from an earlier account cannot overwrite or clear the new account (0.9052ms)
+✔ late IndexedDB restore is discarded after a scope switch (0.2096ms)
+✔ a missing or mismatched response scope rejects private records (0.5078ms)
+✔ 304 validation retains the grid and does not extend maximum unconditional full-fetch age (1.4986ms)
+✔ atomic persistent replacement removes orphan rows and rejects incompatible records (2.1112ms)
+✔ details are bounded and the initial page remains protected (4.2855ms)
+✔ an older same-scope detail response cannot replace post-mutation stock (3.4344ms)
+(node:36524) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/sales-index.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ the lightweight index uses projected lean metadata and no batch reads (35.1118ms)
+✔ unchanged responses authenticate first and never return private rows to denied users (3.3748ms)
+✔ detail queries are bounded, use selected IDs and avoid catalogue stock membership aggregation (2.5554ms)
+✔ compact stock membership preserves physical quantities when historical batch size differs (2.0755ms)
+✔ ETags change on actual metadata changes even when timestamps were preserved (3.5676ms)
+(node:26904) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/settings.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ GST cannot be enabled without a registered GSTIN (0.9941ms)
+✔ GST state must match the GSTIN state prefix (0.2545ms)
+✔ plausible GSTIN alone cannot enable collection for an unregistered supplier (0.2728ms)
+(node:28628) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/password-policy.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ staff creation persists normalized username and hashed strong password (1.7487ms)
+✔ staff creation rejects missing usernames and weak passwords (1.1452ms)
+✔ staff username changes invalidate existing sessions (0.3984ms)
+✔ staff role escalation is rejected before creating or saving an account (0.583ms)
+✔ staff password reset applies strong policy and invalidates existing credentials (0.4048ms)
+(node:15600) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/password-policy.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ username format rejects email, object injection and invalid names (1.1826ms)
+✔ password policy enforces length, character rules and bcrypt byte limit (0.423ms)
+✔ username login reserves persistent IP and account attempts then updates conditionally (1.6998ms)
+✔ missing, inactive, wrong-password and concurrently changed accounts cannot sign in (1.4089ms)
+✔ persistent throttling stops login before credential verification (0.3594ms)
+✔ legacy enrollment verifies old credentials and requires a new strong password (0.394ms)
+✔ email cannot sign in normally or reclaim an enrolled username (0.3373ms)
+✔ weak enrollment passwords are rejected and weak existing passwords require change (0.4616ms)
+(node:21608) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/services/pricing.service.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ product wholesale percentages discount only their own lines without stacking (3.9569ms)
+✔ product wholesale discounts validate every percentage and preserve existing wholesale prices (3.0203ms)
+✔ wholesale bill discount works with normal discounts disabled (1.3708ms)
+✔ wholesale discount does not stack with automatic or product discounts (0.456ms)
+✔ wholesale percentage is validated on the shared server pricing path (1.8781ms)
+(node:27496) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/wholesale-reporting.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ wholesale reporting keeps billed, free, and outgoing quantities separate (1.7383ms)
+✔ legacy wholesale lines are recognized even without saleType (0.2118ms)
+(node:42632) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Next.js/Projects/PVAMSP%20-%20POS/pvamsp-pos/src/lib/wholesale.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ regular cart wholesale toggle preserves identity and recalculates quantity tiers (0.9965ms)
+✔ regular cart wholesale respects eligibility, minimum and free stock (0.4239ms)
+✔ mixed cart percentage discount applies only to the selected wholesale line (1.5517ms)
+✔ existing disabled and future default products support wholesale at their selling price (0.1476ms)
+✔ wholesale carton conversion and scheme use box quantities (0.114ms)
+✔ highest qualifying wholesale tier is automatic (0.1433ms)
+✔ discount pricing follows each product retail price (0.1085ms)
+✔ specific wholesale pack price is converted to a package rate (0.1003ms)
+✔ explicit wholesale loose price overrides the package-derived rate (0.0954ms)
+✔ free quantity scales without billing the free stock (0.13ms)
+✔ manual free quantity is separated from paid quantity (0.0958ms)
+✔ MOQ and invalid free quantity are rejected (0.1083ms)
+✔ wholesale cart keeps the database product id separate from its UI key (0.1129ms)
+✔ hydrated products retain wholesale configuration (1.9612ms)
+✔ credit invoices retain unpaid balances without a collected payment (5.2796ms)
+ℹ tests 370
+ℹ suites 0
+ℹ pass 370
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1180.7071

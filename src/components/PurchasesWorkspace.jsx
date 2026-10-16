@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 
 import { useEffect, useMemo, useState } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -159,7 +160,7 @@ function Badge({ value, type = "status" }) {
   };
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-extrabold ${tones[normalized] || "bg-slate-100 text-slate-600"}`}
+      className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-extrabold ${tones[normalized] || "bg-slate-100 text-slate-600"}`}
     >
       {type === "status" && (
         <span className="size-1.5 rounded-full bg-current" />
@@ -486,7 +487,7 @@ function AddSupplierModal({ onClose, onCreated }) {
   }
   return (
     <div className="fixed inset-0 z-[100] grid place-items-center bg-black/45 p-4">
-      <form onSubmit={submit} className="card w-full max-w-xl p-6">
+      <DialogSurface as="form" onEscape={() => !saving && onClose()} onSubmit={submit} className="card w-full max-w-xl p-6">
         <div className="mb-5 flex items-start justify-between">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--green)]">
@@ -494,7 +495,7 @@ function AddSupplierModal({ onClose, onCreated }) {
             </p>
             <h2 className="mt-1 text-2xl font-extrabold">Add supplier</h2>
           </div>
-          <button type="button" onClick={onClose}>
+          <button aria-label="Close dialog" type="button" onClick={onClose}>
             <X />
           </button>
         </div>
@@ -537,7 +538,7 @@ function AddSupplierModal({ onClose, onCreated }) {
             Add supplier
           </button>
         </div>
-      </form>
+      </DialogSurface>
     </div>
   );
 }
@@ -741,7 +742,7 @@ function LegacyPurchaseForm({
     );
   return (
     <div className="fixed inset-0 z-[70] overflow-y-auto bg-black/45 p-0 sm:p-4">
-      <section
+      <DialogSurface as="section" onEscape={() => !saving && onClose()}
         className="mx-auto min-h-screen w-full max-w-[1180px] bg-[#f7f8f4] sm:min-h-0 sm:rounded-2xl"
         role="dialog"
         aria-modal="true"
@@ -1139,7 +1140,7 @@ function LegacyPurchaseForm({
             </div>
           </aside>
         </div>
-      </section>
+      </DialogSurface>
       {productPicker && (
         <div className="fixed inset-0 z-[90] grid place-items-center bg-black/45 p-4">
           <div className="card max-h-[86vh] w-full max-w-2xl overflow-hidden">
@@ -1160,7 +1161,7 @@ function LegacyPurchaseForm({
                   className="absolute left-3 top-3.5 text-[var(--muted)]"
                   size={17}
                 />
-                <input
+                <input aria-label="Search product, SKU or scan barcode"
                   autoFocus
                   className="field !pl-10"
                   value={productQuery}
@@ -1285,7 +1286,7 @@ function PurchaseDrawer({
       className="fixed inset-0 z-[60] bg-black/35"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <aside className="purchase-print ml-auto flex h-full w-full max-w-2xl flex-col bg-white shadow-2xl">
+      <DialogSurface as="aside" onEscape={onClose} className="purchase-print ml-auto flex h-full w-full max-w-2xl flex-col bg-white shadow-2xl">
         <header className="flex items-start justify-between border-b border-[var(--line)] p-5">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--green)]">
@@ -1299,7 +1300,7 @@ function PurchaseDrawer({
               <Badge value={purchase.paymentStatus || "PAID"} />
             </div>
           </div>
-          <button onClick={onClose}>
+          <button aria-label="Close dialog" onClick={onClose}>
             <X />
           </button>
         </header>
@@ -1548,7 +1549,7 @@ function PurchaseDrawer({
             )
           )}
         </footer>
-      </aside>
+      </DialogSurface>
       {cancelling && (
         <div className="fixed inset-0 z-[80] grid place-items-center bg-black/45 p-4">
           <div className="card w-full max-w-md p-6">
@@ -1792,7 +1793,7 @@ export default function PurchasesWorkspace() {
           New purchase
         </button>
       </div>
-      <div className="mb-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="workspace-kpis mb-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {[
           {
             label: "Purchases today",
@@ -1842,7 +1843,7 @@ export default function PurchasesWorkspace() {
             className="absolute left-3 top-3.5 text-[var(--muted)]"
             size={18}
           />
-          <input
+          <input aria-label="Search purchase ID, supplier, invoice, product, SKU or batch"
             className="field !pl-10"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
@@ -1933,7 +1934,7 @@ export default function PurchasesWorkspace() {
             }}
           />
           <div className="flex gap-2">
-            <select
+            <select aria-label="Sort order"
               className="field"
               value={`${filters.sort}:${filters.order}`}
               onChange={(event) => {
@@ -2113,12 +2114,12 @@ export default function PurchasesWorkspace() {
                   </div>
                   <Badge value={row.purchaseStatus || "RECEIVED"} />
                 </div>
-                <div className="mt-4 flex items-end justify-between">
+                <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
                   <span className="text-sm text-[var(--muted)]">
                     {date(row.purchasedAt)} ·{" "}
                     {plural(row.items.length, "product")}
                   </span>
-                  <strong className="text-lg">{money(row.total)}</strong>
+                  <strong className="whitespace-nowrap text-lg">{money(row.total)}</strong>
                 </div>
               </button>
             ))}

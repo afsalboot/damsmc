@@ -67,11 +67,11 @@ export default function LoginForm() {
             understandable at the counter.
           </p>
         </div>
-        <p className="relative text-sm text-emerald-100/55">
+        <p className="relative text-sm text-emerald-100/80">
           Secure access · Cash, UPI & split payments · Complete stock ledger
         </p>
       </section>
-      <section className="flex items-center justify-center px-6 py-12">
+      <section className="flex min-w-0 items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
           <div className="mb-9 lg:hidden">
             <BrandLogo full />

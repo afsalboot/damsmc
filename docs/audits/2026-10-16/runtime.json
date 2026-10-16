@@ -1,0 +1,1135 @@
+{
+  "isolated": true,
+  "liveDatabase": false,
+  "requests": [
+    {
+      "path": "/",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 97.75909999999999,
+      "location": "/dashboard",
+      "passed": true
+    },
+    {
+      "path": "/change-password",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 62.918499999999995,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/api/suppliers",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 29.930799999999977,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/suppliers",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 8.167699999999968,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/suppliers/[id]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 6.169300000000021,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/suppliers/[id]",
+      "method": "PUT",
+      "status": 401,
+      "milliseconds": 9.867799999999988,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/suppliers/[id]",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 17.33940000000007,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.818700000000035,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 3.4157000000000153,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/[id]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 13.861099999999965,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/[id]",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 13.773000000000025,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/[id]",
+      "method": "PUT",
+      "status": 401,
+      "milliseconds": 17.693699999999808,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/[id]",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 16.64370000000008,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/[id]/reset-password",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 17.307900000000018,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/[id]/reactivate",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 3.7717999999999847,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/[id]/deactivate",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 12.171199999999999,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/[id]/activity",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 17.900300000000016,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/staff/options",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.81820000000016,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/settings",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 14.659799999999905,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/settings",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 3.859899999999925,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/settings",
+      "method": "PUT",
+      "status": 401,
+      "milliseconds": 10.541799999999967,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/settings/reset",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 20.090200000000095,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/settings/receipt",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 17.088100000000168,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/settings/invoice-reset",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 15.817499999999882,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/settings/invoice-reset",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 15.684999999999945,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/settings/audit",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 18.673499999999876,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/search",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 14.223300000000108,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/sales",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 19.02670000000012,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/sales",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 15.111499999999978,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/sales/[id]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 18.392399999999952,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/roles",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 15.602599999999939,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/roles",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 16.195899999999938,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/roles/[id]",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 18.277700000000095,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/roles/[id]",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 15.59030000000007,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/reports/[type]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 17.10889999999995,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/purchases",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 3.784400000000005,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/purchases",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 11.04099999999994,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/purchases/[id]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 17.66709999999989,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/purchases/[id]",
+      "method": "PUT",
+      "status": 401,
+      "milliseconds": 2.423599999999851,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/purchases/[id]",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 14.055499999999938,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/purchases/[id]",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 16.317800000000034,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/purchases/[id]/stock-transactions",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 18.478200000000015,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/purchases/[id]/cancel",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 4.105199999999968,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 12.121700000000146,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 15.59699999999998,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products",
+      "method": "PUT",
+      "status": 401,
+      "milliseconds": 14.632800000000088,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 6.467000000000098,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 10.901499999999942,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/[id]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 18.56840000000011,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/[id]/stock",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 3.9839999999999236,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/[id]/adjustment",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 12.52150000000006,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/sales-index",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.260500000000093,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/merge",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 18.769800000000032,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/import",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 16.439599999999928,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/duplicates",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.33640000000014,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/bulk",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 16.246199999999817,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/bulk",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 15.639599999999973,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/barcode/[barcode]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 15.47790000000009,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/products/barcode/generate",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 3.560399999999845,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/notifications",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 14.938499999999976,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/notifications",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 2.3301000000001295,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/notifications",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 12.173399999999901,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expenses",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 18.264499999999998,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expenses",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 2.3989000000001397,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expenses/[id]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 14.404899999999998,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expenses/[id]",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 16.717599999999948,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expenses/[id]/void",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 16.364499999999907,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expense-categories",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.998000000000047,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expense-categories",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 15.571500000000015,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expense-categories/[id]",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 18.16319999999996,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/expense-categories/[id]",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 14.969600000000128,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/doctors",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 17.849199999999882,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/doctors",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 2.476699999999937,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/doctors/[id]",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 14.123100000000022,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/dashboard",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 19.032100000000128,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/customers",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.183899999999994,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/customers",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 14.72589999999991,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/customers/[id]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.620599999999968,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/customers/[id]",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 16.280199999999923,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/customers/[id]",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 2.058300000000145,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/customers/search",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 13.37279999999987,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/consultations",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 3.951999999999998,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/consultations",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 13.412199999999984,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/consultations/[id]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 17.883100000000013,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/consultations/[id]",
+      "method": "PATCH",
+      "status": 401,
+      "milliseconds": 15.658099999999877,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/consultations/[id]",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 16.98700000000008,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/consultations/[id]/cancel",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 17.67560000000003,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/consultations/reset-tokens",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 3.7654999999999745,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/consultations/options",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 13.155500000000302,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/categories",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.635400000000118,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/categories",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 15.097399999999652,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/categories",
+      "method": "PUT",
+      "status": 401,
+      "milliseconds": 3.7644000000000233,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/categories",
+      "method": "DELETE",
+      "status": 401,
+      "milliseconds": 15.549199999999928,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/backups",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.400900000000092,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/backups",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 2.2824000000000524,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/backups/[name]",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 13.626099999999951,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/backups/restore",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 16.617999999999938,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/backups/folders",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 16.135200000000168,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/auth/pin",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 17.234399999999823,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/auth/change-password",
+      "method": "POST",
+      "status": 401,
+      "milliseconds": 17.149999999999636,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/api/accounts",
+      "method": "GET",
+      "status": 401,
+      "milliseconds": 15.44970000000012,
+      "location": null,
+      "passed": true
+    },
+    {
+      "path": "/suppliers",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 14.93100000000004,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/staff",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 26.15390000000025,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/settings",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 15.270500000000084,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/settings/login-pin",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 14.737700000000132,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/settings/change-password",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 16.81269999999995,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/sales",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 20.4996000000001,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/sales/[id]",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 13.346100000000206,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/sales/recent",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 15.3125,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/sales/new",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 16.624199999999746,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/reports",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 24.292999999999665,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/purchases",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 8.77559999999994,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/products",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 17.939200000000255,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/notifications",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 13.357300000000123,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/login-pin",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 19.05470000000014,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/expenses",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 16.88929999999982,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/dashboard",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 26.404700000000048,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/customers",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 23.73889999999983,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/consultations",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 14.006600000000162,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/consultations/report",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 16.524199999999837,
+      "location": "/login",
+      "passed": true
+    },
+    {
+      "path": "/accounts",
+      "method": "GET",
+      "status": 307,
+      "milliseconds": 27.608900000000176,
+      "location": "/login",
+      "passed": true
+    }
+  ],
+  "loginSamples": [
+    {
+      "milliseconds": 13.629099999999653,
+      "htmlBytes": 10128,
+      "gzipBytes": 3014
+    },
+    {
+      "milliseconds": 18.371200000000044,
+      "htmlBytes": 10128,
+      "gzipBytes": 3014
+    },
+    {
+      "milliseconds": 16.335599999999886,
+      "htmlBytes": 10128,
+      "gzipBytes": 3014
+    },
+    {
+      "milliseconds": 15.835700000000088,
+      "htmlBytes": 10128,
+      "gzipBytes": 3014
+    },
+    {
+      "milliseconds": 17.218399999999747,
+      "htmlBytes": 10128,
+      "gzipBytes": 3014
+    }
+  ],
+  "headers": {
+    "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+    "permissions-policy": "camera=(self), microphone=(), geolocation=(), payment=(), usb=()",
+    "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+  },
+  "loginScripts": [
+    {
+      "path": "/_next/static/chunks/2i51e627rllld.js",
+      "rawBytes": 31346,
+      "gzipBytes": 8345
+    },
+    {
+      "path": "/_next/static/chunks/219n3y_w41yge.js",
+      "rawBytes": 229156,
+      "gzipBytes": 71629
+    },
+    {
+      "path": "/_next/static/chunks/1bslr_bx0z8-a.js",
+      "rawBytes": 156251,
+      "gzipBytes": 42986
+    },
+    {
+      "path": "/_next/static/chunks/turbopack-3n9f_nuem5y23.js",
+      "rawBytes": 9721,
+      "gzipBytes": 3849
+    },
+    {
+      "path": "/_next/static/chunks/18a9icce_9hs6.js",
+      "rawBytes": 37024,
+      "gzipBytes": 10140
+    },
+    {
+      "path": "/_next/static/chunks/2cykma8dsqhrp.js",
+      "rawBytes": 35707,
+      "gzipBytes": 11143
+    },
+    {
+      "path": "/_next/static/chunks/3f7x49vrfwz92.js",
+      "rawBytes": 9648,
+      "gzipBytes": 3627
+    },
+    {
+      "path": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "rawBytes": 112594,
+      "gzipBytes": 39627
+    },
+    {
+      "path": "/_next/static/chunks/0vm861tnr00gj.js",
+      "rawBytes": 12653,
+      "gzipBytes": 3572
+    }
+  ],
+  "crossSiteWrite": {
+    "status": 403,
+    "passed": true
+  },
+  "sameOriginWrites": [
+    {
+      "origin": "http://127.0.0.1:3107",
+      "status": 401,
+      "error": "Authentication required",
+      "passed": true
+    },
+    {
+      "origin": "http://localhost:3107",
+      "status": 403,
+      "error": "Cross-site request blocked",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "browser": {
+    "authenticated": false,
+    "authStatusFixture": true,
+    "errors": [],
+    "apiRequests": [
+      {
+        "path": "/api/auth/status",
+        "method": "GET",
+        "fixture": true
+      },
+      {
+        "path": "/api/auth/status",
+        "method": "GET",
+        "fixture": true
+      }
+    ],
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 1365,
+        "documentWidth": 1365,
+        "passwordField": true,
+        "unlabeledInputs": 0,
+        "paint": [
+          {
+            "name": "first-paint",
+            "ms": 60
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 60
+          }
+        ],
+        "ttfb": 6.300000011920929,
+        "cls": 0.00861980944032226,
+        "lcp": 60
+      },
+      {
+        "name": "mobile",
+        "width": 390,
+        "documentWidth": 390,
+        "passwordField": true,
+        "unlabeledInputs": 0,
+        "paint": [
+          {
+            "name": "first-paint",
+            "ms": 32
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 32
+          }
+        ],
+        "ttfb": 5.4000000059604645,
+        "cls": 0,
+        "lcp": 32
+      }
+    ],
+    "passed": true
+  }
+}

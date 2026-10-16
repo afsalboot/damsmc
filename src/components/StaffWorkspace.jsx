@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -343,7 +344,7 @@ function StaffForm({ initial, roles, onClose, onSaved }) {
   }
   return (
     <div className="fixed inset-0 z-[90] overflow-y-auto bg-black/45 p-0 sm:p-4">
-      <form
+      <DialogSurface as="form" onEscape={() => !saving && onClose()}
         onSubmit={submit}
         className="mx-auto min-h-screen w-full max-w-4xl bg-[#f7f8f4] sm:min-h-0 sm:rounded-2xl"
       >
@@ -358,7 +359,7 @@ function StaffForm({ initial, roles, onClose, onSaved }) {
                 : "Create a staff login and configure access"}
             </h2>
           </div>
-          <button type="button" onClick={onClose}>
+          <button aria-label="Close dialog" type="button" onClick={onClose}>
             <X />
           </button>
         </header>
@@ -545,7 +546,7 @@ function StaffForm({ initial, roles, onClose, onSaved }) {
             </button>
           </div>
         </div>
-      </form>
+      </DialogSurface>
     </div>
   );
 }
@@ -575,13 +576,13 @@ function ResetPassword({ staff, onClose }) {
   }
   return (
     <div className="fixed inset-0 z-[110] grid place-items-center bg-black/45 p-4">
-      <form className="card w-full max-w-md p-6" onSubmit={submit}>
+      <DialogSurface as="form" onEscape={() => !saving && onClose()} className="card w-full max-w-md p-6" onSubmit={submit}>
         <div className="flex justify-between">
           <div>
             <p className="label">Reset password</p>
             <h3 className="mt-1 text-xl font-extrabold">{staff.name}</h3>
           </div>
-          <button type="button" onClick={onClose}>
+          <button aria-label="Close dialog" type="button" onClick={onClose}>
             <X />
           </button>
         </div>
@@ -625,7 +626,7 @@ function ResetPassword({ staff, onClose }) {
             {saving ? "Resetting…" : "Reset password"}
           </button>
         </div>
-      </form>
+      </DialogSurface>
     </div>
   );
 }
@@ -660,7 +661,7 @@ function StatusModal({ staff, onClose, onSaved }) {
   }
   return (
     <div className="fixed inset-0 z-[110] grid place-items-center bg-black/45 p-4">
-      <form className="card w-full max-w-md p-6" onSubmit={submit}>
+      <DialogSurface as="form" onEscape={() => !saving && onClose()} className="card w-full max-w-md p-6" onSubmit={submit}>
         <div
           className={`grid size-11 place-items-center rounded-xl ${staff.active ? "bg-rose-50 text-[var(--red)]" : "bg-emerald-50 text-[var(--green)]"}`}
         >
@@ -696,7 +697,7 @@ function StatusModal({ staff, onClose, onSaved }) {
                 : "Reactivate"}
           </button>
         </div>
-      </form>
+      </DialogSurface>
     </div>
   );
 }
@@ -716,7 +717,7 @@ function StaffDrawer({
       className="fixed inset-0 z-[80] bg-black/40"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <aside className="ml-auto flex h-full w-full max-w-2xl flex-col bg-white shadow-2xl">
+      <DialogSurface as="aside" onEscape={onClose} className="ml-auto flex h-full w-full max-w-2xl flex-col bg-white shadow-2xl">
         <header className="border-b border-[var(--line)] p-5">
           <div className="flex items-start justify-between">
             <div className="flex gap-3">
@@ -735,7 +736,7 @@ function StaffDrawer({
                 </span>
               </div>
             </div>
-            <button onClick={onClose}>
+            <button aria-label="Close dialog" onClick={onClose}>
               <X />
             </button>
           </div>
@@ -869,7 +870,7 @@ function StaffDrawer({
             </button>
           )}
         </footer>
-      </aside>
+      </DialogSurface>
     </div>
   );
 }
@@ -930,7 +931,7 @@ function RolesManager({ roles, onClose, onChanged }) {
   }
   return (
     <div className="fixed inset-0 z-[90] bg-black/45">
-      <aside className="ml-auto flex h-full w-full max-w-3xl flex-col bg-white shadow-2xl">
+      <DialogSurface as="aside" onEscape={onClose} className="ml-auto flex h-full w-full max-w-3xl flex-col bg-white shadow-2xl">
         <header className="flex items-start justify-between border-b border-[var(--line)] p-5">
           <div>
             <p className="label">Roles & permissions</p>
@@ -939,7 +940,7 @@ function RolesManager({ roles, onClose, onChanged }) {
               Owner access stays separate from employee roles.
             </p>
           </div>
-          <button onClick={onClose}>
+          <button aria-label="Close dialog" onClick={onClose}>
             <X />
           </button>
         </header>
@@ -1047,7 +1048,7 @@ function RolesManager({ roles, onClose, onChanged }) {
             </>
           )}
         </div>
-      </aside>
+      </DialogSurface>
     </div>
   );
 }
@@ -1174,7 +1175,7 @@ export default function StaffWorkspace() {
           )}
         </div>
       </header>
-      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <section className="workspace-kpis grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {[
           ["Total staff", data?.kpis.total, "All employee accounts", Users],
           ["Active staff", data?.kpis.active, "Can log in", UserRoundCheck],
@@ -1203,7 +1204,7 @@ export default function StaffWorkspace() {
             className="absolute left-3 top-3.5 text-[var(--muted)]"
             size={18}
           />
-          <input
+          <input aria-label="Search staff name, email, phone or role"
             className="field !pl-10"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
@@ -1257,7 +1258,7 @@ export default function StaffWorkspace() {
               setFilters({ ...filters, permission: values });
             }}
           />
-          <select
+          <select aria-label="Sort order"
             className="field"
             value={`${filters.sort}:${filters.order}`}
             onChange={(event) => {
@@ -1319,7 +1320,7 @@ export default function StaffWorkspace() {
                   >
                     <td>
                       <div className="flex items-center gap-3">
-                        <span className="grid size-10 place-items-center rounded-full bg-[var(--green-soft)] font-extrabold text-[var(--green)]">
+                        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[var(--green-soft)] font-extrabold text-[var(--green)]">
                           {initials(row.name)}
                         </span>
                         <div>
@@ -1374,7 +1375,7 @@ export default function StaffWorkspace() {
               >
                 <div className="flex items-start justify-between">
                   <div className="flex gap-3">
-                    <span className="grid size-10 place-items-center rounded-full bg-[var(--green-soft)] font-extrabold text-[var(--green)]">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[var(--green-soft)] font-extrabold text-[var(--green)]">
                       {initials(row.name)}
                     </span>
                     <div>

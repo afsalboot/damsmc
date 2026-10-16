@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 
 import { useEffect, useState } from "react";
 import {
@@ -60,7 +61,7 @@ function Modal({ title, children, onClose, wide = false }) {
       className="fixed inset-0 z-50 grid place-items-center bg-black/45 p-4"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <div
+      <DialogSurface as="div" onEscape={onClose}
         className={`card max-h-[94vh] w-full overflow-y-auto p-6 ${wide ? "max-w-4xl" : "max-w-lg"}`}
         role="dialog"
         aria-modal="true"
@@ -72,7 +73,7 @@ function Modal({ title, children, onClose, wide = false }) {
           </button>
         </div>
         {children}
-      </div>
+      </DialogSurface>
     </div>
   );
 }
@@ -90,6 +91,7 @@ function Empty({ icon: Icon, title, body }) {
 
 export function SuppliersWorkspace() {
   const confirmAction = useConfirm();
+  const [loadError, setLoadError] = useState("");
   const [rows, setRows] = useState([]),
     [query, setQuery] = useState(""),
     [loading, setLoading] = useState(true),
@@ -97,13 +99,16 @@ export function SuppliersWorkspace() {
     [open, setOpen] = useState(false),
     [saving, setSaving] = useState(false);
   async function load() {
+    setLoading(true);
     try {
       setRows(
         await api(
           `/api/suppliers${query.trim() ? `?q=${encodeURIComponent(query.trim())}` : ""}`,
         ),
       );
+      setLoadError("");
     } catch (error) {
+      setLoadError(error.message || "Please try again.");
       toast.error(error.message);
     } finally {
       setLoading(false);
@@ -112,7 +117,7 @@ export function SuppliersWorkspace() {
   useEffect(() => {
     api("/api/suppliers")
       .then(setRows)
-      .catch((error) => toast.error(error.message))
+      .catch((error) => { setLoadError(error.message || "Please try again."); toast.error(error.message); })
       .finally(() => setLoading(false));
   }, []);
   async function save(event) {
@@ -177,7 +182,7 @@ export function SuppliersWorkspace() {
             className="absolute left-3 top-3 text-(--muted)"
             size={18}
           />
-          <input
+          <input aria-label="Search supplier"
             className="field pl-10!"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -192,6 +197,12 @@ export function SuppliersWorkspace() {
         <div className="card grid min-h-64 place-items-center">
           <LoaderCircle className="loading-shimmer-icon" />
         </div>
+      ) : loadError ? (
+        <section className="card p-6" role="alert">
+          <h2 className="font-extrabold">Unable to load suppliers</h2>
+          <p className="my-3 text-sm text-[var(--muted)]">{loadError}</p>
+          <button type="button" className="btn" onClick={load}>Retry</button>
+        </section>
       ) : rows.length ? (
         <div className="card table-wrap">
           <table>

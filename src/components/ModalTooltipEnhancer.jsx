@@ -111,7 +111,25 @@ export default function ModalTooltipEnhancer() {
     const enhance = () => {
       document.querySelectorAll(".label").forEach((label) => {
         const modal = label.closest('[aria-modal="true"], .fixed.inset-0');
-        if (!modal || modal.dataset.modalTooltipsChecked === "existing") return;
+        if (!modal) return;
+        const control =
+          label.closest("label")?.querySelector("input, select, textarea") ||
+          label.parentElement?.querySelector("input, select, textarea") ||
+          label.nextElementSibling;
+        // A help button before the input becomes an implicit label's first
+        // labelable child. Explicitly preserve the field association before
+        // adding help, including dialogs that already have their own help UI.
+        if (control?.matches?.("input, select, textarea")) {
+          const nativeLabel = control.closest("label");
+          if (nativeLabel?.contains(label) && !nativeLabel.htmlFor) {
+            control.id ||= `modal-field-${crypto.randomUUID()}`;
+            nativeLabel.htmlFor = control.id;
+          } else if (!control.labels?.length && !control.hasAttribute("aria-label") && !control.hasAttribute("aria-labelledby")) {
+            label.id ||= `modal-label-${crypto.randomUUID()}`;
+            control.setAttribute("aria-labelledby", label.id);
+          }
+        }
+        if (modal.dataset.modalTooltipsChecked === "existing") return;
         if (
           modal.querySelector(
             '[aria-label^="Help"], [aria-label^="More information"]:not(.modal-auto-tip), [data-modal-help-existing]',
@@ -124,9 +142,6 @@ export default function ModalTooltipEnhancer() {
           return;
         }
         if (label.querySelector(".modal-auto-tip")) return;
-        const control =
-          label.parentElement?.querySelector("input, select, textarea") ||
-          label.nextElementSibling;
         const text = cleanLabel(label.textContent);
         if (!text || !control?.matches?.("input, select, textarea")) return;
         const trigger = document.createElement("button");

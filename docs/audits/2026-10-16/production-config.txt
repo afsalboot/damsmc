@@ -1,0 +1,12 @@
+
+> oushadi-pos@0.1.0 check:production
+> node scripts/check-production.mjs
+
+npm.cmd : Production configuration needs attention:
+At line:2 char:104
++ ... TEXITCODE"; npm.cmd run check:production *> docs/audits/2026-10-16/pr ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Production conf...eeds attention::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+- BACKUP_DIR must point to persistent backup storage

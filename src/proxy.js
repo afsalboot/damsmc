@@ -1,15 +1,12 @@
 import { jwtVerify } from "jose";
 import { NextResponse } from "next/server";
+import { isCrossSiteWrite } from "./lib/request-origin.js";
 
 const AUTH_COOKIE = "oushadi_session";
 const unsafeRegex = /[.*+?^${}()|[\]\\]/;
 
 export async function proxy(request) {
-  if (!["GET", "HEAD", "OPTIONS"].includes(request.method)) {
-    const fetchSite = request.headers.get("sec-fetch-site");
-    const origin = request.headers.get("origin");
-    if (fetchSite === "cross-site" || (origin && origin !== request.nextUrl.origin)) return NextResponse.json({ error: "Cross-site request blocked" }, { status: 403 });
-  }
+  if (isCrossSiteWrite(request)) return NextResponse.json({ error: "Cross-site request blocked" }, { status: 403 });
   if (request.nextUrl.pathname !== "/api/search") return NextResponse.next();
   const query = request.nextUrl.searchParams.get("q") || "";
   if (query.length > 100 || unsafeRegex.test(query)) return NextResponse.json({ error: "Invalid search query" }, { status: 400 });

@@ -17,6 +17,7 @@ export async function getNotifications(session) {
   ]);
 
   const items = [];
+  const productsById = new Map(products.map(product => [String(product._id), product]));
   const batchesByProduct = new Map();
   for (const batch of batches) {
     const key = String(batch.productId);
@@ -36,7 +37,7 @@ export async function getNotifications(session) {
   for (const batch of batches.filter(positiveStock)) {
     if (!batch.expiryDate) continue;
     const days = Math.ceil((new Date(batch.expiryDate).getTime() - now.getTime()) / 86_400_000);
-    const product = products.find((row) => String(row._id) === String(batch.productId));
+    const product = productsById.get(String(batch.productId));
     if (days < 0 && settings.notifications.expired) items.push({ id: `expired-${batch._id}`, type: "EXPIRED", title: `${product?.name || "Product"} batch expired`, detail: `Batch ${batch.batchNumber || "Default"} expired ${Math.abs(days)} day${Math.abs(days) === 1 ? "" : "s"} ago`, href: "/products", priority: 0, createdAt: batch.updatedAt });
     else if (days >= 0 && days <= warningDays && settings.notifications.expiry) items.push({ id: `expiry-${batch._id}`, type: "EXPIRY", title: `${product?.name || "Product"} expires soon`, detail: `Batch ${batch.batchNumber || "Default"} · ${days === 0 ? "expires today" : `${days} day${days === 1 ? "" : "s"} remaining`}`, href: "/products", priority: days <= Number(settings.batchExpiry.criticalWarningDays || 7) ? 0 : 1, createdAt: batch.updatedAt });
   }

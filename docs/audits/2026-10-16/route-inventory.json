@@ -1,0 +1,1027 @@
+[
+  {
+    "source": "src/app/page.js",
+    "path": "/",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/login/page.js",
+    "path": "/login",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/change-password/page.js",
+    "path": "/change-password",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/suppliers/route.js",
+    "path": "/api/suppliers",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"purchases.view\"",
+      "\"purchases.create\""
+    ]
+  },
+  {
+    "source": "src/app/api/suppliers/[id]/route.js",
+    "path": "/api/suppliers/[id]",
+    "api": true,
+    "methods": [
+      "GET",
+      "PUT",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"purchases.view\"",
+      "\"purchases.edit\"",
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/staff/route.js",
+    "path": "/api/staff",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"staff.view\"",
+      "\"staff.create\"",
+      "\"staff.managePermissions\""
+    ]
+  },
+  {
+    "source": "src/app/api/staff/[id]/route.js",
+    "path": "/api/staff/[id]",
+    "api": true,
+    "methods": [
+      "GET",
+      "PATCH",
+      "PUT",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"staff.view\"",
+      "\"staff.edit\"",
+      "\"staff.managePermissions\"",
+      "\"staff.deactivate\""
+    ]
+  },
+  {
+    "source": "src/app/api/staff/[id]/reset-password/route.js",
+    "path": "/api/staff/[id]/reset-password",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"staff.resetPassword\""
+    ]
+  },
+  {
+    "source": "src/app/api/staff/[id]/reactivate/route.js",
+    "path": "/api/staff/[id]/reactivate",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"staff.deactivate\""
+    ]
+  },
+  {
+    "source": "src/app/api/staff/[id]/deactivate/route.js",
+    "path": "/api/staff/[id]/deactivate",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"staff.deactivate\""
+    ]
+  },
+  {
+    "source": "src/app/api/staff/[id]/activity/route.js",
+    "path": "/api/staff/[id]/activity",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"staff.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/staff/options/route.js",
+    "path": "/api/staff/options",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"expenses\""
+    ]
+  },
+  {
+    "source": "src/app/api/settings/route.js",
+    "path": "/api/settings",
+    "api": true,
+    "methods": [
+      "GET",
+      "PATCH",
+      "PUT"
+    ],
+    "requirements": [
+      "\"settings.view\"",
+      "\"settings.edit\"",
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/settings/reset/route.js",
+    "path": "/api/settings/reset",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/settings/receipt/route.js",
+    "path": "/api/settings/receipt",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "session"
+    ]
+  },
+  {
+    "source": "src/app/api/settings/invoice-reset/route.js",
+    "path": "/api/settings/invoice-reset",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/settings/audit/route.js",
+    "path": "/api/settings/audit",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"settings.edit\""
+    ]
+  },
+  {
+    "source": "src/app/api/search/route.js",
+    "path": "/api/search",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/sales/route.js",
+    "path": "/api/sales",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"sales.view\"",
+      "\"sales.create\"",
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/sales/[id]/route.js",
+    "path": "/api/sales/[id]",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"sales.view\"",
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/roles/route.js",
+    "path": "/api/roles",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"staff.view\"",
+      "\"staff.manageRoles\""
+    ]
+  },
+  {
+    "source": "src/app/api/roles/[id]/route.js",
+    "path": "/api/roles/[id]",
+    "api": true,
+    "methods": [
+      "PATCH",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"staff.manageRoles\""
+    ]
+  },
+  {
+    "source": "src/app/api/reports/[type]/route.js",
+    "path": "/api/reports/[type]",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"reports.view\"",
+      "`reports.${permission}`",
+      "\"reports.export\""
+    ]
+  },
+  {
+    "source": "src/app/api/purchases/route.js",
+    "path": "/api/purchases",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"purchases.view\"",
+      "\"purchases.create\""
+    ]
+  },
+  {
+    "source": "src/app/api/purchases/[id]/route.js",
+    "path": "/api/purchases/[id]",
+    "api": true,
+    "methods": [
+      "GET",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"purchases.view\"",
+      "\"purchases.edit\"",
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/purchases/[id]/stock-transactions/route.js",
+    "path": "/api/purchases/[id]/stock-transactions",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"purchases.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/purchases/[id]/cancel/route.js",
+    "path": "/api/purchases/[id]/cancel",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"purchases.cancel\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/route.js",
+    "path": "/api/products",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"products.view\"",
+      "\"products.create\"",
+      "\"products.edit\"",
+      "\"products.deactivate\"",
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/[id]/route.js",
+    "path": "/api/products/[id]",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"products.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/[id]/stock/route.js",
+    "path": "/api/products/[id]/stock",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"products.stockAdjust\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/[id]/adjustment/route.js",
+    "path": "/api/products/[id]/adjustment",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"products.stockAdjust\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/sales-index/route.js",
+    "path": "/api/products/sales-index",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"products.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/merge/route.js",
+    "path": "/api/products/merge",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/import/route.js",
+    "path": "/api/products/import",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"products.import\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/duplicates/route.js",
+    "path": "/api/products/duplicates",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"products.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/bulk/route.js",
+    "path": "/api/products/bulk",
+    "api": true,
+    "methods": [
+      "PATCH",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"products.edit\"",
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/barcode/[barcode]/route.js",
+    "path": "/api/products/barcode/[barcode]",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"products.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/products/barcode/generate/route.js",
+    "path": "/api/products/barcode/generate",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"products.create\""
+    ]
+  },
+  {
+    "source": "src/app/api/notifications/route.js",
+    "path": "/api/notifications",
+    "api": true,
+    "methods": [
+      "GET",
+      "PATCH",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"products.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/health/route.js",
+    "path": "/api/health",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/expenses/route.js",
+    "path": "/api/expenses",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"expenses.view\"",
+      "\"expenses.create\""
+    ]
+  },
+  {
+    "source": "src/app/api/expenses/[id]/route.js",
+    "path": "/api/expenses/[id]",
+    "api": true,
+    "methods": [
+      "GET",
+      "PATCH"
+    ],
+    "requirements": [
+      "\"expenses.view\"",
+      "\"expenses.edit\""
+    ]
+  },
+  {
+    "source": "src/app/api/expenses/[id]/void/route.js",
+    "path": "/api/expenses/[id]/void",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"expenses.void\""
+    ]
+  },
+  {
+    "source": "src/app/api/expense-categories/route.js",
+    "path": "/api/expense-categories",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"expenses.view\"",
+      "\"expenses.manageCategories\""
+    ]
+  },
+  {
+    "source": "src/app/api/expense-categories/[id]/route.js",
+    "path": "/api/expense-categories/[id]",
+    "api": true,
+    "methods": [
+      "PATCH",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"expenses.manageCategories\""
+    ]
+  },
+  {
+    "source": "src/app/api/doctors/route.js",
+    "path": "/api/doctors",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"doctor.view\"",
+      "\"doctor.manage\""
+    ]
+  },
+  {
+    "source": "src/app/api/doctors/[id]/route.js",
+    "path": "/api/doctors/[id]",
+    "api": true,
+    "methods": [
+      "PATCH"
+    ],
+    "requirements": [
+      "\"doctor.manage\""
+    ]
+  },
+  {
+    "source": "src/app/api/dashboard/route.js",
+    "path": "/api/dashboard",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"dashboard.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/customers/route.js",
+    "path": "/api/customers",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"customers.view\"",
+      "\"customers.create\""
+    ]
+  },
+  {
+    "source": "src/app/api/customers/[id]/route.js",
+    "path": "/api/customers/[id]",
+    "api": true,
+    "methods": [
+      "GET",
+      "PATCH",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"customers.view\"",
+      "\"customers.edit\"",
+      "\"customers.deactivate\""
+    ]
+  },
+  {
+    "source": "src/app/api/customers/search/route.js",
+    "path": "/api/customers/search",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"customers.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/consultations/route.js",
+    "path": "/api/consultations",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"consultation.view\"",
+      "\"consultation.create\""
+    ]
+  },
+  {
+    "source": "src/app/api/consultations/[id]/route.js",
+    "path": "/api/consultations/[id]",
+    "api": true,
+    "methods": [
+      "GET",
+      "PATCH",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"consultation.view\"",
+      "\"consultation.edit\"",
+      "\"consultation.delete\""
+    ]
+  },
+  {
+    "source": "src/app/api/consultations/[id]/cancel/route.js",
+    "path": "/api/consultations/[id]/cancel",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"consultation.cancel\""
+    ]
+  },
+  {
+    "source": "src/app/api/consultations/reset-tokens/route.js",
+    "path": "/api/consultations/reset-tokens",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/consultations/options/route.js",
+    "path": "/api/consultations/options",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"consultation.view\""
+    ]
+  },
+  {
+    "source": "src/app/api/categories/route.js",
+    "path": "/api/categories",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ],
+    "requirements": [
+      "\"products.view\"",
+      "\"products.create\"",
+      "\"products.edit\"",
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/backups/route.js",
+    "path": "/api/backups",
+    "api": true,
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/backups/[name]/route.js",
+    "path": "/api/backups/[name]",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/backups/restore/route.js",
+    "path": "/api/backups/restore",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/backups/folders/route.js",
+    "path": "/api/backups/folders",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"ADMIN\""
+    ]
+  },
+  {
+    "source": "src/app/api/auth/users/route.js",
+    "path": "/api/auth/users",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/auth/username-login/route.js",
+    "path": "/api/auth/username-login",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/auth/status/route.js",
+    "path": "/api/auth/status",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/auth/pin-login/route.js",
+    "path": "/api/auth/pin-login",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/auth/pin/route.js",
+    "path": "/api/auth/pin",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "session"
+    ]
+  },
+  {
+    "source": "src/app/api/auth/logout/route.js",
+    "path": "/api/auth/logout",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/auth/login/route.js",
+    "path": "/api/auth/login",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/auth/change-password/route.js",
+    "path": "/api/auth/change-password",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": [
+      "session (readSession)"
+    ]
+  },
+  {
+    "source": "src/app/api/auth/bootstrap/route.js",
+    "path": "/api/auth/bootstrap",
+    "api": true,
+    "methods": [
+      "POST"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/api/accounts/route.js",
+    "path": "/api/accounts",
+    "api": true,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"accounts\""
+    ]
+  },
+  {
+    "source": "src/app/(workspace)/suppliers/page.js",
+    "path": "/suppliers",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/staff/page.js",
+    "path": "/staff",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/settings/page.js",
+    "path": "/settings",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "session"
+    ]
+  },
+  {
+    "source": "src/app/(workspace)/settings/login-pin/page.js",
+    "path": "/settings/login-pin",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "session"
+    ]
+  },
+  {
+    "source": "src/app/(workspace)/settings/change-password/page.js",
+    "path": "/settings/change-password",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "session"
+    ]
+  },
+  {
+    "source": "src/app/(workspace)/sales/page.js",
+    "path": "/sales",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/sales/[id]/page.js",
+    "path": "/sales/[id]",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/sales/recent/page.js",
+    "path": "/sales/recent",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/sales/new/page.js",
+    "path": "/sales/new",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/reports/page.js",
+    "path": "/reports",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/purchases/page.js",
+    "path": "/purchases",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/products/page.js",
+    "path": "/products",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/notifications/page.js",
+    "path": "/notifications",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/login-pin/page.js",
+    "path": "/login-pin",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/expenses/page.js",
+    "path": "/expenses",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/dashboard/page.js",
+    "path": "/dashboard",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/customers/page.js",
+    "path": "/customers",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  },
+  {
+    "source": "src/app/(workspace)/consultations/page.js",
+    "path": "/consultations",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"consultation.view\""
+    ]
+  },
+  {
+    "source": "src/app/(workspace)/consultations/report/page.js",
+    "path": "/consultations/report",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": [
+      "\"consultation.view\""
+    ]
+  },
+  {
+    "source": "src/app/(workspace)/accounts/page.js",
+    "path": "/accounts",
+    "api": false,
+    "methods": [
+      "GET"
+    ],
+    "requirements": []
+  }
+]

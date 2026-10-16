@@ -1,0 +1,3360 @@
+{
+  "phase": "states",
+  "fixturesOnly": true,
+  "liveDatabase": false,
+  "widths": [
+    320,
+    360,
+    375,
+    390,
+    414,
+    480,
+    640,
+    768,
+    820,
+    1024,
+    1280,
+    1366,
+    1440,
+    1536,
+    1920,
+    2560
+  ],
+  "screens": [
+    {
+      "screen": "sales",
+      "state": "loading",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Sales",
+            "0 items"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "CASHIER WORKSPACE\n\nSales\n\nPackage sales, loose quantities, and custom Ayurvedic mixtures.\n\nHeld sales\nRecent sales\nScan barcode\nNew sale\nSale\nCustom Mix\nScan\nExternal Purchase\nAll\nLow Stock\nLoose Sale\nOpened Stock\nPRODUCTS SHOWN\n0\nLOOSE SALE\n0\nOPENED STOCK\n?\nLOW STOCK\n?\nLoading products\nPrevious\n0 products ? Page 1 of 1\nNext"
+    },
+    {
+      "screen": "products",
+      "state": "loading",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Products"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "INVENTORY CATALOGUE\n\nProducts\n\nManage products, inventory configuration, pricing, batches and POS visibility.\n\nCheck duplicates\nBulk Add\nImport CSV\nAdd product\nTOTAL PRODUCTS\n0\nLOW STOCK\n0\nOPENED STOCK\n0\nEXPIRING SOON\n0\nINVENTORY SELLING VALUE\n₹0.00\nAll\nStock status\nCapabilities\nPOS status\nMore filters\nBrand\nReset filters\n0 Products"
+    },
+    {
+      "screen": "customers",
+      "state": "loading",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "CUSTOMER DIRECTORY\n\nCustomers\n\nManage retail shoppers and wholesale business accounts in separate directories.\n\nExport Retail\nAdd Retail Customer\nRetail Customers\nWholesale Customers\nLive\n—\n\nTotal Retail\n\nLive\n—\n\nNew This Month\n\nLive\n—\n\nRepeat Customers\n\nLive\n—\n\nCustomer Revenue\n\nAll Retail\nNew\nRepeat\nHigh Value\nInactive\nLast purchase: Any Time\nSpending: Any Amount\nPurchases: Any Count\nSort\nSort: Last Purchase\nSort: Name\nSort: Total Purchases\nSort: Total Spent\nSort: Average Bill\nSort: Created Date\nOrder\nOrder: Highest / Newest\nOrder: Lowest / Oldest"
+    },
+    {
+      "screen": "purchases",
+      "state": "loading",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "INVENTORY RECEIVING\n\nPurchases\n\nReceive supplier stock, manage batches, track purchase costs and review purchase history.\n\nNew purchase\nLive\n\nPurchases today\n\n—\n\n0 purchases\n\nLive\n\nThis month\n\n—\n\nPurchase value\n\nLive\n\nPackages received\n\n—\n\nThis month\n\nLive\n\nSupplier outstanding\n\n—\n\nReceived purchases\n\nAll\nToday\nThis week\nThis month\nAll suppliers\nAll payments\nAll statuses\nNewest first\nOldest first\nSupplier A–Z\nHighest total\nLowest total\nPayment status"
+    },
+    {
+      "screen": "reports",
+      "state": "loading",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Overview"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "REPORTING & ANALYTICS\n\nOverview\n\nAnalyze sales, inventory, purchases, expenses and business performance.\n\nPrint\nToday\nYesterday\n7 Days\n30 Days\nThis Month\nLast Month\nThis Year\nCustom\nOverview"
+    },
+    {
+      "screen": "customers",
+      "state": "dense",
+      "samples": [
+        {
+          "width": 320,
+          "height": 844,
+          "documentWidth": 310,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 360,
+          "height": 844,
+          "documentWidth": 350,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "documentWidth": 365,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 414,
+          "height": 844,
+          "documentWidth": 404,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 480,
+          "height": 844,
+          "documentWidth": 470,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 640,
+          "height": 844,
+          "documentWidth": 630,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "documentWidth": 758,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 820,
+          "height": 844,
+          "documentWidth": 810,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1024,
+          "height": 844,
+          "documentWidth": 1014,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1280,
+          "height": 844,
+          "documentWidth": 1270,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1366,
+          "height": 844,
+          "documentWidth": 1356,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "documentWidth": 1430,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1536,
+          "height": 844,
+          "documentWidth": 1526,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1920,
+          "height": 844,
+          "documentWidth": 1910,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 2560,
+          "height": 844,
+          "documentWidth": 2550,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    },
+    {
+      "screen": "suppliers",
+      "state": "dense",
+      "samples": [
+        {
+          "width": 320,
+          "height": 844,
+          "documentWidth": 310,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 360,
+          "height": 844,
+          "documentWidth": 350,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "documentWidth": 365,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 414,
+          "height": 844,
+          "documentWidth": 404,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 480,
+          "height": 844,
+          "documentWidth": 470,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 640,
+          "height": 844,
+          "documentWidth": 630,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "documentWidth": 758,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 820,
+          "height": 844,
+          "documentWidth": 810,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1024,
+          "height": 844,
+          "documentWidth": 1014,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1280,
+          "height": 844,
+          "documentWidth": 1270,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1366,
+          "height": 844,
+          "documentWidth": 1356,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "documentWidth": 1430,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1536,
+          "height": 844,
+          "documentWidth": 1526,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1920,
+          "height": 844,
+          "documentWidth": 1910,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 2560,
+          "height": 844,
+          "documentWidth": 2550,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    },
+    {
+      "screen": "purchases",
+      "state": "dense",
+      "samples": [
+        {
+          "width": 320,
+          "height": 844,
+          "documentWidth": 310,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 360,
+          "height": 844,
+          "documentWidth": 350,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "documentWidth": 365,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 414,
+          "height": 844,
+          "documentWidth": 404,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 480,
+          "height": 844,
+          "documentWidth": 470,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 640,
+          "height": 844,
+          "documentWidth": 630,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "documentWidth": 758,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 820,
+          "height": 844,
+          "documentWidth": 810,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1024,
+          "height": 844,
+          "documentWidth": 1014,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1280,
+          "height": 844,
+          "documentWidth": 1270,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1366,
+          "height": 844,
+          "documentWidth": 1356,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "documentWidth": 1430,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1536,
+          "height": 844,
+          "documentWidth": 1526,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1920,
+          "height": 844,
+          "documentWidth": 1910,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 2560,
+          "height": 844,
+          "documentWidth": 2550,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    },
+    {
+      "screen": "expenses",
+      "state": "dense",
+      "samples": [
+        {
+          "width": 320,
+          "height": 844,
+          "documentWidth": 310,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 360,
+          "height": 844,
+          "documentWidth": 350,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "documentWidth": 365,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 414,
+          "height": 844,
+          "documentWidth": 404,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 480,
+          "height": 844,
+          "documentWidth": 470,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 640,
+          "height": 844,
+          "documentWidth": 630,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "documentWidth": 758,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 820,
+          "height": 844,
+          "documentWidth": 810,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1024,
+          "height": 844,
+          "documentWidth": 1014,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1280,
+          "height": 844,
+          "documentWidth": 1270,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1366,
+          "height": 844,
+          "documentWidth": 1356,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "documentWidth": 1430,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1536,
+          "height": 844,
+          "documentWidth": 1526,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1920,
+          "height": 844,
+          "documentWidth": 1910,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 2560,
+          "height": 844,
+          "documentWidth": 2550,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    },
+    {
+      "screen": "accounts",
+      "state": "dense",
+      "samples": [
+        {
+          "width": 320,
+          "height": 844,
+          "documentWidth": 310,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 360,
+          "height": 844,
+          "documentWidth": 350,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "documentWidth": 365,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 414,
+          "height": 844,
+          "documentWidth": 404,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 480,
+          "height": 844,
+          "documentWidth": 470,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 640,
+          "height": 844,
+          "documentWidth": 630,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "documentWidth": 758,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 820,
+          "height": 844,
+          "documentWidth": 810,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1024,
+          "height": 844,
+          "documentWidth": 1014,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1280,
+          "height": 844,
+          "documentWidth": 1270,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1366,
+          "height": 844,
+          "documentWidth": 1356,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "documentWidth": 1430,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1536,
+          "height": 844,
+          "documentWidth": 1526,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1920,
+          "height": 844,
+          "documentWidth": 1910,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 2560,
+          "height": 844,
+          "documentWidth": 2550,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    },
+    {
+      "screen": "staff",
+      "state": "dense",
+      "samples": [
+        {
+          "width": 320,
+          "height": 844,
+          "documentWidth": 310,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification0",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification1",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification2",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification3",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification4",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification5",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification6",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification7",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification8",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification9",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification10",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification11",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification12",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification13",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification14",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification15",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification16",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification17",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification18",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification19",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 360,
+          "height": 844,
+          "documentWidth": 350,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification0",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification1",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification2",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification3",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification4",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification5",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification6",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification7",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification8",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification9",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification10",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification11",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification12",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification13",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification14",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification15",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification16",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification17",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification18",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification19",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "documentWidth": 365,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification0",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification1",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification2",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification3",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification4",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification5",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification6",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification7",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification8",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification9",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification10",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification11",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification12",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification13",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification14",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification15",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification16",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification17",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification18",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification19",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification0",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification1",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification2",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification3",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification4",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification5",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification6",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification7",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification8",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification9",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification10",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification11",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification12",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification13",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification14",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification15",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification16",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification17",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification18",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification19",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 414,
+          "height": 844,
+          "documentWidth": 404,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification0",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification1",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification2",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification3",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification4",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification5",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification6",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification7",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification8",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification9",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification10",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification11",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification12",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification13",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification14",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification15",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification16",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification17",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification18",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification19",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 480,
+          "height": 844,
+          "documentWidth": 470,
+          "unnamed": [],
+          "tiny": [
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification0",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification1",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification2",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification3",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification4",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification5",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification6",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification7",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification8",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification9",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification10",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification11",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification12",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification13",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification14",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification15",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification16",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification17",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification18",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            },
+            {
+              "text": "Actions for LongUnbrokenDirectoryNameForResponsiveOverflowVerification19",
+              "classes": "grid size-9 place-items-center rounded-lg hover:bg-slate-100"
+            }
+          ],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 640,
+          "height": 844,
+          "documentWidth": 630,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "documentWidth": 758,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 820,
+          "height": 844,
+          "documentWidth": 810,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1024,
+          "height": 844,
+          "documentWidth": 1014,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1280,
+          "height": 844,
+          "documentWidth": 1270,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1366,
+          "height": 844,
+          "documentWidth": 1356,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "documentWidth": 1430,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1536,
+          "height": 844,
+          "documentWidth": 1526,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1920,
+          "height": 844,
+          "documentWidth": 1910,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 2560,
+          "height": 844,
+          "documentWidth": 2550,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    },
+    {
+      "screen": "consultations",
+      "state": "dense",
+      "samples": [
+        {
+          "width": 320,
+          "height": 844,
+          "documentWidth": 310,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 360,
+          "height": 844,
+          "documentWidth": 350,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 375,
+          "height": 844,
+          "documentWidth": 365,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 414,
+          "height": 844,
+          "documentWidth": 404,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 480,
+          "height": 844,
+          "documentWidth": 470,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 640,
+          "height": 844,
+          "documentWidth": 630,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 768,
+          "height": 844,
+          "documentWidth": 758,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 820,
+          "height": 844,
+          "documentWidth": 810,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1024,
+          "height": 844,
+          "documentWidth": 1014,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1280,
+          "height": 844,
+          "documentWidth": 1270,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1366,
+          "height": 844,
+          "documentWidth": 1356,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1440,
+          "height": 844,
+          "documentWidth": 1430,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1536,
+          "height": 844,
+          "documentWidth": 1526,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 1920,
+          "height": 844,
+          "documentWidth": 1910,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        },
+        {
+          "width": 2560,
+          "height": 844,
+          "documentWidth": 2550,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    },
+    {
+      "screen": "sales",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Sales",
+            "0 items"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "CASHIER WORKSPACE\n\nSales\n\nPackage sales, loose quantities, and custom Ayurvedic mixtures.\n\nHeld sales\nRecent sales\nScan barcode\nNew sale\nSale\nCustom Mix\nScan\nExternal Purchase\nAll\nAyurvedic Medicines and Therapeutic Preparations\nLow Stock\nLoose Sale\nOpened Stock\nPRODUCTS SHOWN\n0\nLOOSE SALE\n0\nOPENED STOCK\n0\nLOW STOCK\n0\n\nNo products match the current filters.\n\nPrevious\n0 products ? Page 1 of 1\nNext"
+    },
+    {
+      "screen": "products",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Products",
+            "No products yet"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "INVENTORY CATALOGUE\n\nProducts\n\nManage products, inventory configuration, pricing, batches and POS visibility.\n\nCheck duplicates\nBulk Add\nImport CSV\nAdd product\nTOTAL PRODUCTS\n0\nLOW STOCK\n0\nOPENED STOCK\n0\nEXPIRING SOON\n0\nINVENTORY SELLING VALUE\n₹0.00\nAll\nAyurvedic Medicines and Therapeutic Preparations\nStock status\nCapabilities\nPOS status\nMore filters\nBrand\nReset filters\n0 Products\nNo products yet\n\nAdd your first Ayurvedic product or import your catalogue using CSV.\n\nImport CSV\nAdd product"
+    },
+    {
+      "screen": "customers",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers",
+            "No retail customers yet"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "CUSTOMER DIRECTORY\n\nCustomers\n\nManage retail shoppers and wholesale business accounts in separate directories.\n\nExport Retail\nAdd Retail Customer\nRetail Customers\nWholesale Customers\nLive\n0\n\nTotal Retail\n\nLive\n0\n\nNew This Month\n\nLive\n0\n\nRepeat Customers\n\nLive\n₹0.00\n\nCustomer Revenue\n\nAll Retail\nNew\nRepeat\nHigh Value\nInactive\nLast purchase: Any Time\nSpending: Any Amount\nPurchases: Any Count\nSort\nSort: Last Purchase\nSort: Name\nSort: Total Purchases\nSort: Total Spent\nSort: Average Bill\nSort: Created Date\nOrder\nOrder: Highest / Newest\nOrder: Lowest / Oldest\nNo retail customers yet\n\nRetail customers created during checkout or added manually will appear here.\n\nAdd Retail Customer"
+    },
+    {
+      "screen": "suppliers",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers",
+            "No suppliers yet"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "PURCHASE PARTNERS\n\nSuppliers\n\nSupplier contacts and inventory purchase totals.\n\nAdd supplier\nSearch\nNo suppliers yet\n\nAdd a supplier before recording an inventory purchase."
+    },
+    {
+      "screen": "purchases",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases",
+            "No purchases yet"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "INVENTORY RECEIVING\n\nPurchases\n\nReceive supplier stock, manage batches, track purchase costs and review purchase history.\n\nNew purchase\nLive\n\nPurchases today\n\n₹0.00\n\n0 purchases\n\nLive\n\nThis month\n\n₹0.00\n\nPurchase value\n\nLive\n\nPackages received\n\n0\n\nThis month\n\nLive\n\nSupplier outstanding\n\n₹0.00\n\nReceived purchases\n\nAll\nToday\nThis week\nThis month\nAll suppliers\nAll payments\nAll statuses\nNewest first\nOldest first\nSupplier A–Z\nHighest total\nLowest total\nPayment status\nNo purchases yet\n\nReceive your first supplier stock to begin tracking inventory.\n\nNew purchase"
+    },
+    {
+      "screen": "expenses",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses",
+            "No expenses yet"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "CASH OUTFLOW\n\nExpenses\n\nTrack operating expenses, purchase-related costs and outgoing payments.\n\nExport\nManage categories\nAdd expense\nLive\n\nToday's expenses\n\n₹0.00\n\n0 transactions · Today\n\nLive\n\nThis month\n\n₹0.00\n\n0 transactions · Oct 2026\n\nLive\n\nManual expenses\n\n₹0.00\n\nOperating costs · Oct 2026\n\nLive\n\nPurchase expenses\n\n₹0.00\n\nPaid supplier costs · Oct 2026\n\nAll\nToday\nThis week\nThis month\nAll sources\nManual\nPurchase\nExternal Purchase\nAll categories\nAll payments\nAll staff\nAll statuses\nNewest first\nOldest first\nHighest amount\nLowest amount\nCategory A–Z\nSource\nNo expenses yet\n\nManual expenses and linked purchase expenses will appear here.\n\nAdd expense"
+    },
+    {
+      "screen": "accounts",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary",
+            "No transactions found"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "FINANCIAL LEDGER\n\nAccounts\n\nTrack money received, money paid, cash flow and payment-method balances.\n\nExport\n\nMoney In\n\n₹0.00\n\nCurrent filtered period\n\nMoney Out\n\n₹0.00\n\nCurrent filtered period\n\nNet Cash Flow\n\n₹0.00\n\nMoney in minus money out\n\nCash Balance\n\n₹0.00\n\nAll posted Cash movements\n\nDigital / Bank Balance\n\n₹0.00\n\nAll posted non-cash movements\n\nCASH FLOW OVERVIEW\n\nMoney In and Money Out\nToday\n7 Days\nThis Month\nAll Time\nNo cash-flow activity for this period.\n\nPAYMENT METHODS\n\nReconciliation summary\nCurrent filters\nAll\nMoney In\nMoney Out\nToday\nYesterday\n7 Days\nThis Month\nAll transaction types\nAll payment methods\nAll sources\nNewest first\nOldest first\nAmount high to low\nAmount low to high\nNo transactions found\n\nTry another search, date range or filter.\n\nClear filters"
+    },
+    {
+      "screen": "reports",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Reports",
+            "SALES TREND",
+            "BUSINESS MOVEMENT",
+            "Explore detailed reports"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "REPORTING & ANALYTICS\n\nReports\n\nPreview data only\n\nPrint\nToday\nYesterday\n7 Days\n30 Days\nThis Month\nLast Month\nThis Year\nCustom\nOverview\nSales Report\nCurrent Inventory\nPurchase Report\nExpenses\nCash Flow\nCustomers\nStaff Activity\nSALES TREND\nNo sales in this period. Choose another date range to view the trend.\nBUSINESS MOVEMENT\nNo business movement in this period.\n\nREPORT LIBRARY\n\nExplore detailed reports\nSales Report\n\nRevenue, invoices and sale activity\n\nView report\nCurrent Inventory\n\nPhysical package and base stock\n\nView report\nPurchase Report\n\nReceived supplier purchases\n\nView report\nExpenses\n\nManual and purchase-linked register\n\nView report\nCash Flow\n\nMoney in, money out and channels\n\nView report\nCustomers\n\nSpend, loyalty and customer type\n\nView report\nStaff Activity\n\nEmployee operational activity\n\nView report"
+    },
+    {
+      "screen": "staff",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff",
+            "No additional staff yet"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "ACCESS CONTROL\n\nStaff\n\nManage employee accounts, roles, permissions and system access.\n\nManage roles\nAdd staff\n\nTotal staff\n\n0\n\nAll employee accounts\n\nActive staff\n\n0\n\nCan log in\n\nEmployee roles\n\n1\n\nDatabase roles\n\nInactive staff\n\n0\n\nLogin disabled\n\nAll\nActive\nInactive\nAll roles\nAll permissions\nActive first\nName A–Z\nLast active\nNewest created\nClear filters\nNo additional staff yet\n\nCreate employee accounts and configure their access to Dr Abdulla’s Ayurvedic POS.\n\nAdd staff"
+    },
+    {
+      "screen": "consultations",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "Consultation\n\nReception registration and OP tickets\n\nConsultation report\nReset OP Tokens\nNew Consultation\n\nCompleted consultations\n\n—\n\nConsultation collection\n\n₹0.00\n\nCancelled / refunded\n\n—\nFROM\nTO\nSEARCH\nDOCTOR\nAll doctors\nUI Audit Doctor\nPAYMENT\nAll methods\nCASH\nUPI\nBANK\nSTATUS\nAll statuses\nCOMPLETED\nCANCELLED\nBRANCH\nMain store\nTOKEN\tOP NUMBER\tPATIENT\tPHONE\tDOCTOR\tFEE\tPAYMENT\tDATE / TIME\tSTATUS\tCREATED BY\tACTIONS\n\nNo consultations in this period.\n\n0 records · Page 1 of 1\nPrevious\nNext"
+    },
+    {
+      "screen": "recent-sales",
+      "state": "empty",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Recent Sales",
+            "No completed sales yet"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "Back to Sales\n\nSALES HISTORY\n\nRecent Sales\n\nSearch completed invoices and open their full sale details.\n\nNew sale\n\nINVOICES\n\n0\n\nCurrent filters\n\nREVENUE\n\n₹0.00\n\nPaid sales\n\nAVERAGE BILL\n\n₹0.00\n\nRevenue per invoice\n\nITEMS SOLD\n\n0\n\nInvoice line items\n\nToday\nLast 7 days\nAll sales\nFROM\nTO\nPAYMENT\nAll payments\nCASH\nUPI\nCARD\nBANK\nSALE TYPE\nAll sale types\nPackage\nLoose\nCustom mix\nClear filters\nNo completed sales yet\n\nCompleted sales will appear here automatically."
+    },
+    {
+      "screen": "sales",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Sales",
+            "Unable to load the sales catalogue",
+            "0 items"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "CASHIER WORKSPACE\n\nSales\n\nPackage sales, loose quantities, and custom Ayurvedic mixtures.\n\nHeld sales\nRecent sales\nScan barcode\nNew sale\nSale\nCustom Mix\nScan\nExternal Purchase\nAll\nLow Stock\nLoose Sale\nOpened Stock\nPRODUCTS SHOWN\n0\nLOOSE SALE\n0\nOPENED STOCK\n?\nLOW STOCK\n?\nUnable to load the sales catalogue\n\nPreview network unavailable. Please retry.\n\nRetry\nPrevious\n0 products ? Page 1 of 1\nNext"
+    },
+    {
+      "screen": "products",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Products",
+            "Unable to load products"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "INVENTORY CATALOGUE\n\nProducts\n\nManage products, inventory configuration, pricing, batches and POS visibility.\n\nCheck duplicates\nBulk Add\nImport CSV\nAdd product\nTOTAL PRODUCTS\n0\nLOW STOCK\n0\nOPENED STOCK\n0\nEXPIRING SOON\n0\nINVENTORY SELLING VALUE\n₹0.00\nAll\nStock status\nCapabilities\nPOS status\nMore filters\nBrand\nReset filters\n0 Products\nUnable to load products\n\nPreview network unavailable. Please retry.\n\nRetry"
+    },
+    {
+      "screen": "customers",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Customers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "CUSTOMER DIRECTORY\n\nCustomers\n\nManage retail shoppers and wholesale business accounts in separate directories.\n\nExport Retail\nAdd Retail Customer\nRetail Customers\nWholesale Customers\nLive\n0\n\nTotal Retail\n\nLive\n0\n\nNew This Month\n\nLive\n0\n\nRepeat Customers\n\nLive\n₹0.00\n\nCustomer Revenue\n\nAll Retail\nNew\nRepeat\nHigh Value\nInactive\nLast purchase: Any Time\nSpending: Any Amount\nPurchases: Any Count\nSort\nSort: Last Purchase\nSort: Name\nSort: Total Purchases\nSort: Total Spent\nSort: Average Bill\nSort: Created Date\nOrder\nOrder: Highest / Newest\nOrder: Lowest / Oldest\nUnable to load customers.Retry"
+    },
+    {
+      "screen": "suppliers",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Suppliers",
+            "Unable to load suppliers"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "PURCHASE PARTNERS\n\nSuppliers\n\nSupplier contacts and inventory purchase totals.\n\nAdd supplier\nSearch\nUnable to load suppliers\n\nPreview network unavailable. Please retry.\n\nRetry"
+    },
+    {
+      "screen": "purchases",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Purchases",
+            "Unable to load purchases"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "INVENTORY RECEIVING\n\nPurchases\n\nReceive supplier stock, manage batches, track purchase costs and review purchase history.\n\nNew purchase\nLive\n\nPurchases today\n\n₹0.00\n\n0 purchases\n\nLive\n\nThis month\n\n₹0.00\n\nPurchase value\n\nLive\n\nPackages received\n\n0\n\nThis month\n\nLive\n\nSupplier outstanding\n\n₹0.00\n\nReceived purchases\n\nAll\nToday\nThis week\nThis month\nAll suppliers\nAll payments\nAll statuses\nNewest first\nOldest first\nSupplier A–Z\nHighest total\nLowest total\nPayment status\nUnable to load purchases\n\nPreview network unavailable. Please retry.\n\nRetry"
+    },
+    {
+      "screen": "expenses",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Expenses",
+            "Unable to load expenses"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "CASH OUTFLOW\n\nExpenses\n\nTrack operating expenses, purchase-related costs and outgoing payments.\n\nExport\nManage categories\nAdd expense\nLive\n\nToday's expenses\n\n₹0.00\n\n0 transactions · Today\n\nLive\n\nThis month\n\n₹0.00\n\n0 transactions · Oct 2026\n\nLive\n\nManual expenses\n\n₹0.00\n\nOperating costs · Oct 2026\n\nLive\n\nPurchase expenses\n\n₹0.00\n\nPaid supplier costs · Oct 2026\n\nAll\nToday\nThis week\nThis month\nAll sources\nManual\nPurchase\nExternal Purchase\nAll categories\nAll payments\nAll staff\nAll statuses\nNewest first\nOldest first\nHighest amount\nLowest amount\nCategory A–Z\nSource\nUnable to load expenses\n\nPreview network unavailable. Please retry.\n\nRetry"
+    },
+    {
+      "screen": "accounts",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Accounts",
+            "Money In and Money Out",
+            "Reconciliation summary",
+            "Unable to load account transactions."
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "FINANCIAL LEDGER\n\nAccounts\n\nTrack money received, money paid, cash flow and payment-method balances.\n\nExport\n\nMoney In\n\n₹0.00\n\nCurrent filtered period\n\nMoney Out\n\n₹0.00\n\nCurrent filtered period\n\nNet Cash Flow\n\n₹0.00\n\nMoney in minus money out\n\nCash Balance\n\n₹0.00\n\nAll posted Cash movements\n\nDigital / Bank Balance\n\n₹0.00\n\nAll posted non-cash movements\n\nCASH FLOW OVERVIEW\n\nMoney In and Money Out\nToday\n7 Days\nThis Month\nAll Time\nNo cash-flow activity for this period.\n\nPAYMENT METHODS\n\nReconciliation summary\nCurrent filters\nAll\nMoney In\nMoney Out\nToday\nYesterday\n7 Days\nThis Month\nAll transaction types\nAll payment methods\nAll sources\nNewest first\nOldest first\nAmount high to low\nAmount low to high\nUnable to load account transactions.\n\nPreview network unavailable. Please retry.\n\nRetry"
+    },
+    {
+      "screen": "reports",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Overview",
+            "Unable to load Overview"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "REPORTING & ANALYTICS\n\nOverview\n\nAnalyze sales, inventory, purchases, expenses and business performance.\n\nPrint\nToday\nYesterday\n7 Days\n30 Days\nThis Month\nLast Month\nThis Year\nCustom\nOverview\nUnable to load Overview\n\nPreview network unavailable. Please retry.\n\nRetry"
+    },
+    {
+      "screen": "staff",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Staff",
+            "Unable to load staff"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "ACCESS CONTROL\n\nStaff\n\nManage employee accounts, roles, permissions and system access.\n\nTotal staff\n\n0\n\nAll employee accounts\n\nActive staff\n\n0\n\nCan log in\n\nEmployee roles\n\n0\n\nDatabase roles\n\nInactive staff\n\n0\n\nLogin disabled\n\nAll\nActive\nInactive\nAll roles\nAll permissions\nActive first\nName A–Z\nLast active\nNewest created\nClear filters\nUnable to load staff\n\nPreview network unavailable. Please retry.\n\nRetry"
+    },
+    {
+      "screen": "consultations",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Consultation"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "Consultation\n\nReception registration and OP tickets\n\nConsultation report\n\nCompleted consultations\n\n—\n\nConsultation collection\n\n—\n\nCancelled / refunded\n\n—\nFROM\nTO\nSEARCH\nDOCTOR\nAll doctors\nPAYMENT\nAll methods\nCASH\nUPI\nBANK\nSTATUS\nAll statuses\nCOMPLETED\nCANCELLED\nBRANCH\nMain store\n\nPreview network unavailable. Please retry.\n\nRetry\nTOKEN\tOP NUMBER\tPATIENT\tPHONE\tDOCTOR\tFEE\tPAYMENT\tDATE / TIME\tSTATUS\tCREATED BY\tACTIONS"
+    },
+    {
+      "screen": "recent-sales",
+      "state": "error",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 380,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "Recent Sales",
+            "Unable to load recent sales"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ],
+      "text": "Back to Sales\n\nSALES HISTORY\n\nRecent Sales\n\nSearch completed invoices and open their full sale details.\n\nNew sale\n\nINVOICES\n\n0\n\nCurrent filters\n\nREVENUE\n\n₹0.00\n\nPaid sales\n\nAVERAGE BILL\n\n₹0.00\n\nRevenue per invoice\n\nITEMS SOLD\n\n0\n\nInvoice line items\n\nToday\nLast 7 days\nAll sales\nFROM\nTO\nPAYMENT\nAll payments\nCASH\nUPI\nCARD\nBANK\nSALE TYPE\nAll sale types\nPackage\nLoose\nCustom mix\nClear filters\nUnable to load recent sales\n\nPreview network unavailable. Please retry.\n\nRetry"
+    },
+    {
+      "screen": "error-fallback",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "This screen could not load"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    },
+    {
+      "screen": "not-found",
+      "samples": [
+        {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390,
+          "unnamed": [],
+          "tiny": [],
+          "headings": [
+            "We could not find this page"
+          ],
+          "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "screen": "products",
+      "button": "Add product",
+      "opened": {
+        "width": 390,
+        "height": 600,
+        "documentWidth": 390,
+        "unnamed": [],
+        "tiny": [
+          {
+            "text": "More information about Product / Medicine Name",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about Barcode (Optional)",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about Brand / Manufacturer",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about Category",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about Status",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about Measured In",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about Package Type",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about Full Package Selling Price",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about Starting Stock",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          },
+          {
+            "text": "More information about this field",
+            "classes": "inline-flex rounded-full text-emerald-700/65 transition hover:text-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-600/40"
+          }
+        ],
+        "headings": [
+          "Products",
+          "Add Product"
+        ],
+        "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/",
+        "dialogs": [
+          {
+            "name": "Add Product",
+            "rect": {
+              "top": 12,
+              "bottom": 588,
+              "height": 576
+            },
+            "focusInside": true
+          }
+        ]
+      },
+      "keyboard": {
+        "count": 43,
+        "tabStayedInside": true,
+        "shiftTabStayedInside": true
+      },
+      "dialogsAfterEscape": 0
+    },
+    {
+      "screen": "customers",
+      "button": "Add Retail Customer",
+      "opened": {
+        "width": 390,
+        "height": 600,
+        "documentWidth": 390,
+        "unnamed": [],
+        "tiny": [
+          {
+            "text": "More information about Customer name",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Mobile",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Email",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Address",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Status",
+            "classes": "modal-auto-tip"
+          }
+        ],
+        "headings": [
+          "Customers",
+          "No retail customers yet",
+          "Add Retail Customer"
+        ],
+        "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/",
+        "dialogs": [
+          {
+            "name": "Add Retail Customer",
+            "rect": {
+              "top": 12,
+              "bottom": 588,
+              "height": 576
+            },
+            "focusInside": true
+          }
+        ]
+      },
+      "keyboard": {
+        "count": 13,
+        "tabStayedInside": true,
+        "shiftTabStayedInside": true
+      },
+      "dialogsAfterEscape": 0
+    },
+    {
+      "screen": "suppliers",
+      "button": "Add supplier",
+      "opened": {
+        "width": 390,
+        "height": 600,
+        "documentWidth": 390,
+        "unnamed": [],
+        "tiny": [
+          {
+            "text": "More information about Supplier name",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Phone",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Email",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Tax / GST number",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Address",
+            "classes": "modal-auto-tip"
+          }
+        ],
+        "headings": [
+          "Suppliers",
+          "No suppliers yet",
+          "Add supplier"
+        ],
+        "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/",
+        "dialogs": [
+          {
+            "name": "Add supplier",
+            "rect": {
+              "top": 12,
+              "bottom": 588,
+              "height": 576
+            },
+            "focusInside": true
+          }
+        ]
+      },
+      "keyboard": {
+        "count": 13,
+        "tabStayedInside": true,
+        "shiftTabStayedInside": true
+      },
+      "dialogsAfterEscape": 0
+    },
+    {
+      "screen": "purchases",
+      "button": "New purchase",
+      "opened": {
+        "width": 390,
+        "height": 600,
+        "documentWidth": 390,
+        "unnamed": [],
+        "tiny": [
+          {
+            "text": "+ Add Supplier ",
+            "classes": "text-xs font-extrabold text-[var(--green)]"
+          }
+        ],
+        "headings": [
+          "Purchases",
+          "No purchases yet",
+          "Receive Stock from Supplier"
+        ],
+        "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/",
+        "dialogs": [
+          {
+            "name": "Receive Stock from Supplier",
+            "rect": {
+              "top": 0,
+              "bottom": 576,
+              "height": 576
+            },
+            "focusInside": true
+          }
+        ]
+      },
+      "keyboard": {
+        "count": 17,
+        "tabStayedInside": true,
+        "shiftTabStayedInside": true
+      },
+      "dialogsAfterEscape": 0
+    },
+    {
+      "screen": "expenses",
+      "button": "Add expense",
+      "opened": {
+        "width": 390,
+        "height": 600,
+        "documentWidth": 390,
+        "unnamed": [],
+        "tiny": [
+          {
+            "text": "More information about Category",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Expense title",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Description",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Amount",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Expense date",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Paid to",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Notes",
+            "classes": "modal-auto-tip"
+          }
+        ],
+        "headings": [
+          "Expenses",
+          "No expenses yet",
+          "Record an operating expense"
+        ],
+        "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/",
+        "dialogs": [
+          {
+            "name": "Record an operating expense",
+            "rect": {
+              "top": 0,
+              "bottom": 576,
+              "height": 576
+            },
+            "focusInside": true
+          }
+        ]
+      },
+      "keyboard": {
+        "count": 21,
+        "tabStayedInside": true,
+        "shiftTabStayedInside": true
+      },
+      "dialogsAfterEscape": 0
+    },
+    {
+      "screen": "staff",
+      "button": "Add staff",
+      "opened": {
+        "width": 390,
+        "height": 600,
+        "documentWidth": 390,
+        "unnamed": [],
+        "tiny": [
+          {
+            "text": "More information about Staff information",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Full name",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Username",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Email",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Phone",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Status",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Login credentials",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Password",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "",
+            "classes": "absolute right-3 top-3"
+          },
+          {
+            "text": "More information about Confirm password",
+            "classes": "modal-auto-tip"
+          },
+          {
+            "text": "More information about Role",
+            "classes": "modal-auto-tip"
+          }
+        ],
+        "headings": [
+          "Staff",
+          "No additional staff yet",
+          "Create a staff login and configure access"
+        ],
+        "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/",
+        "dialogs": [
+          {
+            "name": "Create a staff login and configure access",
+            "rect": {
+              "top": 0,
+              "bottom": 576,
+              "height": 576
+            },
+            "focusInside": true
+          }
+        ]
+      },
+      "keyboard": {
+        "count": 23,
+        "tabStayedInside": true,
+        "shiftTabStayedInside": true
+      },
+      "dialogsAfterEscape": 0
+    },
+    {
+      "screen": "consultations",
+      "button": "New Consultation",
+      "opened": {
+        "width": 390,
+        "height": 600,
+        "documentWidth": 380,
+        "unnamed": [],
+        "tiny": [],
+        "headings": [
+          "Consultation",
+          "New Consultation"
+        ],
+        "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/",
+        "dialogs": [
+          {
+            "name": "New Consultation",
+            "rect": {
+              "top": 30,
+              "bottom": 570,
+              "height": 540
+            },
+            "focusInside": true
+          }
+        ]
+      },
+      "keyboard": {
+        "count": 9,
+        "tabStayedInside": true,
+        "shiftTabStayedInside": true
+      },
+      "dialogsAfterEscape": 0
+    }
+  ],
+  "checkout": {
+    "cash": {
+      "width": 390,
+      "height": 600,
+      "documentWidth": 390,
+      "unnamed": [],
+      "tiny": [
+        {
+          "text": "More information about Payment method",
+          "classes": "modal-auto-tip"
+        },
+        {
+          "text": "More information about Cash received",
+          "classes": "modal-auto-tip"
+        }
+      ],
+      "headings": [
+        "Sales",
+        "LongProductNameWithoutSpacesForResponsiveLayoutVerificationAndOverflowChecks",
+        "Classical Ayurvedic Preparation 2",
+        "Classical Ayurvedic Preparation 3",
+        "Classical Ayurvedic Preparation 4",
+        "Classical Ayurvedic Preparation 5",
+        "Classical Ayurvedic Preparation 6",
+        "Classical Ayurvedic Preparation 7"
+      ],
+      "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+    },
+    "dialog": {
+      "open": true,
+      "focusInside": true
+    },
+    "split": {
+      "width": 390,
+      "height": 600,
+      "documentWidth": 390,
+      "unnamed": [],
+      "tiny": [
+        {
+          "text": "More information about Payment method",
+          "classes": "modal-auto-tip"
+        },
+        {
+          "text": "More information about Cash",
+          "classes": "modal-auto-tip"
+        },
+        {
+          "text": "More information about UPI",
+          "classes": "modal-auto-tip"
+        },
+        {
+          "text": "More information about UPI reference (optional)",
+          "classes": "modal-auto-tip"
+        }
+      ],
+      "headings": [
+        "Sales",
+        "LongProductNameWithoutSpacesForResponsiveLayoutVerificationAndOverflowChecks",
+        "Classical Ayurvedic Preparation 2",
+        "Classical Ayurvedic Preparation 3",
+        "Classical Ayurvedic Preparation 4",
+        "Classical Ayurvedic Preparation 5",
+        "Classical Ayurvedic Preparation 6",
+        "Classical Ayurvedic Preparation 7"
+      ],
+      "errorText": ":host {\n  all: initial;\n\n  /* the direction property is not reset by 'all' */\n  direction: ltr;\n}\n\n/"
+    }
+  },
+  "navigation": {
+    "dialog": true,
+    "expanded": "true",
+    "active": "<a aria-label=\"Dr Abdulla’s Ayurvedic POS dashboard\" href=\"/dashboard\"><span class=\"brand-logo brand-logo--inverse\"><img alt=\"Dr Abdulla’s Ayurvedic Multi Speciality Medical Center\" loading=\"eager\" src=\"/brand/dr-abdullas-horizontal.png\"></span></a>"
+  },
+  "exceptions": [],
+  "missingFixtures": [],
+  "blockedWrites": []
+}

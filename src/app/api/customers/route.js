@@ -1,3 +1,5 @@
+import {customerSaleStats} from "@/lib/customer-statistics";
+import {boundedInteger,searchText} from "@/lib/query-input";
 import { connectDb } from "@/lib/db";
 import { requireSession } from "@/lib/auth";
 import { ok, apiError } from "@/lib/api";
@@ -5,16 +7,16 @@ import { Customer } from "@/models";
 import {createCustomer,escapeRegex,normalizePhone} from "@/services/customer.service";
 import {queryValues} from "@/lib/filter-utils";
 
-const bounded=(value,fallback,min,max)=>Math.min(max,Math.max(min,Number(value)||fallback));
+const bounded=boundedInteger;
 const sortFields={name:"name",purchases:"purchaseCount",totalSpent:"totalSpent",averageBill:"averageBill",lastPurchase:"lastPurchaseAt",createdAt:"createdAt"};
 const activeMatch=(status)=>status==="INACTIVE"?{$or:[{status:"INACTIVE"},{active:false}]}:status==="ALL"?{}:{$or:[{status:"ACTIVE"},{status:{$exists:false},active:{$ne:false}}]};
 const withCustomerType=(match,customerType)=>{if(customerType==="WHOLESALE")match.customerType="WHOLESALE";if(customerType==="RETAIL")match.$and=[...(match.$and||[]),{$or:[{customerType:"RETAIL"},{customerType:{$exists:false}}]}];return match};
-const saleStats=()=>[{$lookup:{from:"sales",localField:"_id",foreignField:"customerId",as:"customerSales"}},{$addFields:{purchaseCount:{$size:"$customerSales"},totalSpent:{$sum:"$customerSales.total"},averageBill:{$cond:[{$gt:[{$size:"$customerSales"},0]},{$avg:"$customerSales.total"},0]},highestBill:{$ifNull:[{$max:"$customerSales.total"},0]},firstPurchaseAt:{$min:"$customerSales.createdAt"},lastPurchaseAt:{$max:"$customerSales.createdAt"}}},{$unset:"customerSales"}];
+const saleStats=customerSaleStats;
 
 export async function GET(request) {
   try {
     await requireSession("customers.view");await connectDb();
-    const params=new URL(request.url).searchParams,q=String(params.get("q")||params.get("search")||"").trim(),page=bounded(params.get("page"),1,1,100000),limit=bounded(params.get("limit"),20,1,500),status=String(params.get("status")||"ACTIVE").toUpperCase(),quick=String(params.get("quick")||"ALL").toUpperCase(),customerType=String(params.get("customerType")||"").toUpperCase(),highValue=bounded(params.get("highValue"),10000,1,100000000);
+    const params=new URL(request.url).searchParams,q=searchText(params.get("q")||params.get("search")),page=bounded(params.get("page"),1,1,100000),limit=bounded(params.get("limit"),20,1,500),status=String(params.get("status")||"ACTIVE").toUpperCase(),quick=String(params.get("quick")||"ALL").toUpperCase(),customerType=String(params.get("customerType")||"").toUpperCase(),highValue=bounded(params.get("highValue"),10000,1,100000000);
     const base=withCustomerType(activeMatch(quick==="INACTIVE"?"INACTIVE":status),customerType),safe=escapeRegex(q),phone=normalizePhone(q);
     if(q)base.$and=[...(base.$and||[]),{$or:[{name:{$regex:safe,$options:"i"}},{businessName:{$regex:safe,$options:"i"}},{gstin:{$regex:safe,$options:"i"}},{phone:{$regex:safe,$options:"i"}},{email:{$regex:safe,$options:"i"}},...(phone.length>=4?[{normalizedPhone:{$regex:`${escapeRegex(phone)}$`}}]:[])]}];
     const pipeline=[{$match:base},...saleStats()],startMonth=new Date();startMonth.setDate(1);startMonth.setHours(0,0,0,0);

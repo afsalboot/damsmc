@@ -1,0 +1,30 @@
+▲ Next.js 16.3.8
+- Local:         http://127.0.0.1:3107
+- Network:       http://127.0.0.1:3107
+✓ Ready in 117ms
+✓ Running next.config.mjs took 19ms
+⨯ Error: UNAUTHORIZED
+    at o (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\_1vra64v._.js:1:50326)
+    at async g (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\[root-of-the-server]__12ufedh._.js:1:7743) {
+  digest: '1560046509'
+}
+⨯ Error: UNAUTHORIZED
+    at o (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\_1vra64v._.js:1:50326)
+    at async g (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\[root-of-the-server]__0_32uj0._.js:1:7812) {
+  digest: '3886768350'
+}
+⨯ Error: UNAUTHORIZED
+    at o (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\_1vra64v._.js:1:50326)
+    at async f (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\[root-of-the-server]__1wh2hd2._.js:1:6727) {
+  digest: '511525780'
+}
+⨯ Error: UNAUTHORIZED
+    at o (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\_1vra64v._.js:1:50326)
+    at async f (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\[root-of-the-server]__0-dk_du._.js:1:4605) {
+  digest: '3708571593'
+}
+⨯ Error: UNAUTHORIZED
+    at o (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\_1vra64v._.js:1:50326)
+    at async f (D:\Next.js\Projects\PVAMSP - POS\pvamsp-pos\.next\server\chunks\ssr\[root-of-the-server]__1vs3lpx._.js:1:4665) {
+  digest: '3091423568'
+}

@@ -299,6 +299,10 @@ function ChartCard({ title, children }) {
     </section>
   );
 }
+function ChartEmpty({ children }) {
+  return <div className="grid h-full place-items-center rounded-xl border border-dashed border-[var(--line)] p-6 text-center text-sm text-[var(--muted)]" role="status">{children}</div>;
+}
+
 function Overview({ data, openReport, allowed }) {
   const trend = data.charts?.trend || [],
     movement = data.charts?.movement || [];
@@ -307,6 +311,7 @@ function Overview({ data, openReport, allowed }) {
       <Kpis items={data.kpis} />
       <div className="mt-5 grid gap-5 xl:grid-cols-[1.4fr_.6fr]">
         <ChartCard title="Sales Trend">
+          {!trend.length ? <ChartEmpty>No sales in this period. Choose another date range to view the trend.</ChartEmpty> :
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={trend}>
               <defs>
@@ -333,8 +338,10 @@ function Overview({ data, openReport, allowed }) {
               />
             </AreaChart>
           </ResponsiveContainer>
+          }
         </ChartCard>
         <ChartCard title="Business Movement">
+          {!movement.length ? <ChartEmpty>No business movement in this period.</ChartEmpty> :
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={movement} layout="vertical">
               <CartesianGrid strokeDasharray="3 3" horizontal={false} />
@@ -349,6 +356,7 @@ function Overview({ data, openReport, allowed }) {
               <Bar dataKey="value" fill="#1f6b45" radius={[0, 6, 6, 0]} />
             </BarChart>
           </ResponsiveContainer>
+          }
         </ChartCard>
       </div>
       <section className="mt-7">
@@ -659,7 +667,7 @@ export default function ReportsWorkspace() {
                   className="absolute left-3 top-3 text-[var(--muted)]"
                   size={18}
                 />
-                <input
+                <input aria-label="Search this report"
                   className="field !pl-10"
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}

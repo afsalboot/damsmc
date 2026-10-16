@@ -79,11 +79,6 @@ export function ConfirmDialog({
         onCancel?.();
         return;
       }
-      if (event.key === "Enter" && !loading && !disabled) {
-        event.preventDefault();
-        onConfirm?.();
-        return;
-      }
       if (event.key !== "Tab") return;
       const controls = [
         ...(dialogRef.current?.querySelectorAll("button:not([disabled])") ||

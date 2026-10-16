@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { dashboardToday } from "@/lib/dashboard-dates";
@@ -758,7 +759,7 @@ export default function DashboardWorkspace() {
       </Card>
       {invoice && (
         <div className="fixed inset-0 z-[70] grid place-items-center bg-black/45 p-4">
-          <section className="card max-h-[90vh] w-full max-w-2xl overflow-auto p-6">
+          <DialogSurface onEscape={() => setInvoice(null)} className="card max-h-[90vh] w-full max-w-2xl overflow-auto p-6">
             <div className="flex justify-between">
               <div>
                 <small>SALE INVOICE</small>
@@ -791,7 +792,7 @@ export default function DashboardWorkspace() {
               <b>Total</b>
               <b>{money(invoice.total)}</b>
             </div>
-          </section>
+          </DialogSurface>
         </div>
       )}
     </div>

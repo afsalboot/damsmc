@@ -1,4 +1,5 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
 /* eslint-disable react-hooks/set-state-in-effect */
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -8,7 +9,7 @@ import { saleEditCart } from "@/lib/sale-edit";
 import ExternalPurchaseModal from "@/components/ExternalPurchaseModal";
 import { isExternalPurchase } from "@/lib/external-purchase";
 import {checkoutFetch} from "@/lib/checkout-request";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
 import {
   Barcode,
   ChevronLeft,
@@ -293,7 +294,7 @@ function QuickSell({ p, close, add }) {
   }
   return (
     <div className="fixed inset-0 z-[90] grid place-items-center bg-black/45 p-4">
-      <section
+      <DialogSurface as="section" onEscape={close}
         className="card max-h-[94vh] w-full max-w-lg overflow-y-auto overscroll-contain p-6"
         role="dialog"
         aria-modal="true"
@@ -406,10 +407,10 @@ function QuickSell({ p, close, add }) {
             Add to sale
           </button>
         </div>
-      </section>
+      </DialogSurface>
       {opening && (
         <div className="fixed inset-0 z-[110] grid place-items-center bg-black/55 p-4">
-          <section
+          <DialogSurface as="section" onEscape={() => setOpening(false)}
             className="card w-full max-w-md p-6"
             role="dialog"
             aria-modal="true"
@@ -458,7 +459,7 @@ function QuickSell({ p, close, add }) {
                 Open {p.packageType}
               </button>
             </div>
-          </section>
+          </DialogSurface>
         </div>
       )}
     </div>
@@ -470,7 +471,7 @@ function HeldSalesModal({ sales, onClose, onResume, onRemove }) {
       className="fixed inset-0 z-[95] grid place-items-center bg-black/45 p-4"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <section
+      <DialogSurface as="section" onEscape={onClose}
         className="card max-h-[88vh] w-full max-w-2xl overflow-auto overscroll-contain p-6"
         role="dialog"
         aria-modal="true"
@@ -546,7 +547,7 @@ function HeldSalesModal({ sales, onClose, onResume, onRemove }) {
             </span>
           </div>
         )}
-      </section>
+      </DialogSurface>
     </div>
   );
 }
@@ -558,6 +559,15 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
   const [editError, setEditError] = useState("");
   const loadedEditRef = useRef(false);
   const catalogue = useSalesCache();
+  const [catalogueError, setCatalogueError] = useState("");
+  const [catalogueRetry, setCatalogueRetry] = useState(0);
+  useEffect(() => {
+    if (editSaleId) return;
+    let active = true;
+    salesCache.ensure().then(() => { if (active) setCatalogueError(""); })
+      .catch(error => { if (active) setCatalogueError(error.message || "Please try again."); });
+    return () => { active = false; };
+  }, [catalogueRetry, editSaleId]);
   const [page, setPage] = useState(0);
   const confirmAction = useConfirm();
   const [mode, setMode] = useState("PRODUCT"),
@@ -777,8 +787,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
     window.addEventListener("oushadi-sale-complete", completed);
     return () => window.removeEventListener("oushadi-sale-complete", completed);
   }, [router]);
-  useEffect(() => {
-    const scanned = (event) => {
+  const onScannedProduct = useEffectEvent((event) => {
       const product = event.detail;
       if (!product) return;
       setMode("PRODUCT");
@@ -810,10 +819,12 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
         openPackageCounts: [],
         baseUnit: product.baseUnit,
       });
-    };
+  });
+  useEffect(() => {
+    const scanned = (event) => onScannedProduct(event);
     window.addEventListener("oushadi-barcode-product", scanned);
     return () => window.removeEventListener("oushadi-barcode-product", scanned);
-  }, [cart]);
+  }, []);
   useEffect(() => {
     if (editSaleId) return;
     const links = [...document.querySelectorAll('a[href="/sales"]')].filter(
@@ -1254,7 +1265,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
             Package sales, loose quantities, and custom Ayurvedic mixtures.
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
           <button className="btn" disabled={Boolean(editingSale)} onClick={() => setHeldOpen(true)}>
             <Pause size={16} />
             Held sales{heldSales.length ? ` (${heldSales.length})` : ""}
@@ -1307,7 +1318,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
         </div>
         <div className="relative flex-1">
           <Search className="absolute left-4 top-3" size={18} />
-          <input
+          <input aria-label="Search product name, SKU, category, or scan barcode"
             id="pos-search"
             className="field !min-h-11 !pl-11"
             value={search}
@@ -1386,11 +1397,13 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
       )}
       <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_410px]">
         <main className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-3">
+          {!editSaleId && !catalogue.ready && !catalogueError && <div role="status" className="card p-5 sm:col-span-2 2xl:col-span-3"><span className="sr-only">Loading products</span><div className="loading-shimmer h-24 rounded-xl bg-[var(--green-soft)]" aria-hidden="true" /></div>}
+          {!editSaleId && catalogueError && <section role="alert" className="card p-5 sm:col-span-2 2xl:col-span-3"><h2 className="font-extrabold">Unable to load the sales catalogue</h2><p className="my-3 text-sm">{catalogueError}</p><button type="button" className="btn" onClick={() => setCatalogueRetry(value => value + 1)}>Retry</button></section>}
+          {!editSaleId && catalogue.ready && !catalogueError && !visibleProducts.length && <p role="status" className="card p-5 sm:col-span-2 2xl:col-span-3">No products match the current filters.</p>}
           {visibleProducts.map((p) => (
             <article
-              className={`sales-product-card card flex cursor-pointer flex-col p-5 transition hover:-translate-y-0.5 hover:shadow-md ${p.expired ? "sales-product-expired" : ""}`}
+              className={`sales-product-card card relative flex cursor-pointer flex-col p-5 transition hover:-translate-y-0.5 hover:shadow-md ${p.expired ? "sales-product-expired" : ""}`}
               key={p._id}
-              onClick={() => chooseProduct(p)}
             >
               <div className="flex justify-between">
                 <Badge t="green">{p.categoryId?.name}</Badge>
@@ -1398,7 +1411,7 @@ export default function SalesWorkspaceModern({ editSaleId = null }) {
                   <Plus size={17} />
                 </span>
               </div>
-              <h2 className="mt-4 text-lg font-extrabold">{p.name}</h2>
+              <h2 className="mt-4 text-lg font-extrabold"><button type="button" className="text-left after:absolute after:inset-0" aria-label={`Select ${p.name}`} onClick={() => chooseProduct(p)}>{p.name}</button></h2>
               <ExpiredStockWarning product={p} />
               <small className="text-[var(--muted)]">SKU {p.sku}</small>
               <div className="sales-product-badges mt-3 flex flex-wrap gap-1">

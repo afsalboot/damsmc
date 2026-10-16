@@ -1,4 +1,6 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
+import {csvCell} from "@/lib/csv";
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -161,7 +163,7 @@ function TransactionDrawer({ movement, onClose, onSource }) {
       className="fixed inset-0 z-[80] bg-black/40"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <aside className="ml-auto flex h-full w-full max-w-xl flex-col bg-white shadow-2xl">
+      <DialogSurface as="aside" onEscape={onClose} className="ml-auto flex h-full w-full max-w-xl flex-col bg-white shadow-2xl">
         <header className="flex items-start justify-between border-b border-[var(--line)] p-5">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[.16em] text-[var(--green)]">
@@ -288,7 +290,7 @@ function TransactionDrawer({ movement, onClose, onSource }) {
             View source <ArrowRight size={16} />
           </button>
         </footer>
-      </aside>
+      </DialogSurface>
     </div>
   );
 }
@@ -426,7 +428,7 @@ export default function AccountsWorkspace() {
         "Created By",
         "Payment Reference",
       ];
-      const cell = (value) => `"${String(value ?? "").replaceAll('"', '""')}"`;
+      const cell = csvCell;
       const rows = result.movements.map((row) => {
         const timestamp = new Date(row.date);
         return [
@@ -488,7 +490,7 @@ export default function AccountsWorkspace() {
           {exporting ? "Preparing export…" : "Export"}
         </button>
       </header>
-      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+      <section className="workspace-kpis grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
         <KpiCard
           loading={loading}
           label="Money In"
@@ -649,7 +651,7 @@ export default function AccountsWorkspace() {
             className="absolute left-3 top-3.5 text-[var(--muted)]"
             size={18}
           />
-          <input
+          <input aria-label="Search invoice, purchase, expense, customer, supplier or reference"
             className="field !pl-10"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
@@ -741,7 +743,7 @@ export default function AccountsWorkspace() {
             }}
           />
           <div className="flex gap-2">
-            <select
+            <select aria-label="Sort order"
               className="field"
               value={`${filters.sort}:${filters.order}`}
               onChange={(event) => {
@@ -888,7 +890,7 @@ export default function AccountsWorkspace() {
                   </div>
                   <ArrowRight size={18} className="text-[var(--muted)]" />
                 </div>
-                <div className="mt-4 flex items-end justify-between">
+                <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
                   <div className="text-xs text-[var(--muted)]">
                     <p>{dateTime(row.date)}</p>
                     <p className="mt-1">
@@ -898,8 +900,8 @@ export default function AccountsWorkspace() {
                   <strong
                     className={
                       row.direction === "IN"
-                        ? "text-[var(--green)]"
-                        : "text-[var(--red)]"
+                        ? "whitespace-nowrap text-[var(--green)]"
+                        : "whitespace-nowrap text-[var(--red)]"
                     }
                   >
                     {row.direction === "IN" ? "+" : "−"}

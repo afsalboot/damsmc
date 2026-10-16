@@ -60,6 +60,7 @@ test("production configuration rejects missing or reused secrets without exposin
   assert.equal(validateProductionEnv({}).length, 4);
   const env = { MONGODB_URI: "mongodb://host/db", JWT_SECRET: "a".repeat(32), BACKUP_ENCRYPTION_KEY: "b".repeat(32), BACKUP_DIR: "/data/backups" };
   assert.deepEqual(validateProductionEnv(env), []);
+  assert.deepEqual(validateProductionEnv({ ...env, VERCEL: "1", BACKUP_DIR: "" }), []);
   assert.match(validateProductionEnv({ ...env, BACKUP_ENCRYPTION_KEY: env.JWT_SECRET }).join(), /separate/);
   assert.equal(validateProductionEnv({ JWT_SECRET: "private" }).join().includes("private"), false);
 });

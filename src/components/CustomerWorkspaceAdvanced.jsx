@@ -1,4 +1,6 @@
 "use client";
+import DialogSurface from "@/components/DialogSurface";
+import {csvCell} from "@/lib/csv";
 /* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable @next/next/no-location-assign-relative-destination */
 
@@ -172,7 +174,7 @@ function CustomerForm({ customer, initialType = "RETAIL", onClose, onSaved }) {
         event.target === event.currentTarget && !saving && onClose()
       }
     >
-      <form
+      <DialogSurface as="form" onEscape={() => !saving && onClose()}
         className="card max-h-[94vh] w-full max-w-2xl overflow-auto p-6"
         onSubmit={submit}
         role="dialog"
@@ -241,7 +243,6 @@ function CustomerForm({ customer, initialType = "RETAIL", onClose, onSaved }) {
                 name="name"
                 defaultValue={customer?.name}
                 required
-                autoFocus
               />
             </label>
             {customerType === "WHOLESALE" && (
@@ -393,7 +394,7 @@ function CustomerForm({ customer, initialType = "RETAIL", onClose, onSaved }) {
                 : `Create ${typeLabel} Customer`}
           </button>
         </div>
-      </form>
+      </DialogSurface>
     </div>
   );
 }
@@ -405,7 +406,7 @@ function InvoiceModal({ bill, onClose }) {
       className="fixed inset-0 z-[140] grid place-items-center bg-black/50 p-4"
       onMouseDown={(event) => event.target === event.currentTarget && onClose()}
     >
-      <section className="card max-h-[92vh] w-full max-w-2xl overflow-auto p-6">
+      <DialogSurface as="section" onEscape={onClose} className="card max-h-[92vh] w-full max-w-2xl overflow-auto p-6">
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--green)]">
@@ -479,7 +480,7 @@ function InvoiceModal({ bill, onClose }) {
           <button type="button" className="btn" onClick={onClose}>Close</button>
           <ReceiptPrintButton sale={bill} label="Reprint Invoice" />
         </div>
-      </section>
+      </DialogSurface>
     </div>
   );
 }
@@ -521,7 +522,7 @@ function DetailDrawer({ id, onClose, onEdit, onChanged }) {
           event.target === event.currentTarget && onClose()
         }
       >
-        <aside
+        <DialogSurface as="aside" onEscape={onClose}
           className="absolute inset-y-0 right-0 w-full max-w-2xl overflow-y-auto bg-white shadow-2xl"
           role="dialog"
           aria-modal="true"
@@ -703,7 +704,7 @@ function DetailDrawer({ id, onClose, onEdit, onChanged }) {
               </>
             )
           )}
-        </aside>
+        </DialogSurface>
       </div>
       <InvoiceModal bill={invoice} onClose={() => setInvoice(null)} />
     </>,
@@ -1011,7 +1012,7 @@ export default function CustomerWorkspaceAdvanced() {
           ]),
         ].map((line) =>
           line
-            .map((value) => `"${String(value ?? "").replaceAll('"', '""')}"`)
+            .map(csvCell)
             .join(","),
         );
       const url = URL.createObjectURL(
@@ -1144,6 +1145,7 @@ export default function CustomerWorkspaceAdvanced() {
           />
           <input
             className="field !min-h-12 !pl-12"
+            aria-label={customerType === "WHOLESALE" ? "Search wholesale customers" : "Search retail customers"}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder={

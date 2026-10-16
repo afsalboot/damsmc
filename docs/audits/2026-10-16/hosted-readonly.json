@@ -1,0 +1,60 @@
+{
+  "authenticated": false,
+  "financialWrites": false,
+  "samples": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "totalMs": 2342.058,
+      "bytes": 15,
+      "headers": {
+        "cache-control": "no-store",
+        "content-encoding": "br",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "x-frame-options": "DENY"
+      }
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "totalMs": 1632.3840999999998,
+      "bytes": 10613,
+      "headers": {
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "x-frame-options": "DENY"
+      }
+    },
+    {
+      "path": "/api/products",
+      "status": 401,
+      "totalMs": 1023.6600000000003,
+      "bytes": 35,
+      "headers": {
+        "cache-control": "private, no-store, max-age=0",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "x-frame-options": "DENY"
+      }
+    },
+    {
+      "path": "/api/sales?view=recent",
+      "status": 401,
+      "totalMs": 818.2115000000003,
+      "bytes": 35,
+      "headers": {
+        "cache-control": "private, no-store, max-age=0",
+        "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "x-frame-options": "DENY"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "authenticated": false,
+  "authStatusFixture": true,
+  "errors": [],
+  "apiRequests": [
+    {
+      "path": "/api/auth/status",
+      "method": "GET",
+      "fixture": true
+    },
+    {
+      "path": "/api/auth/status",
+      "method": "GET",
+      "fixture": true
+    }
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1365,
+      "documentWidth": 1365,
+      "passwordField": true,
+      "unlabeledInputs": 0,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 60
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 60
+        }
+      ],
+      "ttfb": 6.300000011920929,
+      "cls": 0.00861980944032226,
+      "lcp": 60
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "documentWidth": 390,
+      "passwordField": true,
+      "unlabeledInputs": 0,
+      "paint": [
+        {
+          "name": "first-paint",
+          "ms": 32
+        },
+        {
+          "name": "first-contentful-paint",
+          "ms": 32
+        }
+      ],
+      "ttfb": 5.4000000059604645,
+      "cls": 0,
+      "lcp": 32
+    }
+  ],
+  "passed": true
+}
