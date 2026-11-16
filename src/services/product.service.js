@@ -95,7 +95,7 @@ export async function updateProduct(id, input, actor) {
   const existing = await Product.findById(id);
   if (!existing) throw new Error("Product not found");
   const normalized = normalizeProductInput({ ...existing.toObject(), ...input, openingPackages: 0, openingQuantity: 0 });
-  const errors = validateProductInput(normalized);
+  const errors = validateProductInput(normalized, { requireBatchExpiry: false });
   if (errors.length) throw new Error(errors.join(". "));
   await validateProductTax(normalized);
   await validateProductCategory(normalized.categoryId);

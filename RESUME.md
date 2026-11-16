@@ -1,3 +1,16 @@
+﻿# Latest follow-up: batch expiry validation during product editing
+
+- Original task: Remove the "Expiry date is required for batch tracking" warning when editing product/pricing in the Products screen.
+- Completed: Product editor requires expiry only when creating a product; shared validation supports an optional requirement, and product updates skip the required-expiry check. Creates/imports continue to enforce it.
+- Currently being worked on: Final diff review is complete.
+- Files modified: src/components/ProductCatalogue.jsx, src/lib/product-validation.js, src/services/product.service.js, RESUME.md.
+- Important decisions: Existing product edits, including pricing-only edits, should not require expiry data from inventory batches. New product creation and import validation retain the current requirement.
+- Known bugs/issues: No known issue from code inspection. Checks were not run.
+- Remaining tasks in order: None for this request.
+- Commands/tests that should be run next: No tests were run because verification was not requested.
+- Exact recommended next step: Review the three code changes and reload the Products editor to confirm the toast no longer appears on edits.
+
+---
 # Latest completed follow-up: Sales pagination placement
 
 - Original task: User screenshot showed Previous/Next beside a single product instead of below the product grid.

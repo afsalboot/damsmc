@@ -117,7 +117,7 @@ export function normalizeProductInput(input = {}) {
   };
 }
 
-export function validateProductInput(product) {
+export function validateProductInput(product, { requireBatchExpiry = true } = {}) {
   const errors = [];
   if (!product.name) errors.push("Name is required");
   if (!product.sku) errors.push("SKU is required");
@@ -151,7 +151,7 @@ export function validateProductInput(product) {
   if ([product.allowPackageSale, product.allowLooseSale, product.allowMixture, product.visibleInSales, product.active, product.batchTracking,product.taxable,product.useDefaultGstRate,product.gstExempt,product.wholesaleEnabled,product.allowWholesaleLooseSale,product.freeSchemeEnabled].includes(null)) errors.push("Boolean values must be true or false");
   if (!product.allowPackageSale && !product.allowLooseSale) errors.push("Enable package sale or loose sale");
   errors.push(...validateWholesaleProduct(product));
-  if (product.batchTracking && !product.expiryDate) errors.push("Expiry date is required when batch tracking is enabled");
+  if (requireBatchExpiry && product.batchTracking && !product.expiryDate) errors.push("Expiry date is required when batch tracking is enabled");
   if (product.manufacturingDate && Number.isNaN(product.manufacturingDate.getTime())) errors.push("Manufacturing date is invalid");
   if (product.expiryDate && Number.isNaN(product.expiryDate.getTime())) errors.push("Expiry date is invalid");
   if (product.manufacturingDate && product.expiryDate && product.expiryDate <= product.manufacturingDate) errors.push("Expiry date must be after manufacturing date");

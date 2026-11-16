@@ -564,7 +564,7 @@ function ProductEditor({
       return toast.error(
         "Enter valid whole numbers for full stock and packages per box.",
       );
-    if (form.batchTracking && !form.expiryDate)
+    if (!edit && form.batchTracking && !form.expiryDate)
       return toast.error("Expiry date is required for batch tracking.");
     if (
       form.manufacturingDate &&
