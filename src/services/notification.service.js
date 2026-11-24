@@ -12,7 +12,7 @@ export async function getNotifications(session) {
     Product.find({ active: true }).select("name reorderLevel baseUnit packageType packageSize loosePricingMethod updatedAt").lean(),
     InventoryBatch.find({ $or: [{ sealedPackages: { $gt: 0 } }, { openQuantity: { $gt: 0 } }] }).select("productId batchNumber expiryDate sealedPackages openQuantity packageSize updatedAt").lean(),
     settings.notifications.purchaseDue && hasPermission(session, "purchases.view")
-      ? Purchase.find({ purchaseStatus: { $ne: "CANCELLED" }, balanceDue: { $gt: 0 } }).select("purchaseNumber supplierSnapshot balanceDue purchasedAt").sort({ purchasedAt: 1 }).limit(100).lean()
+      ? Purchase.find({ purchaseStatus: { $in: ["BILLED", "RECEIVED"] }, balanceDue: { $gt: 0 } }).select("purchaseNumber supplierSnapshot balanceDue purchasedAt").sort({ purchasedAt: 1 }).limit(100).lean()
       : [],
   ]);
 

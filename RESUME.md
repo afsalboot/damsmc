@@ -1,4 +1,17 @@
-﻿# Latest follow-up: batch expiry validation during product editing
+﻿# Latest follow-up: supplier bills and inventory receiving
+
+- Original task: Separate supplier bill recording from inventory posting, retain partial payments on pending bills, and show supplier outstanding balances on the dashboard. Bills for goods already in stock must not add duplicate inventory.
+- Completed: Added the BILLED state, Save Supplier Bill and Add to Inventory actions, a guarded transactional receive endpoint, expense sync for saved bills, supplier-wise outstanding dashboard totals, and outstanding inclusion for billed and received purchases. Drafts remain excluded from debt totals.
+- Currently being worked on: No active edits. Implementation is ready for review.
+- Files modified: src/models/index.js; src/services/purchase.service.js; src/app/api/purchases/[id]/route.js; src/app/api/purchases/[id]/receive/route.js; src/app/api/suppliers/route.js; src/services/notification.service.js; src/lib/server/dashboard-data.js; src/components/PurchaseForm.jsx; src/components/PurchasesWorkspace.jsx; src/components/DashboardWorkspace.jsx; RESUME.md.
+- Important decisions: BILLED records invoice/payment data without stock movement; RECEIVED means inventory is posted. Bill-only entry handles stock already accounted for. Bills with recorded payment cannot be cancelled because payment reversals are not modeled. Dashboard purchase value stays based on received stock; outstanding includes BILLED and RECEIVED.
+- Known bugs/issues: Automated checks and browser flows were not run. No standalone supplier opening balance was added; supplier debt is calculated from billed/received purchases. Later partial installments do not have a payment-history ledger; the existing amountPaid field stores the current aggregate.
+- Remaining tasks in order: (1) Run lint, tests and build. (2) Confirm a partial-payment bill appears in outstanding while inventory is unchanged. (3) Add it to inventory once and confirm no duplicate stock and no change to supplier balance.
+- Commands/tests that should be run next: npm.cmd run lint; npm.cmd test; npm.cmd run build.
+- Exact recommended next step: Run npm.cmd run lint from the project root, then address diagnostics before running the test suite and build.
+
+---
+# Latest follow-up: batch expiry validation during product editing
 
 - Original task: Remove the "Expiry date is required for batch tracking" warning when editing product/pricing in the Products screen.
 - Completed: Product editor requires expiry only when creating a product; shared validation supports an optional requirement, and product updates skip the required-expiry check. Creates/imports continue to enforce it.

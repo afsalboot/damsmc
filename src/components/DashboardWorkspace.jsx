@@ -568,7 +568,7 @@ export default function DashboardWorkspace() {
           ))}
         </Card>}
       </div>
-      <div className="grid gap-5 lg:grid-cols-3">
+      <div className="grid gap-5 lg:grid-cols-2 2xl:grid-cols-4">
         <Card title="Payment breakdown">
           {data?.payments.length ? (
             <div className="grid grid-cols-[130px_1fr] items-center">
@@ -658,6 +658,29 @@ export default function DashboardWorkspace() {
                 {money(data.purchases.latest.total)}
               </p>
             </div>
+          )}
+        </Card>
+        <Card
+          title="Supplier outstanding"
+          action={<Link href="/purchases" className="text-xs font-bold text-[var(--green)]">View bills</Link>}
+        >
+          <div className="mb-3 rounded-xl bg-amber-50 p-3">
+            <small className="text-amber-800">Total due</small>
+            <p className="text-xl font-extrabold text-amber-900">
+              {money(data?.suppliers.outstanding.total)}
+            </p>
+          </div>
+          {data?.suppliers.outstanding.rows.length ? (
+            <div className="space-y-3">
+              {data.suppliers.outstanding.rows.map((supplier) => (
+                <div className="flex items-center justify-between gap-3" key={supplier.id}>
+                  <span className="truncate text-sm font-bold">{supplier.name}</span>
+                  <strong className="shrink-0 text-sm">{money(supplier.balanceDue)}</strong>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <Empty title="Nothing outstanding" body="Unpaid supplier bills will appear here." />
           )}
         </Card>
       </div>

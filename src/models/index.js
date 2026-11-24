@@ -596,7 +596,7 @@ const purchaseSchema = new Schema(
     paymentReference: { type: String, trim: true, default: "" },
     purchaseStatus: {
       type: String,
-      enum: ["DRAFT", "RECEIVED", "CANCELLED"],
+      enum: ["DRAFT", "BILLED", "RECEIVED", "CANCELLED"],
       default: "RECEIVED",
       index: true,
     },
@@ -847,7 +847,7 @@ Purchase.schema.add({
   balanceDue: { type: Number, default: 0, min: 0 },
   purchaseStatus: {
     type: String,
-    enum: ["DRAFT", "RECEIVED", "CANCELLED"],
+    enum: ["DRAFT", "BILLED", "RECEIVED", "CANCELLED"],
     default: "RECEIVED",
     index: true,
   },

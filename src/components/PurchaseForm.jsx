@@ -624,7 +624,9 @@ export default function PurchaseForm({
       toast.success(
         purchaseStatus === "DRAFT"
           ? "Purchase draft saved."
-          : "Purchase received successfully.",
+          : purchaseStatus === "BILLED"
+            ? "Supplier bill saved. Inventory was not changed."
+            : "Purchase received and inventory updated.",
       );
       onSaved(result);
     } catch (error) {
@@ -655,11 +657,12 @@ export default function PurchaseForm({
               New Purchase
             </p>
             <h2 className="mt-1 text-2xl font-extrabold">
-              Receive Stock from Supplier
+              Record Supplier Bill
             </h2>
             <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
-              Record products received from a supplier, including quantity,
-              cost, batch, tax and payment details.
+              Record the supplier invoice, quantities, tax and payments. Saving
+              the bill will not change stock; add inventory separately when the
+              stock still needs to be posted.
             </p>
           </div>
           <button type="button" onClick={onClose} aria-label="Close">
@@ -1006,6 +1009,18 @@ export default function PurchaseForm({
                       </p>
                     </label>
                   )}
+                  {form.paymentMethod !== "CASH" && (
+                    <label className="sm:col-span-2">
+                      <Label help="Optional reference for the bank, UPI or card payment.">
+                        Payment Reference
+                      </Label>
+                      <input
+                        className="field"
+                        value={form.paymentReference}
+                        onChange={(e) => set({ paymentReference: e.target.value })}
+                      />
+                    </label>
+                  )}
                 </div>
               )}
             </section>
@@ -1137,7 +1152,7 @@ export default function PurchaseForm({
               <button
                 className="btn btn-primary"
                 type="button"
-                title="Save the purchase, receive the stock and update inventory."
+                title="Save the bill, post the received quantities and update inventory."
                 disabled={saving}
                 onClick={() => save("RECEIVED")}
               >
@@ -1146,17 +1161,26 @@ export default function PurchaseForm({
                 ) : (
                   <PackageCheck size={17} />
                 )}
-                Complete Purchase
+                Add to Inventory
               </button>
               <button
                 className="btn"
                 type="button"
-                title="Save the entered details without receiving completed stock."
+                title="Save the supplier bill and payment balance without changing inventory."
+                disabled={saving}
+                onClick={() => save("BILLED")}
+              >
+                Save Supplier Bill
+              </button>
+              {initial?.purchaseStatus !== "BILLED" && <button
+                className="btn !min-h-9"
+                type="button"
+                title="Save unfinished details without recording a bill or changing inventory."
                 disabled={saving}
                 onClick={() => save("DRAFT")}
               >
                 Save as Draft
-              </button>
+              </button>}
             </div>
           </aside>
         </div>

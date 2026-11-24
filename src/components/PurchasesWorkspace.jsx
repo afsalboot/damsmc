@@ -152,6 +152,7 @@ function Badge({ value, type = "status" }) {
   const normalized = value || "—";
   const tones = {
     RECEIVED: "bg-emerald-50 text-emerald-700",
+    BILLED: "bg-blue-50 text-blue-700",
     PAID: "bg-emerald-50 text-emerald-700",
     DRAFT: "bg-amber-50 text-amber-700",
     PARTIAL: "bg-amber-50 text-amber-700",
@@ -1264,6 +1265,18 @@ function PurchaseDrawer({
       setSaving(false);
     }
   }
+  async function addToInventory() {
+    setSaving(true);
+    try {
+      const result = await api(`/api/purchases/${purchase._id}/receive`, { method: "POST" });
+      toast.success("Purchase stock added to inventory.");
+      onRefresh(result);
+    } catch (error) {
+      toast.error(error.message || "Unable to add purchase stock to inventory.");
+    } finally {
+      setSaving(false);
+    }
+  }
   function print() {
     document.body.classList.add("printing-purchase");
     window.print();
@@ -1510,7 +1523,7 @@ function PurchaseDrawer({
                 ))
               ) : (
                 <p className="py-10 text-center text-sm text-[var(--muted)]">
-                  No stock entries were posted for this draft.
+                  No stock entries have been posted for this bill.
                 </p>
               )}
             </div>
@@ -1525,12 +1538,12 @@ function PurchaseDrawer({
             <Copy size={16} />
             Duplicate
           </button>
-          {purchase.purchaseStatus === "DRAFT" ? (
+          {purchase.purchaseStatus === "DRAFT" || purchase.purchaseStatus === "BILLED" ? (
             <button
               className="btn btn-primary"
               onClick={() => onEditDraft(purchase)}
             >
-              Edit draft
+              {purchase.purchaseStatus === "DRAFT" ? "Edit draft" : "Edit bill"}
             </button>
           ) : (
             purchase.purchaseStatus !== "CANCELLED" && (
@@ -1548,6 +1561,18 @@ function PurchaseDrawer({
               </>
             )
           )}
+          {purchase.purchaseStatus === "BILLED" && (
+            <>
+              <button className="btn btn-primary" disabled={saving} onClick={addToInventory}>
+                {saving ? <LoaderCircle className="loading-shimmer-icon" size={16} /> : <PackageCheck size={16} />}
+                Add to Inventory
+              </button>
+              <button className="btn btn-danger" onClick={() => setCancelling(true)}>
+                <RotateCcw size={16} />
+                Cancel bill
+              </button>
+            </>
+          )}
         </footer>
       </DialogSurface>
       {cancelling && (
@@ -1558,9 +1583,9 @@ function PurchaseDrawer({
               Cancel this purchase?
             </h3>
             <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-              Inventory will be reversed only if every received package is still
-              available. The original purchase and reversal entries remain
-              auditable.
+              {purchase.purchaseStatus === "BILLED"
+                ? "The bill will be marked cancelled and its outstanding amount removed. Bills with recorded payments must be reconciled first."
+                : "Inventory will be reversed only if every received package is still available. The original purchase and reversal entries remain auditable."}
             </p>
             <label className="mt-4 block">
               <span className="label">Reason</span>
@@ -1777,12 +1802,12 @@ export default function PurchasesWorkspace() {
       <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="mb-2 text-xs font-extrabold uppercase tracking-[.16em] text-[var(--green)]">
-            Inventory receiving
+            Supplier bills and inventory
           </p>
           <h1 className="text-3xl font-extrabold tracking-tight">Purchases</h1>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-            Receive supplier stock, manage batches, track purchase costs and
-            review purchase history.
+            Record supplier bills and payments, then add stock to inventory
+            when it has not already been recorded.
           </p>
         </div>
         <button
@@ -1816,7 +1841,7 @@ export default function PurchasesWorkspace() {
           {
             label: "Supplier outstanding",
             value: money(kpis.outstanding),
-            note: "Received purchases",
+            note: "Unpaid supplier bills",
             icon: Truck,
           },
         ].map(({ label, value, note, icon: Icon }) => (
@@ -1903,6 +1928,7 @@ export default function PurchasesWorkspace() {
             values={filters.purchaseStatus}
             options={[
               { value: "DRAFT", label: "Draft" },
+              { value: "BILLED", label: "Bill only" },
               { value: "RECEIVED", label: "Received" },
               { value: "CANCELLED", label: "Cancelled" },
             ]}
@@ -2082,7 +2108,7 @@ export default function PurchasesWorkspace() {
                           row={row}
                           onView={() => openDetail(row)}
                           onEdit={() =>
-                            row.purchaseStatus === "DRAFT"
+                            ["DRAFT", "BILLED"].includes(row.purchaseStatus)
                               ? editDraft(row)
                               : openDetail(row)
                           }
@@ -2174,7 +2200,7 @@ export default function PurchasesWorkspace() {
               filters.paymentStatus.length ||
               filters.purchaseStatus.length
                 ? "Try changing your search or filters."
-                : "Receive your first supplier stock to begin tracking inventory."}
+                : "Record a supplier bill or add received stock to inventory."}
             </p>
             <button
               className="btn btn-primary mt-5"
